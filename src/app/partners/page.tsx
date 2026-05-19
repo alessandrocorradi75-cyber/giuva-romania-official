@@ -1,21 +1,45 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { Building2, HandHeart, Stethoscope } from "lucide-react";
+import { HeroSection } from "@/components/HeroSection";
+import { ModuleGrid } from "@/components/ModuleGrid";
+import { Partners } from "@/components/Partners";
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: "Partners",
+  description: "Parteneriate instituționale, medicale, hospitality, media, tehnice și de mobilitate."
+};
+
+const modules = [
+  { title: "Instituțional", text: "Primării, protecție civilă, ISU, SMURD și autorități competente, doar prin proceduri oficiale.", icon: Building2 },
+  { title: "Medical and training", text: "Provideri autorizați pentru cursuri, AED awareness, certificări și actualizări.", icon: Stethoscope },
+  { title: "Corporate", text: "Sponsori, hospitality, travel, media, mobilitate și companii locale.", icon: HandHeart }
+];
+
+export default function PartnersPage() {
   return (
-    <main>
-      <section className="min-h-[80vh] bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,.24),transparent_34%),linear-gradient(135deg,#020617,#07111f_55%,#111827)] px-5 pb-20 pt-40">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-sm font-black uppercase tracking-[0.25em] text-giuva-cyan">Strategic Partners</div>
-          <h1 className="mt-5 max-w-5xl text-5xl font-black leading-none md:text-8xl">Partnerships built on protocols, transparency and impact.</h1>
-          <p className="mt-8 max-w-3xl text-lg text-slate-300">
-            GIUVA.RO is a community mobility and civil resilience platform. All operational activities must be based on training, protocols, authorizations and legal compliance.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a href="mailto:contact@giuva.ro" className="rounded-full bg-giuva-cyan px-6 py-3 font-black text-slate-950">contact@giuva.ro</a>
-            <Link href="/" className="rounded-full border border-white/25 px-6 py-3 font-black">Back home</Link>
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      <HeroSection
+        eyebrow="Parteneri strategici / Strategic partners"
+        title="Partnerships built on protocols, transparency and impact."
+        subtitle="Parteneri instituționali, tehnici, medicali, logistici, hospitality și media."
+        subtitleEn="Institutional, technical, medical, logistics, hospitality and media partners."
+        text="GIUVA.RO este deschisă colaborărilor responsabile cu instituții publice, companii, sponsori, organizații de formare, furnizori tehnici și parteneri hospitality and travel."
+        textEn="GIUVA.RO is open to responsible collaboration with public institutions, companies, sponsors, training organizations, technical suppliers and hospitality or travel partners."
+        actions={[
+          { href: "mailto:contact@giuva.ro", label: "Propune parteneriat", tone: "blue" },
+          { href: "/project-pulse", label: "Project Pulse", tone: "ghost" }
+        ]}
+        panel={{ title: "Partner areas", items: ["institutional and civil protection", "medical and training", "AED, radio, GPS and IT", "logistics and mobility", "hospitality, travel and media"] }}
+      />
+      <Partners />
+      <ModuleGrid
+        tag="Colaborări viitoare / Future collaborations"
+        title="Dialog instituțional, nu afiliere automată."
+        text="Menționarea autorităților sau instituțiilor nu indică parteneriat existent, aprobare sau afiliere. Orice colaborare trebuie formalizată prin proceduri și protocoale oficiale."
+        textEn="Mentioning authorities or institutions does not indicate an existing partnership, endorsement or affiliation. Every collaboration must be formalized through official procedures and protocols."
+        modules={modules}
+        light={false}
+      />
+    </>
   );
 }

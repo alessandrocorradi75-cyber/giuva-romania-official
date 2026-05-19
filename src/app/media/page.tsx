@@ -1,21 +1,43 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { BookOpen, Camera, Newspaper } from "lucide-react";
+import { HeroSection } from "@/components/HeroSection";
+import { ModuleGrid } from "@/components/ModuleGrid";
+import { operationalPages } from "@/data/site";
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: "Media",
+  description: "Comunicare publică, facts media, boilerplate și strategie SEO."
+};
+
+const modules = [
+  { title: "Boilerplate", text: "Descriere scurtă a proiectului pentru media, sponsori, autorități și parteneri.", icon: Newspaper },
+  { title: "SEO pages", text: `Pagini: ${operationalPages.map((page) => page.title).join(", ")}.`, icon: BookOpen },
+  { title: "Journey media", text: "Stories, galerii, captions și imagini viitoare conectate la CMS.", icon: Camera }
+];
+
+export default function MediaPage() {
   return (
-    <main>
-      <section className="min-h-[80vh] bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,.24),transparent_34%),linear-gradient(135deg,#020617,#07111f_55%,#111827)] px-5 pb-20 pt-40">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-sm font-black uppercase tracking-[0.25em] text-giuva-cyan">Media & Public Affairs</div>
-          <h1 className="mt-5 max-w-5xl text-5xl font-black leading-none md:text-8xl">Public communication for media, sponsors, authorities and partners.</h1>
-          <p className="mt-8 max-w-3xl text-lg text-slate-300">
-            GIUVA.RO is a community mobility and civil resilience platform. All operational activities must be based on training, protocols, authorizations and legal compliance.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a href="mailto:contact@giuva.ro" className="rounded-full bg-giuva-cyan px-6 py-3 font-black text-slate-950">contact@giuva.ro</a>
-            <Link href="/" className="rounded-full border border-white/25 px-6 py-3 font-black">Back home</Link>
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      <HeroSection
+        eyebrow="Media and Public Affairs"
+        title="GIUVA.RO public communication."
+        subtitle="Comunicare clară pentru media, sponsori, autorități și parteneri."
+        subtitleEn="Clear communication for media, sponsors, authorities and partners."
+        text="Această pagină adună descrierea scurtă a proiectului, mesajele instituționale, poziția publică GIUVA.RO și viitoarea strategie SEO."
+        textEn="This page collects the project boilerplate, institutional messages, public position and future SEO strategy."
+        actions={[
+          { href: "mailto:contact@giuva.ro", label: "Media contact", tone: "blue" },
+          { href: "/project-pulse", label: "Project Pulse", tone: "ghost" }
+        ]}
+        panel={{ title: "Short facts", items: ["GIUVA.RO platform", "Ride • Respond • Unite", "Mobile Community Response", "Project Pulse fundraising", "Civil Response by protocols"] }}
+      />
+      <ModuleGrid
+        tag="Boilerplate"
+        title="About GIUVA.RO"
+        text="GIUVA.RO este o platformă comunitară pentru voluntariat, impact social, educație AED/DEA, storytelling și reziliență civică."
+        textEn="GIUVA.RO is a community platform focused on volunteer action, social impact, AED awareness, storytelling and civil resilience."
+        modules={modules}
+      />
+    </>
   );
 }

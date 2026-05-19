@@ -1,35 +1,42 @@
-import { divisions } from "@/data/divisions";
-import Link from "next/link";
+import type { Metadata } from "next";
+import { BadgeCheck, HeartPulse, MapPin } from "lucide-react";
+import { HeroSection } from "@/components/HeroSection";
+import { ModuleGrid } from "@/components/ModuleGrid";
 
-const data = divisions.find((d) => d.slug === "riders-rescue")!;
+export const metadata: Metadata = {
+  title: "Riders Rescue",
+  description: "Mobile community response, AED awareness, volunteer training and responsible availability."
+};
 
-export default function Page() {
+const modules = [
+  { title: "Training", text: "Cursuri recunoscute și formare continuă prin parteneri autorizați.", icon: BadgeCheck },
+  { title: "AED mobility", text: "Defibrilatoare automate externe transportabile rapid de voluntari pregătiți.", icon: HeartPulse },
+  { title: "Availability", text: "Disponibilitate reală și geolocalizare doar când sunt autorizate și conforme.", icon: MapPin }
+];
+
+export default function RidersRescuePage() {
   return (
-    <main>
-      <section className="min-h-[80vh] bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,.24),transparent_34%),radial-gradient(circle_at_85%_70%,rgba(239,35,60,.18),transparent_32%),linear-gradient(135deg,#020617,#07111f_55%,#111827)] px-5 pb-20 pt-40">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-sm font-black uppercase tracking-[0.25em] text-giuva-cyan">{data.title}</div>
-          <h1 className="mt-5 max-w-5xl text-5xl font-black leading-none md:text-8xl">{data.subtitle}</h1>
-          <p className="mt-8 max-w-3xl text-lg text-slate-300">{data.description}</p>
-          <div className="giuva-pulse my-10 max-w-2xl" />
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="rounded-full bg-giuva-cyan px-6 py-3 font-black text-slate-950">Contact</Link>
-            <Link href="/" className="rounded-full border border-white/25 px-6 py-3 font-black">Back home</Link>
-          </div>
-        </div>
-      </section>
-      <section className="bg-slate-50 px-5 py-24 text-slate-950">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-4xl font-black md:text-6xl">Operational focus</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {data.bullets.map((item) => (
-              <div key={item} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/60">
-                <h3 className="text-2xl font-black">{item}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      <HeroSection
+        eyebrow="GIUVA Riders Rescue"
+        title="Mobile Community Response"
+        subtitle="Voluntari instruiți. Defibrilatoare mobile. Răspuns responsabil."
+        subtitleEn="Trained volunteers. Mobile AED units. Responsible community support."
+        text="GIUVA Riders Rescue este pilonul dedicat voluntarilor mobili, AED/DEA, formării și disponibilității responsabile în comunitate."
+        textEn="GIUVA Riders Rescue is dedicated to mobile volunteers, AED awareness, training and responsible community availability."
+        actions={[
+          { href: "/project-pulse", label: "Susține Project Pulse", tone: "red" },
+          { href: "/contact", label: "Devino voluntar", tone: "ghost" }
+        ]}
+        imagePanel={{ src: "/brand/riders-rescue-support.png", alt: "GIUVA Rescue support event context" }}
+      />
+      <ModuleGrid
+        tag="Misiune / Mission"
+        title="Mobile Community First Response."
+        text="Voluntari formați, AED mobile pe motociclete și scooter, sprijin rapid în comunitate, mereu în cadrul legal și prin protocoale oficiale."
+        textEn="Trained volunteers, mobile AED units and fast community support, always within the legal framework and official protocols."
+        modules={modules}
+      />
+    </>
   );
 }

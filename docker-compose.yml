@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: giuva-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: giuva
+      POSTGRES_USER: giuva
+      POSTGRES_PASSWORD: giuva_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - giuva_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U giuva -d giuva"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  giuva_postgres_data:

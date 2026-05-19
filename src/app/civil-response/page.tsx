@@ -1,35 +1,70 @@
-import { divisions } from "@/data/divisions";
-import Link from "next/link";
+import type { Metadata } from "next";
+import { BookOpen, CalendarDays, Radio, ShieldCheck } from "lucide-react";
+import { HeroSection } from "@/components/HeroSection";
+import { LegalNotice } from "@/components/LegalNotice";
+import { ModuleGrid } from "@/components/ModuleGrid";
+import { VisualShowcase } from "@/components/VisualShowcase";
 
-const data = divisions.find((d) => d.slug === "civil-response")!;
+export const metadata: Metadata = {
+  title: "Civil Response",
+  description: "Informational civil resilience module: preparedness, public awareness and protocol-based volunteer coordination."
+};
 
-export default function Page() {
+const modules = [
+  { title: "Preparedness info", text: "Materiale publice și conținut educativ pentru cultura prevenției.", icon: BookOpen },
+  { title: "Public awareness", text: "Comunicare clară pentru comunitate, media, sponsori și parteneri instituționali.", icon: Radio },
+  { title: "Event support", text: "Sprijin informativ și voluntariat doar cu roluri autorizate și protocoale semnate.", icon: ShieldCheck },
+  { title: "Training calendar", text: "Calendar de formare pentru voluntari, coordonatori și briefing-uri comunitare.", icon: CalendarDays }
+];
+
+const civilVisuals = [
+  {
+    title: "Coordonare prin protocol",
+    image: "/brand/civil-response-scene.png",
+    text: "Visual util pentru colaborare, briefing, prevenție și roluri autorizate."
+  },
+  {
+    title: "Context instituțional",
+    image: "/brand/civil-response-protocol.png",
+    text: "De folosit doar cu disclaimer clar: nu indică parteneriat existent sau autoritate operativă."
+  }
+];
+
+export default function CivilResponsePage() {
   return (
-    <main>
-      <section className="min-h-[80vh] bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,.24),transparent_34%),radial-gradient(circle_at_85%_70%,rgba(239,35,60,.18),transparent_32%),linear-gradient(135deg,#020617,#07111f_55%,#111827)] px-5 pb-20 pt-40">
+    <>
+      <HeroSection
+        eyebrow="Civil Response"
+        title="Community resilience and civil support."
+        subtitle="Informare, pregătire și coordonare voluntari prin protocoale oficiale."
+        subtitleEn="Information, preparedness and volunteer coordination through official protocols."
+        text="Civil Response este modulul dedicat pregătirii, informării publice, calendarului de training, sprijinului la evenimente și coordonării voluntarilor. Nu este sistem de dispatch sau comandă operativă."
+        textEn="Civil Response is dedicated to preparedness, public awareness, training calendar, event support and volunteer coordination. It is not a dispatch or operational command system."
+        actions={[
+          { href: "/media", label: "Informare publică", tone: "blue" },
+          { href: "/contact", label: "Propune protocol", tone: "ghost" }
+        ]}
+        imagePanel={{ src: "/brand/civil-response-scene.png", alt: "Civil Response protocol-based community support" }}
+      />
+      <VisualShowcase
+        tag="Visuale Civil Response / Civil visuals"
+        title="Imagini utile, cu limită legală clară."
+        text="Aceste materiale funcționează pentru pregătire, colaborare și suport la evenimente. Nu trebuie să comunice intervenție autonomă sau dispatch."
+        textEn="These visuals work for preparedness, collaboration and event support. They must not communicate autonomous intervention or dispatch."
+        items={civilVisuals}
+      />
+      <ModuleGrid
+        tag="Doar informativ / Informational only"
+        title="Community platform first. Never emergency operator."
+        text="Această secțiune evită intervenția autonomă, dispatch-ul, comanda în timp real sau funcții care pot fi confundate cu servicii de urgență."
+        textEn="This section avoids autonomous intervention, dispatch, real-time command or any feature that could be confused with emergency services."
+        modules={modules}
+      />
+      <section className="soft-section px-5 pb-20">
         <div className="mx-auto max-w-7xl">
-          <div className="text-sm font-black uppercase tracking-[0.25em] text-giuva-cyan">{data.title}</div>
-          <h1 className="mt-5 max-w-5xl text-5xl font-black leading-none md:text-8xl">{data.subtitle}</h1>
-          <p className="mt-8 max-w-3xl text-lg text-slate-300">{data.description}</p>
-          <div className="giuva-pulse my-10 max-w-2xl" />
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="rounded-full bg-giuva-cyan px-6 py-3 font-black text-slate-950">Contact</Link>
-            <Link href="/" className="rounded-full border border-white/25 px-6 py-3 font-black">Back home</Link>
-          </div>
+          <LegalNotice />
         </div>
       </section>
-      <section className="bg-slate-50 px-5 py-24 text-slate-950">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-4xl font-black md:text-6xl">Operational focus</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {data.bullets.map((item) => (
-              <div key={item} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/60">
-                <h3 className="text-2xl font-black">{item}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+    </>
   );
 }

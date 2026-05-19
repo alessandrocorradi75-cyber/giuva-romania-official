@@ -1,35 +1,51 @@
-import { divisions } from "@/data/divisions";
-import Link from "next/link";
+import type { Metadata } from "next";
+import { CalendarDays, HandHeart, Users } from "lucide-react";
+import { HeroSection } from "@/components/HeroSection";
+import { ModuleGrid } from "@/components/ModuleGrid";
+import { VisualShowcase } from "@/components/VisualShowcase";
+import { communityManifestos } from "@/data/site";
 
-const data = divisions.find((d) => d.slug === "community")!;
+export const metadata: Metadata = {
+  title: "Community",
+  description: "Impact social, activități comunitare, charity rides și inițiative de solidaritate."
+};
 
-export default function Page() {
+const modules = [
+  { title: "Acțiuni comunitare", text: "Inițiative locale, activități sociale și momente deschise oamenilor cu valori comune.", icon: Users },
+  { title: "Charity rides", text: "Strângeri de fonduri și activități recreative cu impact real și comunicare clară.", icon: HandHeart },
+  { title: "Evenimente", text: "Un calendar viitor pentru community rides, opriri la parteneri, training și întâlniri.", icon: CalendarDays }
+];
+
+export default function CommunityPage() {
   return (
-    <main>
-      <section className="min-h-[80vh] bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,.24),transparent_34%),radial-gradient(circle_at_85%_70%,rgba(239,35,60,.18),transparent_32%),linear-gradient(135deg,#020617,#07111f_55%,#111827)] px-5 pb-20 pt-40">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-sm font-black uppercase tracking-[0.25em] text-giuva-cyan">{data.title}</div>
-          <h1 className="mt-5 max-w-5xl text-5xl font-black leading-none md:text-8xl">{data.subtitle}</h1>
-          <p className="mt-8 max-w-3xl text-lg text-slate-300">{data.description}</p>
-          <div className="giuva-pulse my-10 max-w-2xl" />
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="rounded-full bg-giuva-cyan px-6 py-3 font-black text-slate-950">Contact</Link>
-            <Link href="/" className="rounded-full border border-white/25 px-6 py-3 font-black">Back home</Link>
-          </div>
-        </div>
-      </section>
-      <section className="bg-slate-50 px-5 py-24 text-slate-950">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-4xl font-black md:text-6xl">Operational focus</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {data.bullets.map((item) => (
-              <div key={item} className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/60">
-                <h3 className="text-2xl font-black">{item}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      <HeroSection
+        eyebrow="GIUVA Community"
+        title="People first. Community always."
+        subtitle="Acțiuni comunitare, socializare, recreere și solidaritate."
+        subtitleEn="Community actions, social life, recreation and solidarity."
+        text="GIUVA Community este pilonul uman al proiectului: unește persoane cu valori comune pentru activități sociale, inițiative caritabile și sprijin comunitar."
+        textEn="GIUVA Community is the human pillar of the project: bringing people together around shared values, social moments, charity initiatives and community support."
+        actions={[
+          { href: "/contact", label: "Intră în comunitate", tone: "blue" },
+          { href: "/journey", label: "See Journey", tone: "ghost" }
+        ]}
+        imagePanel={{ src: "/brand/community-manifesto-3.png", alt: "GIUVA Community manifesto" }}
+      />
+      <VisualShowcase
+        tag="Identitate vizuală / Visual identity"
+        title="Manifesto community pentru pagină, media kit și social."
+        text="Aceste materiale transmit tonul uman al proiectului: comunitate, charity, socializare, responsabilitate și mobilitate solidară."
+        textEn="These assets express the human tone of the project: community, charity, social connection, responsibility and solidarity mobility."
+        items={communityManifestos}
+      />
+      <ModuleGrid
+        tag="Comunitate / Community"
+        title="O comunitate sănătoasă, deschisă și pozitivă."
+        text="Obiectivul este un mediu serios și prietenos, nu un club închis."
+        textEn="The goal is a healthy, open and positive environment, not a closed club."
+        modules={modules}
+      />
+    </>
   );
 }
