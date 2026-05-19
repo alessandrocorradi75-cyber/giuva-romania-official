@@ -3,7 +3,7 @@ import { CommunitySection } from "@/components/CommunitySection";
 import { HeroSection } from "@/components/HeroSection";
 import { JourneyGallery } from "@/components/JourneyGallery";
 import { ModuleGrid } from "@/components/ModuleGrid";
-import { Partners } from "@/components/Partners";
+import { OfficialResources } from "@/components/OfficialResources";
 import { ProjectPulseSection } from "@/components/ProjectPulseSection";
 import { Roadmap } from "@/components/Roadmap";
 import { platformModules } from "@/data/site";
@@ -12,32 +12,28 @@ export default function Home() {
   return (
     <>
       <HeroSection
-        eyebrow="Platformă de mobilitate comunitară / Community mobility platform"
-        title="GIUVA.RO"
-        subtitle="Ride • Respond • Unite"
-        subtitleEn="Community, mobility and responsible civic support."
-        text="GIUVA.RO este o platformă de comunitate, mobilitate și răspuns civic responsabil, construită pentru oameni care aleg acțiunea, solidaritatea și respectul."
-        textEn="GIUVA.RO is a community, mobility and responsible civic support platform built for people who choose action, solidarity and respect."
+        eyebrow="Comunitate. Voluntariat. Mobilitate. Acțiune."
+        title="GIUVA"
+        subtitle="Platformă pentru oameni care vor să transforme solidaritatea în acțiune."
+        text="GIUVA este la început. Acum se construiește o platformă comunitară pentru voluntariat, sprijin, mobilitate, prevenție și impact transparent."
         actions={[
-          { href: "/riders-rescue", label: "Riders Rescue", tone: "red" },
-          { href: "/project-pulse", label: "Susține Project Pulse", tone: "blue" },
-          { href: "/civil-response", label: "Civil Response", tone: "ghost" }
+          { href: "mailto:contact@giuva.ro", label: "contact@giuva.ro", tone: "blue" },
+          { href: "/project-pulse", label: "Susține proiectul", tone: "red" }
         ]}
-        showBanner
+        panel={{ title: "Direcții", items: ["comunitate", "voluntariat", "mobilitate", "siguranță", "parteneriate"] }}
       />
       <CommunitySection />
       <ProjectPulseSection />
       <JourneyGallery />
       <Roadmap />
+      <OfficialResources />
       <ModuleGrid
         light={false}
-        tag="Platformă reală / Real platform"
+        tag="Platformă reală"
         title="GIUVA este construită ca platformă, nu ca simplă pagină de prezentare."
         text="Baza este pregătită pentru CMS, backend FastAPI, PostgreSQL, voluntari, parteneri, campanii și conținut editorial."
-        textEn="The foundation is ready for CMS, FastAPI, PostgreSQL, volunteers, partners, campaigns and editorial content."
         modules={platformModules}
       />
-      <Partners />
       <CTA />
     </>
   );

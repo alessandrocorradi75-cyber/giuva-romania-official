@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BookOpen, Camera, Newspaper } from "lucide-react";
 import { HeroSection } from "@/components/HeroSection";
 import { ModuleGrid } from "@/components/ModuleGrid";
+import { ReferenceBenchmarks } from "@/components/ReferenceBenchmarks";
 import { operationalPages } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -22,9 +23,7 @@ export default function MediaPage() {
         eyebrow="Media and Public Affairs"
         title="GIUVA.RO public communication."
         subtitle="Comunicare clară pentru media, sponsori, autorități și parteneri."
-        subtitleEn="Clear communication for media, sponsors, authorities and partners."
         text="Această pagină adună descrierea scurtă a proiectului, mesajele instituționale, poziția publică GIUVA.RO și viitoarea strategie SEO."
-        textEn="This page collects the project boilerplate, institutional messages, public position and future SEO strategy."
         actions={[
           { href: "mailto:contact@giuva.ro", label: "Media contact", tone: "blue" },
           { href: "/project-pulse", label: "Project Pulse", tone: "ghost" }
@@ -35,9 +34,9 @@ export default function MediaPage() {
         tag="Boilerplate"
         title="About GIUVA.RO"
         text="GIUVA.RO este o platformă comunitară pentru voluntariat, impact social, educație AED/DEA, storytelling și reziliență civică."
-        textEn="GIUVA.RO is a community platform focused on volunteer action, social impact, AED awareness, storytelling and civil resilience."
         modules={modules}
       />
+      <ReferenceBenchmarks />
     </>
   );
 }

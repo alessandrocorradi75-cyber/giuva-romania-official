@@ -3,6 +3,7 @@ import { Building2, HandHeart, Stethoscope } from "lucide-react";
 import { HeroSection } from "@/components/HeroSection";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { Partners } from "@/components/Partners";
+import { ReferenceBenchmarks } from "@/components/ReferenceBenchmarks";
 
 export const metadata: Metadata = {
   title: "Partners",
@@ -22,9 +23,7 @@ export default function PartnersPage() {
         eyebrow="Parteneri strategici / Strategic partners"
         title="Partnerships built on protocols, transparency and impact."
         subtitle="Parteneri instituționali, tehnici, medicali, logistici, hospitality și media."
-        subtitleEn="Institutional, technical, medical, logistics, hospitality and media partners."
         text="GIUVA.RO este deschisă colaborărilor responsabile cu instituții publice, companii, sponsori, organizații de formare, furnizori tehnici și parteneri hospitality and travel."
-        textEn="GIUVA.RO is open to responsible collaboration with public institutions, companies, sponsors, training organizations, technical suppliers and hospitality or travel partners."
         actions={[
           { href: "mailto:contact@giuva.ro", label: "Propune parteneriat", tone: "blue" },
           { href: "/project-pulse", label: "Project Pulse", tone: "ghost" }
@@ -32,11 +31,11 @@ export default function PartnersPage() {
         panel={{ title: "Partner areas", items: ["institutional and civil protection", "medical and training", "AED, radio, GPS and IT", "logistics and mobility", "hospitality, travel and media"] }}
       />
       <Partners />
+      <ReferenceBenchmarks />
       <ModuleGrid
         tag="Colaborări viitoare / Future collaborations"
         title="Dialog instituțional, nu afiliere automată."
-        text="Menționarea autorităților sau instituțiilor nu indică parteneriat existent, aprobare sau afiliere. Orice colaborare trebuie formalizată prin proceduri și protocoale oficiale."
-        textEn="Mentioning authorities or institutions does not indicate an existing partnership, endorsement or affiliation. Every collaboration must be formalized through official procedures and protocols."
+        text="Menționarea autorităților, organizațiilor sau aplicațiilor nu indică parteneriat existent, aprobare sau afiliere. Orice colaborare trebuie formalizată prin proceduri și protocoale oficiale."
         modules={modules}
         light={false}
       />

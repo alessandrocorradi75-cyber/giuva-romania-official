@@ -9,10 +9,9 @@ export function CommunitySection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           light
-          tag="Arhitectură platformă / Platform architecture"
-          title="Cinci piloni, o singură comunitate."
-          text="Fiecare pilon are o misiune clară și poate crește ca modul al platformei GIUVA.RO."
-          textEn="Five clear pillars, each able to grow as a module of the GIUVA.RO platform."
+          tag="Cei cinci piloni"
+          title="GIUVA are cinci direcții autonome."
+          text="Fiecare pilon poate crește separat, dar rămâne conectat la platforma mamă GIUVA.RO."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
           {pillars.map((pillar) => {
@@ -24,7 +23,6 @@ export function CommunitySection() {
                   <h3 className="text-xl font-black leading-tight text-slate-950">{pillar.title}</h3>
                   <p className="mt-1 text-xs font-black uppercase tracking-[0.16em] text-teal-700">{pillar.byline}</p>
                   <p className="mt-4 text-sm leading-6 text-slate-700">{pillar.text}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-500">{pillar.textEn}</p>
                 </Link>
               </MotionShell>
             );

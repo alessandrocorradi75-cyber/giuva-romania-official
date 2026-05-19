@@ -6,13 +6,13 @@ import { ModuleGrid } from "@/components/ModuleGrid";
 
 export const metadata: Metadata = {
   title: "Journey",
-  description: "Povești prin drumuri, oameni, fotografii, călătorii și memorie comunitară."
+  description: "Povești prin fotografii, descrieri scurte, activități recreative și socializare."
 };
 
 const modules = [
-  { title: "Povești", text: "Articole cu titlu, slug, conținut, imagine cover, locație, autor și dată de publicare.", icon: Camera },
-  { title: "Galerii", text: "Evenimente, imagini, captions și selecție editorială pentru memoria vizuală.", icon: Map },
-  { title: "Volunteer stories", text: "Oameni, training, experiențe și momente care spun cultura GIUVA.", icon: Users }
+  { title: "Povești", text: "Drumuri, oameni, sens, locuri și momente comune.", icon: Camera },
+  { title: "Activități recreative", text: "Promovăm activități care unesc puncte de interes comun și creează altele noi.", icon: Map },
+  { title: "Volunteer stories", text: "Pot include training days, rapoarte, certificate, galerii și educație publică.", icon: Users }
 ];
 
 export default function JourneyPage() {
@@ -20,11 +20,9 @@ export default function JourneyPage() {
     <>
       <HeroSection
         eyebrow="Journey"
-        title="Stories through roads, people and moments."
+        title="Journey"
         subtitle="Spunem povești prin fotografii și mici descrieri."
-        subtitleEn="We tell stories through photographs and short captions."
         text="Journey este pilonul narativ și vizual al GIUVA.RO: drumuri, peisaje, comunități, detalii umane, experiențe și memorie colectivă."
-        textEn="Journey is the narrative and visual pillar of GIUVA.RO: roads, landscapes, communities, human details, experiences and collective memory."
         actions={[
           { href: "/contact", label: "Trimite o poveste", tone: "blue" },
           { href: "/community", label: "Community", tone: "ghost" }
@@ -33,10 +31,9 @@ export default function JourneyPage() {
       />
       <JourneyGallery />
       <ModuleGrid
-        tag="Modele de conținut / Content models"
-        title="Journey trebuie să devină content driven."
-        text="Următorul pas este conectarea la Sanity sau Strapi, ca poveștile să fie publicate fără modificări de cod."
-        textEn="The next step is connecting Sanity or Strapi so stories can be published without code changes."
+        tag="Galeria devine poveste"
+        title="Journey este pregătit să devină content driven."
+        text="Povești, galerii, evenimente, campanii, volunteer stories, training days și community rides pot fi publicate ca materiale editoriale."
         modules={modules}
         light={false}
       />

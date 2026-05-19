@@ -3,11 +3,10 @@ import { CalendarDays, HandHeart, Users } from "lucide-react";
 import { HeroSection } from "@/components/HeroSection";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { VisualShowcase } from "@/components/VisualShowcase";
-import { communityManifestos } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Community",
-  description: "Impact social, activități comunitare, charity rides și inițiative de solidaritate."
+  description: "Acțiuni comunitare, socializare, recreere și solidaritate."
 };
 
 const modules = [
@@ -16,34 +15,38 @@ const modules = [
   { title: "Evenimente", text: "Un calendar viitor pentru community rides, opriri la parteneri, training și întâlniri.", icon: CalendarDays }
 ];
 
+const communityPoster = [
+  {
+    title: "GIUVA Community",
+    image: "/brand/community-manifesto-3.png",
+    text: "Locandina dedicată pilonului Community. Pentru adresă, giuva.ro este suficient și clar."
+  }
+];
+
 export default function CommunityPage() {
   return (
     <>
       <HeroSection
-        eyebrow="GIUVA Community"
-        title="People first. Community always."
+        eyebrow="Community"
+        title="Community"
         subtitle="Acțiuni comunitare, socializare, recreere și solidaritate."
-        subtitleEn="Community actions, social life, recreation and solidarity."
-        text="GIUVA Community este pilonul uman al proiectului: unește persoane cu valori comune pentru activități sociale, inițiative caritabile și sprijin comunitar."
-        textEn="GIUVA Community is the human pillar of the project: bringing people together around shared values, social moments, charity initiatives and community support."
+        text="Community este pilonul uman al proiectului: unește persoane cu valori comune pentru activități sociale, inițiative caritabile și sprijin comunitar."
         actions={[
           { href: "/contact", label: "Intră în comunitate", tone: "blue" },
-          { href: "/journey", label: "See Journey", tone: "ghost" }
+          { href: "/journey", label: "Vezi Journey", tone: "ghost" }
         ]}
-        imagePanel={{ src: "/brand/community-manifesto-3.png", alt: "GIUVA Community manifesto" }}
+        imagePanel={{ src: "/brand/community-manifesto-3.png", alt: "GIUVA Community poster" }}
       />
       <VisualShowcase
-        tag="Identitate vizuală / Visual identity"
-        title="Manifesto community pentru pagină, media kit și social."
-        text="Aceste materiale transmit tonul uman al proiectului: comunitate, charity, socializare, responsabilitate și mobilitate solidară."
-        textEn="These assets express the human tone of the project: community, charity, social connection, responsibility and solidarity mobility."
-        items={communityManifestos}
+        tag="Locandină Community"
+        title="Community în prim plan."
+        text="Pentru acest pilon folosim doar vizualul Community, fără amestec cu Riders Rescue sau Civil Response."
+        items={communityPoster}
       />
       <ModuleGrid
-        tag="Comunitate / Community"
+        tag="Community"
         title="O comunitate sănătoasă, deschisă și pozitivă."
         text="Obiectivul este un mediu serios și prietenos, nu un club închis."
-        textEn="The goal is a healthy, open and positive environment, not a closed club."
         modules={modules}
       />
     </>

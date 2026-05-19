@@ -9,9 +9,8 @@ export function Roadmap() {
         <SectionHeader
           light
           tag="Roadmap"
-          title="De la comunitate la pilot european."
-          text="Creșterea trebuie să fie graduală, documentată și responsabilă: comunitate prima, tehnologie după, protocoale mereu."
-          textEn="Growth should be gradual, documented and responsible: community first, technology after, protocols always."
+          title="Extinderea platformei GIUVA."
+          text="Acești pași transformă proiectul din prezență publică într-o platformă comunitară reală."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {roadmap.map((step, index) => (

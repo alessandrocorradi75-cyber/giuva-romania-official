@@ -26,49 +26,50 @@ export const brand = {
 };
 
 export const navItems = [
-  { href: "/", label: "Acasă / Home" },
-  { href: "/riders-rescue", label: "Riders Rescue" },
-  { href: "/community", label: "Comunitate / Community" },
-  { href: "/journey", label: "Journey" },
-  { href: "/project-pulse", label: "Project Pulse" },
-  { href: "/civil-response", label: "Civil Response" },
-  { href: "/partners", label: "Parteneri / Partners" },
-  { href: "/media", label: "Media" },
+  { href: "/", label: "Acasă" },
+  { href: "/media", label: "Despre" },
+  { href: "/riders-rescue", label: "Salvatori Moto" },
+  { href: "/contact", label: "Voluntari" },
+  { href: "/project-pulse", label: "Susține" },
+  { href: "/project-pulse", label: "Campanie DEA" },
+  { href: "/civil-response", label: "Resurse" },
+  { href: "/journey", label: "Travel" },
+  { href: "/journey", label: "Galerie" },
   { href: "/contact", label: "Contact" }
 ];
 
 export const pillars = [
   {
-    title: "Riders Community",
+    title: "Community",
     href: "/community",
     icon: Users,
     byline: "by GIUVA",
-    text: "Comunitate, socializare, valori comune, acțiuni caritabile și inițiative locale.",
-    textEn: "Community, shared values, charity rides and local initiatives."
+    text: "Acțiuni comunitare, socializare, recreere și solidaritate.",
+    textEn: "Community actions, social life, recreation and solidarity."
   },
   {
     title: "Riders Rescue",
     href: "/riders-rescue",
     icon: Bike,
     byline: "by GIUVA",
-    text: "Voluntari instruiți, AED/DEA mobile, kituri de prim ajutor și sprijin comunitar.",
-    textEn: "Trained volunteers, mobile AED units, first aid kits and community support."
+    text: "Voluntari instruiți. Defibrilatoare mobile. Răspuns rapid și responsabil.",
+    textEn: "Trained volunteers. Mobile defibrillators. Fast and responsible response."
   },
   {
     title: "Civil Response",
     href: "/civil-response",
     icon: ShieldCheck,
     byline: "by GIUVA",
-    text: "Informare publică, pregătire, calendar de training și coordonare voluntari.",
-    textEn: "Public information, preparedness, training calendar and volunteer coordination."
+    text: "Activități de protecție civilă, sprijin autorizat și coordonare la solicitarea autorităților.",
+    textEn: "Civil protection activities, authorized support and coordination upon request from authorities."
   },
   {
-    title: "Riders Journey",
+    title: "Journey",
     href: "/journey",
     icon: Map,
     byline: "by GIUVA",
-    text: "Călătorii, experiențe, oameni, fotografii și memorie comunitară.",
-    textEn: "Roads, people, photographs and collective community memory."
+    text: "Povești, activități recreative, socializare și memorie comunitară.",
+    textEn: "Stories, recreational activities, social connection and community memory."
   },
   {
     title: "Project Pulse",
@@ -130,13 +131,92 @@ export const platformModules = [
   }
 ];
 
+export const languageOptions = [
+  { code: "ro", label: "Română" },
+  { code: "it", label: "Italiano" },
+  { code: "en", label: "English" },
+  { code: "de", label: "Deutsch" },
+  { code: "fr", label: "Français" },
+  { code: "hu", label: "Magyar" },
+  { code: "sr", label: "Srpski" },
+  { code: "hr", label: "Hrvatski" }
+];
+
+export const officialResources = [
+  {
+    name: "Poliția Română",
+    badge: "PR",
+    logo: "https://politiaromana.ro/front/view/img/stema_igpr.png",
+    href: "https://www.politiaromana.ro/ro/",
+    note: "Resursă oficială pentru informare publică."
+  },
+  {
+    name: "ISU București-Ilfov",
+    badge: "ISU",
+    logo: "https://isubif.igsu.ro/resources/c1166be2-ed0b-4b1c-92b9-caad95c910a2.png",
+    href: "https://www.isubif.ro/",
+    note: "Inspectorat pentru situații de urgență."
+  },
+  {
+    name: "SMURD",
+    badge: "SMURD",
+    logo: "https://smurd.ro/wp-content/uploads/2014/05/logo-smurd%402x.png",
+    href: "https://smurd.ro/",
+    note: "Resurse publice și informații SMURD."
+  },
+  {
+    name: "Primăria Capitalei",
+    badge: "PMB",
+    logo: "https://www2.pmb.ro/orasul/stema/imag/stema.jpg",
+    href: "https://www2.pmb.ro/",
+    note: "Administrația locală a Municipiului București."
+  },
+  {
+    name: "MAI - Protecție Civilă",
+    badge: "MAI",
+    href: "https://www.mai.gov.ro/despre-noi/organizare/aparat-central/directia-generala-pentru-protectie-civila/",
+    note: "Direcția Generală pentru Protecție Civilă."
+  },
+  {
+    name: "Fii Pregătit - Hartă",
+    badge: "FP",
+    logo: "https://fiipregatit.ro/_next/static/media/LogoDsu.166alx4dke6mn.png",
+    href: "https://fiipregatit.ro/harta",
+    note: "Hartă publică a punctelor de interes."
+  },
+  {
+    name: "Salvează o viață",
+    badge: "AED",
+    logo: "https://salveaza-o-viata.ro/wp-content/uploads/2019/12/salveaza.png",
+    href: "https://salveaza-o-viata.ro/",
+    note: "Resursă publică despre acces la defibrilatoare."
+  }
+];
+
+export const legalAndBenchmarkReferences = [
+  {
+    title: "European Road Safety Charter - AASI",
+    type: "Referință juridică / instituțională",
+    href: "https://road-safety-charter.ec.europa.eu/user/3617",
+    text:
+      "Model util pentru poziționare europeană, educație, recunoașterea rolurilor profesionale și colaborare în zona siguranței rutiere."
+  },
+  {
+    title: "Rider Rescue Network",
+    type: "Benchmark aplicație / posibil contact",
+    href: "https://apps.apple.com/us/app/riders-to-the-rescue/id6744728720",
+    text:
+      "Exemplu de aplicație mobilă orientată către comunitate și suport pe teren. Poate inspira viitorul portal/app GIUVA și poate deveni subiect de dialog pentru parteneriat."
+  }
+];
+
 export const journeyStories = [
   {
     title: "Drumuri, oameni, sens",
     location: "România",
     category: "Journey",
     image: "/brand/journey-urban-1.png",
-    text: "Inima media a GIUVA: povești scurte, oameni reali, drumuri documentate și momente comunitare."
+    text: "Inima media a GIUVA: povești scurte, oameni reali, drumuri documentate și momente comune."
   },
   {
     title: "Zi de training",
