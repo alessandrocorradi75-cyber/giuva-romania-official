@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050b14;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: #f8fafc;
+}
+
+.giuva-pulse {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #38bdf8, #ef233c, #38bdf8, transparent);
+  border-radius: 999px;
+  position: relative;
+}
+
+.giuva-pulse::after {
+  content: "♥";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ef233c;
+  font-size: 32px;
+  text-shadow: 0 0 24px rgba(239, 35, 60, 0.85);
+}
