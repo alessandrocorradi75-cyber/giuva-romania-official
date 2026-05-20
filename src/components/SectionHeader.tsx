@@ -11,16 +11,13 @@ export function SectionHeader({
   textEn?: string;
   light?: boolean;
 }) {
+  const body = textEn ? `${text} ${textEn}` : text;
+
   return (
     <div className="max-w-4xl">
       <span className={light ? "tag tag-light" : "tag"}>{tag}</span>
-      <h2 className="section-title text-slate-950">{title}</h2>
-      {text ? (
-        <div className="language-pair section-text">
-          <p className="ro">{text}</p>
-          {textEn ? <p className="en">{textEn}</p> : null}
-        </div>
-      ) : null}
+      <h2 className="section-title text-white">{title}</h2>
+      {body ? <p className="section-text text-slate-300">{body}</p> : null}
     </div>
   );
 }

@@ -1,21 +1,32 @@
+"use client";
+
 import { languageOptions } from "@/data/site";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export function LanguageSelector() {
+  const { language, setLanguage } = useLanguage();
+
   return (
-    <aside className="fixed left-3 top-28 z-40 hidden w-28 rounded-md border border-sky-100 bg-white/92 p-2 shadow-lg backdrop-blur-xl xl:block">
-      <p className="px-2 pb-2 text-[0.68rem] font-black uppercase tracking-[0.14em] text-sky-700">Limbă</p>
+    <aside
+      aria-label="Language selector"
+      className="fixed left-3 top-28 z-40 w-[4.5rem] rounded-md border border-white/10 bg-slate-950/90 p-2 shadow-2xl backdrop-blur-xl sm:w-28"
+    >
+      <p className="sr-only">Choose language</p>
       <div className="grid gap-1">
-        {languageOptions.map((language) => (
+        {languageOptions.map((option) => (
           <button
-            key={language.code}
+            key={option.code}
             type="button"
+            onClick={() => setLanguage(option.code)}
+            aria-pressed={language === option.code}
             className={
-              language.code === "ro"
-                ? "rounded-md bg-sky-700 px-2 py-1.5 text-left text-xs font-bold text-white"
-                : "rounded-md px-2 py-1.5 text-left text-xs font-semibold text-slate-600 transition hover:bg-sky-50 hover:text-sky-800"
+              language === option.code
+                ? "rounded-md bg-red-600 px-2 py-1.5 text-left text-xs font-black text-white"
+                : "rounded-md px-2 py-1.5 text-left text-xs font-bold text-slate-300 transition hover:bg-white/10 hover:text-white"
             }
           >
-            {language.label}
+            <span className="sm:hidden">{option.code.toUpperCase()}</span>
+            <span className="hidden sm:inline">{option.label}</span>
           </button>
         ))}
       </div>

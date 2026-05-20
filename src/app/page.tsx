@@ -6,34 +6,56 @@ import { ModuleGrid } from "@/components/ModuleGrid";
 import { OfficialResources } from "@/components/OfficialResources";
 import { ProjectPulseSection } from "@/components/ProjectPulseSection";
 import { Roadmap } from "@/components/Roadmap";
-import { platformModules } from "@/data/site";
+import { homeCopy, partnerGroups, platformModules } from "@/data/site";
 
 export default function Home() {
   return (
     <>
       <HeroSection
-        eyebrow="Comunitate. Voluntariat. Mobilitate. Acțiune."
-        title="GIUVA"
-        subtitle="Platformă pentru oameni care vor să transforme solidaritatea în acțiune."
-        text="GIUVA este la început. Acum se construiește o platformă comunitară pentru voluntariat, sprijin, mobilitate, prevenție și impact transparent."
+        eyebrow={homeCopy.eyebrow}
+        title={homeCopy.title}
+        subtitle={homeCopy.subtitle}
+        text={homeCopy.text}
         actions={[
-          { href: "mailto:contact@giuva.ro", label: "contact@giuva.ro", tone: "blue" },
-          { href: "/project-pulse", label: "Susține proiectul", tone: "red" }
+          { href: "/contact", label: homeCopy.primaryAction, tone: "red" },
+          { href: "/project-pulse", label: homeCopy.secondaryAction, tone: "ghost" }
         ]}
-        panel={{ title: "Direcții", items: ["comunitate", "voluntariat", "mobilitate", "siguranță", "parteneriate"] }}
+        panel={{ title: homeCopy.panelTitle, items: homeCopy.panelItems }}
       />
       <CommunitySection />
-      <ProjectPulseSection />
-      <JourneyGallery />
-      <Roadmap />
-      <OfficialResources />
       <ModuleGrid
-        light={false}
-        tag="Platformă reală"
-        title="GIUVA este construită ca platformă, nu ca simplă pagină de prezentare."
-        text="Baza este pregătită pentru CMS, backend FastAPI, PostgreSQL, voluntari, parteneri, campanii și conținut editorial."
+        tag={{ ro: "Platformă operațională", en: "Operational platform", it: "Piattaforma operativa" }}
+        title={{
+          ro: "GIUVA integrează voluntariat, donații, pregătire publică și date verificabile.",
+          en: "GIUVA integrates volunteering, donations, public preparedness and verifiable data.",
+          it: "GIUVA integra volontariato, donazioni, preparazione pubblica e dati verificabili."
+        }}
+        text={{
+          ro: "Aceste sisteme sunt placeholder-e proiectate pentru backend, CMS, PostgreSQL și portaluri dedicate.",
+          en: "These systems are placeholders designed for backend services, CMS, PostgreSQL and dedicated portals.",
+          it: "Questi sistemi sono placeholder progettati per backend, CMS, PostgreSQL e portali dedicati."
+        }}
         modules={platformModules}
       />
+      <ProjectPulseSection />
+      <JourneyGallery />
+      <ModuleGrid
+        tone="red"
+        tag={{ ro: "Parteneriate", en: "Partnerships", it: "Partnership" }}
+        title={{
+          ro: "Credibilitatea GIUVA se construiește prin protocoale, nu prin afirmații.",
+          en: "GIUVA credibility is built through protocols, not claims.",
+          it: "La credibilità di GIUVA si costruisce con protocolli, non con dichiarazioni."
+        }}
+        text={{
+          ro: "Site-ul separă clar partenerii instituționali, partenerii de urgență și cooperarea municipală.",
+          en: "The site clearly separates institutional partners, emergency partners and municipal cooperation.",
+          it: "Il sito separa chiaramente partner istituzionali, partner di emergenza e cooperazione municipale."
+        }}
+        modules={partnerGroups}
+      />
+      <OfficialResources />
+      <Roadmap />
       <CTA />
     </>
   );

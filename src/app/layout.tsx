@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "GIUVA.RO | Ride • Respond • Unite",
+    default: "GIUVA.RO | European Civic Resilience Platform",
     template: "%s | GIUVA.RO"
   },
   description:
-    "GIUVA.RO este o platformă comunitară pentru mobilitate voluntară, educație AED/DEA, povești Journey, campanii Project Pulse și reziliență civică.",
+    "GIUVA.RO is a European civic resilience platform for volunteering, AED awareness, public preparedness, community support and institutional cooperation.",
   icons: {
     icon: "/favicon.svg"
+  },
+  openGraph: {
+    title: "GIUVA.RO",
+    description: "European civic resilience platform for communities, volunteers and public preparedness.",
+    url: "https://giuva.ro",
+    siteName: "GIUVA.RO",
+    type: "website"
   }
 };
 
@@ -20,10 +28,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ro">
       <body>
-        <Navbar />
-        <LanguageSelector />
-        <main>{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <LanguageSelector />
+          <main>{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
