@@ -1,37 +1,26 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { LanguageCode, LocalizedText } from "@/data/site";
+import { createContext, useContext, useMemo } from "react";
+import { usePathname } from "next/navigation";
+import type { Locale } from "@/i18n/config";
+import { defaultLocale, isLocale } from "@/i18n/config";
+import type { LocalizedText } from "@/data/site";
 
 type LanguageContextValue = {
-  language: LanguageCode;
-  setLanguage: (language: LanguageCode) => void;
+  language: Locale;
   text: (value: LocalizedText) => string;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<LanguageCode>("ro");
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem("giuva-language") as LanguageCode | null;
-    if (stored === "ro" || stored === "en" || stored === "it") {
-      setLanguageState(stored);
-      document.documentElement.lang = stored;
-    }
-  }, []);
-
-  const setLanguage = (nextLanguage: LanguageCode) => {
-    setLanguageState(nextLanguage);
-    window.localStorage.setItem("giuva-language", nextLanguage);
-    document.documentElement.lang = nextLanguage;
-  };
+  const pathname = usePathname();
+  const segment = pathname?.split("/")[1];
+  const language = isLocale(segment) ? segment : defaultLocale;
 
   const value = useMemo<LanguageContextValue>(
     () => ({
       language,
-      setLanguage,
       text: (localized) => localized[language] ?? localized.ro
     }),
     [language]

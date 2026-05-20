@@ -5,14 +5,15 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { brand, navItems } from "@/data/site";
 import { useLanguage } from "@/components/LanguageProvider";
+import { withLocale } from "@/i18n/config";
 
 export function Navbar() {
-  const { text } = useLanguage();
+  const { language, text } = useLanguage();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/88 shadow-2xl backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3">
-        <Link href="/" className="flex items-center gap-3" aria-label="GIUVA.RO home">
+        <Link href={withLocale(language, "/")} className="flex items-center gap-3" aria-label="GIUVA.RO home">
           <Image src="/brand/giuva-logo.svg" alt="GIUVA.RO" width={52} height={52} priority />
           <span className="leading-none">
             <span className="block text-xl font-black tracking-[0.08em] text-white">{brand.name}</span>
@@ -25,7 +26,7 @@ export function Navbar() {
           </summary>
           <div className="absolute left-0 right-0 top-[73px] flex flex-col border-b border-white/10 bg-slate-950 px-5 py-4 shadow-2xl">
             {navItems.map((item) => (
-              <Link key={`${item.href}-${text(item.label)}`} href={item.href} className="py-3 text-sm font-semibold text-slate-100">
+              <Link key={`${item.href}-${text(item.label)}`} href={withLocale(language, item.href)} className="py-3 text-sm font-semibold text-slate-100">
                 {text(item.label)}
               </Link>
             ))}
@@ -35,7 +36,7 @@ export function Navbar() {
           {navItems.map((item) => (
             <Link
               key={`${item.href}-${text(item.label)}`}
-              href={item.href}
+              href={withLocale(language, item.href)}
               className="text-sm font-semibold text-slate-200 transition hover:text-cyan-200"
             >
               {text(item.label)}

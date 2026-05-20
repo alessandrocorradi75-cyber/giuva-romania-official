@@ -5,6 +5,7 @@ import { pillars } from "@/data/site";
 import { MotionShell } from "@/components/MotionShell";
 import { SectionHeader } from "@/components/SectionHeader";
 import { useLanguage } from "@/components/LanguageProvider";
+import { withLocale } from "@/i18n/config";
 
 const header = {
   tag: { ro: "Structură coordonată", en: "Coordinated structure", it: "Struttura coordinata" },
@@ -21,7 +22,7 @@ const header = {
 };
 
 export function CommunitySection() {
-  const { text } = useLanguage();
+  const { language, text } = useLanguage();
 
   return (
     <section className="dark-section px-5 py-20">
@@ -32,11 +33,11 @@ export function CommunitySection() {
             const Icon = pillar.icon;
             return (
               <MotionShell key={text(pillar.title)}>
-                <Link href={pillar.href} className="pillar-card block h-full p-5">
+                <Link href={withLocale(language, `/${pillar.slug}`)} className="pillar-card block h-full p-5">
                   <Icon className="mb-5 text-red-400" size={36} />
                   <h3 className="text-xl font-black leading-tight text-white">{text(pillar.title)}</h3>
-                  <p className="mt-3 text-sm font-bold uppercase tracking-[0.12em] text-cyan-200">{text(pillar.focus)}</p>
-                  <p className="mt-4 text-sm leading-6 text-slate-300">{text(pillar.text)}</p>
+                  <p className="mt-3 text-sm font-bold uppercase tracking-[0.12em] text-cyan-200">{text(pillar.mission)}</p>
+                  <p className="mt-4 text-sm leading-6 text-slate-300">{text(pillar.purpose)}</p>
                 </Link>
               </MotionShell>
             );
