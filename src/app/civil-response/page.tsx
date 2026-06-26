@@ -21,12 +21,12 @@ const modules = [
 const civilVisuals = [
   {
     title: "Protecție civilă",
-    image: "/brand/civil-response-scene.png",
-    text: "Activitate de sprijin și coordonare, nu comandă operativă autonomă."
+    image: "/brand/civil-preparedness-visual.svg",
+    text: "Activitate de sprijin și coordonare, nu comandă autonomă."
   },
   {
     title: "Suport la solicitarea autorităților",
-    image: "/brand/civil-response-protocol.png",
+    image: "/brand/civic-resilience-visual.svg",
     text: "Personalul disponibil poate fi folosit numai când autoritățile solicită sprijin."
   }
 ];
@@ -43,18 +43,18 @@ export default function CivilResponsePage() {
           { href: "/media", label: "Informare publică", tone: "blue" },
           { href: "/contact", label: "Propune protocol", tone: "ghost" }
         ]}
-        imagePanel={{ src: "/brand/civil-response-scene.png", alt: "Civil Response protocol-based community support" }}
+        imagePanel={{ src: "/brand/civil-preparedness-visual.svg", alt: "Civil preparedness and protocol-based community support" }}
       />
       <VisualShowcase
         tag="Protecție civilă"
-        title="Prevenție, sprijin și acțiune autorizată."
+        title="Prevenție, sprijin și activitate aprobată."
         text="Activitățile pot include prevenție și sprijin în situații unde autoritățile solicită participare. GIUVA nu operează independent și nu înlocuiește serviciile publice."
         items={civilVisuals}
       />
       <ModuleGrid
         tag="Doar cu autorități"
         title="Sprijin doar în cadrul legal și pe bază de protocol."
-        text="Nu există dispatch propriu, intervenție autonomă sau comandă în timp real. Totul se face alături de autorități și în limitele rolurilor aprobate."
+        text="Nu există coordonare autonomă de urgență, intervenție autonomă sau comandă în timp real. Totul se face alături de autorități și în limitele rolurilor aprobate."
         modules={modules}
       />
       <OfficialResources />

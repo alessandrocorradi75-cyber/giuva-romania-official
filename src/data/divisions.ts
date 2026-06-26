@@ -10,10 +10,10 @@ export const divisions: Division[] = [
   {
     slug: "riders-rescue",
     title: "GIUVA Riders Rescue",
-    subtitle: "Mobile Community Response",
+    subtitle: "Mobile Civic Availability",
     description:
       "Voluntari instruiți, defibrilatoare mobile și sprijin comunitar responsabil, dezvoltat numai prin formare, protocoale și colaborări oficiale.",
-    bullets: ["AED / DEA mobility", "Volunteer training", "Community first response"]
+    bullets: ["AED / DEA mobility", "Volunteer training", "Community preparedness support"]
   },
   {
     slug: "community",
@@ -36,7 +36,7 @@ export const divisions: Division[] = [
     title: "Project Pulse",
     subtitle: "Every minute matters.",
     description:
-      "Fundraising per defibrillatori, equipaggiamento, uniformi, radio, ambulanze, motociclette, scooter e supporto operativo.",
+      "Fundraising per defibrillatori, equipaggiamento, uniformi, radio, mobilità civica, scooter e supporto logistico.",
     bullets: ["Sponsor an AED", "Equip a volunteer", "Support mobility"]
   },
   {
@@ -44,7 +44,7 @@ export const divisions: Division[] = [
     title: "Civil Response",
     subtitle: "Community resilience & civil support.",
     description:
-      "Supporto a protezione civile, manifestazioni, emergenze e sicurezza pubblica solo attraverso protocolli ufficiali, ruoli chiari e autorizzazioni.",
+      "Supporto a protezione civile, manifestazioni, prevenzione e preparazione pubblica solo attraverso protocolli ufficiali, ruoli chiari e autorizzazioni.",
     bullets: ["Civil resilience", "Official protocols", "Public awareness"]
   }
 ];

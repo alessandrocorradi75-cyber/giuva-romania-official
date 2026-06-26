@@ -34,11 +34,12 @@ export const languageOptions: { code: Locale; label: string }[] = [
 
 export const brand = {
   name: "GIUVA.RO",
+  officialFullName: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS",
   email: "contact@giuva.ro",
   tagline: {
-    ro: "Platformă europeană de reziliență civică",
-    en: "European civic resilience platform",
-    it: "Piattaforma europea di resilienza civica",
+    ro: "Voluntariat urban, awareness și reziliență civică",
+    en: "Urban volunteering, awareness and civic resilience",
+    it: "Volontariato urbano, awareness e resilienza civica",
     de: "Europäische Plattform für zivile Resilienz",
     fr: "Plateforme européenne de résilience civique",
     hu: "Európai polgári reziliencia platform",
@@ -46,9 +47,9 @@ export const brand = {
     hr: "Europska platforma građanske otpornosti"
   },
   description: {
-    ro: "GIUVA este o platformă europeană de reziliență civică pentru voluntariat, pregătire publică, rețele AED/DEA, sprijin comunitar și cooperare instituțională.",
-    en: "GIUVA is a European civic resilience platform for volunteering, public preparedness, AED networks, community support and institutional cooperation.",
-    it: "GIUVA è una piattaforma europea di resilienza civica per volontariato, preparazione pubblica, reti AED/DEA, supporto comunitario e cooperazione istituzionale.",
+    ro: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS este o platformă europeană pentru voluntariat civic, awareness AED/DEA, pregătire comunitară, cultură a prevenției și cooperare instituțională complementară.",
+    en: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS is a European platform for civic volunteering, AED awareness, community preparedness, prevention culture and complementary institutional cooperation.",
+    it: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS è una piattaforma europea per volontariato civico, awareness AED, preparazione comunitaria, cultura della prevenzione e cooperazione istituzionale complementare.",
     de: "GIUVA ist eine europäische Plattform für zivile Resilienz, Freiwilligenarbeit, öffentliche Vorsorge, AED-Netzwerke, Gemeindehilfe und institutionelle Zusammenarbeit.",
     fr: "GIUVA est une plateforme européenne de résilience civique pour le bénévolat, la préparation publique, les réseaux DAE, le soutien communautaire et la coopération institutionnelle.",
     hu: "A GIUVA európai polgári reziliencia platform az önkéntesség, a közfelkészültség, az AED-hálózatok, a közösségi támogatás és az intézményi együttműködés számára.",
@@ -94,9 +95,9 @@ export const homeCopy = {
     hr: "Europska građanska platforma za pripremljene zajednice."
   },
   heroText: {
-    ro: "GIUVA nu este un club moto. GIUVA construiește un ecosistem descentralizat de reziliență civică: voluntari, răspuns rapid, educație de prim ajutor, rețele AED/DEA, sprijin comunitar și cooperare cu autoritățile.",
-    en: "GIUVA is not a motorcycle club. GIUVA builds a decentralized civic resilience ecosystem: volunteers, rapid response, first aid education, AED networks, community support and cooperation with authorities.",
-    it: "GIUVA non è un motoclub. GIUVA costruisce un ecosistema decentralizzato di resilienza civica: volontari, risposta rapida, educazione al primo soccorso, reti AED, supporto comunitario e cooperazione con le autorità.",
+    ro: "GIUVA nu este un club moto și nu este serviciu de urgență. GIUVA construiește un ecosistem de voluntariat civic, awareness AED/DEA, pregătire comunitară, prevenție, sprijin complementar și cooperare cu instituțiile.",
+    en: "GIUVA is not a motorcycle club and not an emergency service. GIUVA builds an ecosystem for civic volunteering, AED awareness, community preparedness, prevention, complementary support and institutional cooperation.",
+    it: "GIUVA non è un motoclub e non è un servizio di emergenza. GIUVA costruisce un ecosistema di volontariato civico, awareness AED, preparazione comunitaria, prevenzione, supporto complementare e cooperazione istituzionale.",
     de: "GIUVA ist kein Motorradclub. GIUVA baut ein dezentrales Ökosystem ziviler Resilienz auf: Freiwillige, schnelle Unterstützung, Erste-Hilfe-Bildung, AED-Netzwerke, Gemeindehilfe und Zusammenarbeit mit Behörden.",
     fr: "GIUVA n’est pas un club moto. GIUVA construit un écosystème décentralisé de résilience civique : bénévoles, réponse rapide, formation aux premiers secours, réseaux DAE, soutien communautaire et coopération avec les autorités.",
     hu: "A GIUVA nem motoros klub. A GIUVA decentralizált polgári reziliencia ökoszisztémát épít: önkéntesek, gyors támogatás, elsősegély-oktatás, AED-hálózatok, közösségi támogatás és együttműködés a hatóságokkal.",
@@ -107,21 +108,21 @@ export const homeCopy = {
   ctaSupport: { ro: "Susține proiectul", en: "Support the project", it: "Sostieni il progetto", de: "Projekt unterstützen", fr: "Soutenir le projet", hu: "Támogasd a projektet", sr: "Podrži projekat", hr: "Podrži projekt" },
   ctaPartners: { ro: "Parteneriate instituționale", en: "Institutional partnerships", it: "Partnership istituzionali", de: "Institutionelle Partnerschaften", fr: "Partenariats institutionnels", hu: "Intézményi partnerségek", sr: "Institucionalna partnerstva", hr: "Institucionalna partnerstva" },
   missionTitle: {
-    ro: "Misiune",
-    en: "Mission",
-    it: "Missione",
-    de: "Mission",
-    fr: "Mission",
+    ro: "Direcție civică",
+    en: "Civic direction",
+    it: "Direzione civica",
+    de: "Civic direction",
+    fr: "Direction civique",
     hu: "Küldetés",
     sr: "Misija",
     hr: "Misija"
   },
   missionText: {
-    ro: "Misiunea GIUVA este să transforme solidaritatea în capacitate publică reală: oameni formați, comunități informate, echipamente utile, campanii transparente și cooperare responsabilă cu instituțiile.",
-    en: "GIUVA’s mission is to turn solidarity into real public capacity: trained people, informed communities, useful equipment, transparent campaigns and responsible cooperation with institutions.",
-    it: "La missione di GIUVA è trasformare la solidarietà in capacità pubblica reale: persone formate, comunità informate, attrezzature utili, campagne trasparenti e cooperazione responsabile con le istituzioni.",
-    de: "Die Mission von GIUVA ist es, Solidarität in echte öffentliche Handlungsfähigkeit zu verwandeln: geschulte Menschen, informierte Gemeinschaften, sinnvolle Ausrüstung, transparente Kampagnen und verantwortliche Zusammenarbeit.",
-    fr: "La mission de GIUVA est de transformer la solidarité en capacité publique réelle : personnes formées, communautés informées, équipements utiles, campagnes transparentes et coopération responsable.",
+    ro: "GIUVA transformă solidaritatea în participare civică responsabilă: oameni formați, comunități informate, echipamente utile, campanii transparente și cooperare complementară cu instituțiile.",
+    en: "GIUVA turns solidarity into responsible civic participation: trained people, informed communities, useful equipment, transparent campaigns and complementary cooperation with institutions.",
+    it: "GIUVA trasforma la solidarietà in partecipazione civica responsabile: persone formate, comunità informate, attrezzature utili, campagne trasparenti e cooperazione complementare con le istituzioni.",
+    de: "GIUVA verwandelt Solidarität in verantwortliche bürgerschaftliche Beteiligung: geschulte Menschen, informierte Gemeinschaften, sinnvolle Ausrüstung, transparente Kampagnen und verantwortliche Zusammenarbeit.",
+    fr: "GIUVA transforme la solidarité en participation civique responsable : personnes formées, communautés informées, équipements utiles, campagnes transparentes et coopération responsable.",
     hu: "A GIUVA küldetése, hogy a szolidaritást valódi közösségi kapacitássá alakítsa: képzett emberek, tájékozott közösségek, hasznos eszközök, átlátható kampányok és felelős együttműködés.",
     sr: "Misija GIUVA je da solidarnost pretvori u stvarni javni kapacitet: obučene ljude, informisane zajednice, korisnu opremu, transparentne kampanje i odgovornu saradnju.",
     hr: "Misija GIUVA je pretvoriti solidarnost u stvarni javni kapacitet: obučene ljude, informirane zajednice, korisnu opremu, transparentne kampanje i odgovornu suradnju."
@@ -130,8 +131,8 @@ export const homeCopy = {
 
 export const foundationStatement = {
   label: {
-    ro: "European Community Civil Resilience Platform",
-    en: "European Community Civil Resilience Platform"
+    ro: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS",
+    en: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS"
   },
   title: {
     ro: "GIUVA este o infrastructură civică complementară.",
@@ -139,22 +140,22 @@ export const foundationStatement = {
   },
   paragraphs: [
     {
-      ro: "GIUVA este o platformă europeană de reziliență civică și comunitară construită pentru a sprijini comunitățile locale prin voluntariat, educație, pregătire civică, răspuns comunitar rapid și cooperare instituțională.",
-      en: "GIUVA is a European civic and community resilience platform built to support local communities through volunteering, education, civic preparedness, rapid community response and institutional cooperation."
+      ro: "GIUVA este o platformă europeană de reziliență civică și comunitară construită pentru a sprijini comunitățile locale prin voluntariat, educație, pregătire civică, awareness AED/DEA, prevenție și cooperare instituțională.",
+      en: "GIUVA is a European civic and community resilience platform built to support local communities through volunteering, education, civic preparedness, AED awareness, prevention and institutional cooperation."
     },
     {
-      ro: "GIUVA nu înlocuiește instituțiile statului. GIUVA acționează ca infrastructură civică complementară pentru creșterea rezilienței teritoriale și reducerea timpului de răspuns în situații critice.",
-      en: "GIUVA does not replace state institutions. GIUVA acts as complementary civic infrastructure to increase territorial resilience and reduce response time in critical situations."
+      ro: "GIUVA nu înlocuiește instituțiile statului. GIUVA acționează ca infrastructură civică complementară pentru creșterea rezilienței teritoriale, pregătirii comunitare și participării responsabile.",
+      en: "GIUVA does not replace state institutions. GIUVA acts as complementary civic infrastructure to strengthen territorial resilience, community preparedness and responsible participation."
     }
   ]
 };
 
 export const strategicDoctrine = [
   {
-    title: { ro: "Misiune", en: "Mission" },
+    title: { ro: "Scop public", en: "Public purpose" },
     text: {
-      ro: "Crearea unei rețele moderne de voluntariat civic capabile să sprijine populația prin educație pentru situații de urgență, formare în prim ajutor, promovarea utilizării defibrilatoarelor AED, sprijin comunitar, pregătire civică și cooperare cu autoritățile.",
-      en: "Creating a modern civic volunteer network capable of supporting the population through emergency education, first aid training, AED awareness, community support, civic preparedness and cooperation with authorities."
+      ro: "Crearea unei rețele moderne de voluntariat civic capabile să sprijine populația prin educație pentru situații critice, formare în prim ajutor, promovarea utilizării defibrilatoarelor AED, sprijin comunitar, pregătire civică și cooperare cu autoritățile.",
+      en: "Creating a modern civic volunteer network capable of supporting the population through critical-situation education, first aid training, AED awareness, community support, civic preparedness and cooperation with authorities."
     }
   },
   {
@@ -165,10 +166,10 @@ export const strategicDoctrine = [
     }
   },
   {
-    title: { ro: "Principii operaționale", en: "Operational principles" },
+    title: { ro: "Principii civice", en: "Civic principles" },
     text: {
-      ro: "Cooperare instituțională, suport civic complementar, prevenție, educație, reacție rapidă, voluntariat responsabil, comunicare profesionistă și respectarea legislației naționale și europene.",
-      en: "Institutional cooperation, complementary civic support, prevention, education, rapid reaction, responsible volunteering, professional communication and respect for national and European law."
+      ro: "Cooperare instituțională, suport civic complementar, prevenție, educație, participare responsabilă, voluntariat responsabil, comunicare profesionistă și respectarea legislației naționale și europene.",
+      en: "Institutional cooperation, complementary civic support, prevention, education, responsible participation, responsible volunteering, professional communication and respect for national and European law."
     }
   }
 ];
@@ -204,9 +205,9 @@ export const pillars = [
     icon: Bike,
     title: { ro: "Riders Rescue", en: "Riders Rescue", it: "Riders Rescue", de: "Riders Rescue", fr: "Riders Rescue", hu: "Riders Rescue", sr: "Riders Rescue", hr: "Riders Rescue" },
     mission: {
-      ro: "Răspuns rapid voluntar pe motociclete și scutere.",
-      en: "Rapid volunteer response on motorcycles and scooters.",
-      it: "Risposta rapida volontaria su motociclette e scooter.",
+      ro: "Disponibilitate civică mobilă pe motociclete și scutere.",
+      en: "Mobile civic availability on motorcycles and scooters.",
+      it: "Disponibilità civica mobile su motociclette e scooter.",
       de: "Schnelle freiwillige Unterstützung mit Motorrädern und Scootern.",
       fr: "Réponse rapide bénévole à moto et scooter.",
       hu: "Gyors önkéntes reagálás motorokkal és robogókkal.",
@@ -214,9 +215,9 @@ export const pillars = [
       hr: "Brza volonterska podrška motociklima i skuterima."
     },
     purpose: {
-      ro: "Mobilitate AED/DEA, suport urban, evenimente publice, prim ajutor și disponibilitate responsabilă în cadrul protocoalelor.",
-      en: "AED mobility, urban support, public events, first aid and responsible availability within protocols.",
-      it: "Mobilità AED, supporto urbano, eventi pubblici, primo soccorso e disponibilità responsabile entro protocolli.",
+      ro: "Mobilitate AED/DEA, sprijin urban complementar, activități publice aprobate, prim ajutor și disponibilitate responsabilă în cadrul protocoalelor.",
+      en: "AED mobility, complementary urban support, approved public activities, first aid and responsible availability within protocols.",
+      it: "Mobilità AED, supporto urbano complementare, attività pubbliche approvate, primo soccorso e disponibilità responsabile entro protocolli.",
       de: "AED-Mobilität, urbane Unterstützung, öffentliche Veranstaltungen, Erste Hilfe und verantwortliche Verfügbarkeit in Protokollen.",
       fr: "Mobilité DAE, soutien urbain, événements publics, premiers secours et disponibilité responsable dans des protocoles.",
       hu: "AED-mobilitás, városi támogatás, nyilvános események, elsősegély és felelős rendelkezésre állás protokollok szerint.",
@@ -314,9 +315,9 @@ export const pillars = [
       hr: "Civilna pripravnost i institucionalna suradnja."
     },
     purpose: {
-      ro: "Protecție civilă, suport la evenimente, pregătire pentru dezastre și comunicare de urgență doar prin protocoale oficiale.",
-      en: "Civil protection, event support, disaster preparedness and emergency communication only through official protocols.",
-      it: "Protezione civile, supporto eventi, preparazione ai disastri e comunicazione di emergenza solo tramite protocolli ufficiali.",
+      ro: "Pregătire civilă, suport la evenimente, prevenție, logistică și comunicare comunitară doar prin protocoale oficiale.",
+      en: "Civil preparedness, event support, prevention, logistics and community communication only through official protocols.",
+      it: "Preparazione civile, supporto eventi, prevenzione, logistica e comunicazione comunitaria solo tramite protocolli ufficiali.",
       de: "Zivilschutz, Veranstaltungsunterstützung, Katastrophenvorsorge und Notfallkommunikation nur über offizielle Protokolle.",
       fr: "Protection civile, soutien aux événements, préparation aux catastrophes et communication d’urgence uniquement par protocoles officiels.",
       hu: "Polgári védelem, eseménytámogatás, katasztrófa-felkészülés és vészhelyzeti kommunikáció kizárólag hivatalos protokollokon keresztül.",
@@ -327,14 +328,14 @@ export const pillars = [
   {
     slug: "emergency-communications",
     icon: Radio,
-    title: { ro: "Emergency Communications Unit", en: "Emergency Communications Unit", it: "Emergency Communications Unit", de: "Emergency Communications Unit", fr: "Emergency Communications Unit", hu: "Emergency Communications Unit", sr: "Emergency Communications Unit", hr: "Emergency Communications Unit" },
+    title: { ro: "Community Communications Unit", en: "Community Communications Unit", it: "Community Communications Unit", de: "Community Communications Unit", fr: "Community Communications Unit", hu: "Community Communications Unit", sr: "Community Communications Unit", hr: "Community Communications Unit" },
     mission: {
-      ro: "Comunicare de urgență, coordonare informațională și suport civic responsabil.",
-      en: "Emergency communication, informational coordination and responsible civic support."
+      ro: "Comunicare comunitară, coordonare informațională și suport civic responsabil.",
+      en: "Community communication, informational coordination and responsible civic support."
     },
     purpose: {
-      ro: "Unitate viitoare pentru comunicare operațională, radio, fluxuri de informare, suport la evenimente și legături cu partenerii, fără dispecerat sau comandă de intervenție.",
-      en: "Future unit for operational communication, radio, information flows, event support and partner liaison, without dispatch or intervention command."
+      ro: "Unitate viitoare pentru comunicare comunitară, radio, fluxuri de informare, suport la evenimente și legături cu partenerii, fără dispecerat sau comandă de intervenție.",
+      en: "Future unit for community communication, radio, information flows, event support and partner liaison, without emergency-service coordination or intervention command."
     }
   },
   {
@@ -346,27 +347,27 @@ export const pillars = [
       en: "Civic academy for training, certifications and continuous preparedness."
     },
     purpose: {
-      ro: "Training, prim ajutor, CPR, AED/DEA, proceduri operaționale, cod de conduită, siguranță și standarde de voluntariat profesionist.",
-      en: "Training, first aid, CPR, AED, operational procedures, code of conduct, safety and professional volunteer standards."
+      ro: "Training, prim ajutor, CPR, AED/DEA, proceduri pentru activități aprobate, cod de conduită, siguranță și standarde de voluntariat profesionist.",
+      en: "Training, first aid, CPR, AED, approved-activity procedures, code of conduct, safety and professional volunteer standards."
     }
   }
 ];
 
 export const homepageSections = {
   pillarsTitle: {
-    ro: "Cinci piloni operaționali, identități separate, misiune comună.",
-    en: "Five operational pillars, separate identities, one mission.",
-    it: "Cinque pilastri operativi, identità separate, una missione.",
-    de: "Fünf operative Säulen, getrennte Identitäten, eine Mission.",
-    fr: "Cinq piliers opérationnels, identités séparées, une mission.",
-    hu: "Öt operatív pillér, külön identitások, egy küldetés.",
-    sr: "Pet operativnih stubova, odvojeni identiteti, jedna misija.",
-    hr: "Pet operativnih stupova, odvojeni identiteti, jedna misija."
+    ro: "Cinci piloni civici, identități separate, cadru comun.",
+    en: "Five civic pillars, separate identities, one shared framework.",
+    it: "Cinque pilastri civici, identità separate, un quadro comune.",
+    de: "Fünf bürgerschaftliche Säulen, getrennte Identitäten, ein gemeinsamer Rahmen.",
+    fr: "Cinq piliers civiques, identités séparées, un cadre commun.",
+    hu: "Öt civil pillér, külön identitások, közös keretrendszer.",
+    sr: "Pet građanskih stubova, odvojeni identiteti, zajednički okvir.",
+    hr: "Pet građanskih stupova, odvojeni identiteti, zajednički okvir."
   },
   pillarsText: {
-    ro: "Fiecare pilon poate funcționa autonom, dar este coordonat prin standarde comune, transparență și cooperare instituțională.",
-    en: "Each pillar can operate independently while being coordinated through shared standards, transparency and institutional cooperation.",
-    it: "Ogni pilastro può operare autonomamente ma resta coordinato tramite standard comuni, trasparenza e cooperazione istituzionale.",
+    ro: "Fiecare pilon are identitate proprie, dar este conectat prin standarde comune, transparență, wellbeing voluntar și cooperare instituțională.",
+    en: "Each pillar has its own identity while being connected through shared standards, transparency, volunteer wellbeing and institutional cooperation.",
+    it: "Ogni pilastro ha una propria identità ed è collegato da standard comuni, trasparenza, wellbeing dei volontari e cooperazione istituzionale.",
     de: "Jede Säule kann eigenständig arbeiten und wird durch gemeinsame Standards, Transparenz und institutionelle Zusammenarbeit koordiniert.",
     fr: "Chaque pilier peut fonctionner de manière autonome tout en étant coordonné par des standards communs, la transparence et la coopération institutionnelle.",
     hu: "Minden pillér önállóan működhet, miközben közös standardok, átláthatóság és intézményi együttműködés koordinálja.",
@@ -482,10 +483,10 @@ export const institutionalMatrix = [
   },
   {
     icon: ShieldCheck,
-    title: { ro: "Protecție civilă și agenții de urgență", en: "Civil protection and emergency agencies" },
+    title: { ro: "Protecție civilă și pregătire publică", en: "Civil protection and public preparedness" },
     text: {
-      ro: "Cooperare numai în baza protocoalelor, cu roluri clare, limite operaționale și comunicare responsabilă.",
-      en: "Cooperation only through protocols, with clear roles, operational limits and responsible communication."
+      ro: "Cooperare numai în baza protocoalelor, cu roluri clare, limite de activitate și comunicare responsabilă.",
+      en: "Cooperation only through protocols, with clear roles, activity boundaries and responsible communication."
     }
   },
   {
@@ -498,10 +499,10 @@ export const institutionalMatrix = [
   },
   {
     icon: Radio,
-    title: { ro: "MAI, IGSU și comunicare de urgență", en: "MAI, IGSU and emergency communication" },
+    title: { ro: "MAI, IGSU și comunicare comunitară", en: "MAI, IGSU and community communication" },
     text: {
-      ro: "Poziționare informativă și de cooperare, fără dispecerat, comandă operativă sau intervenție neautorizată.",
-      en: "Informational and cooperative positioning, with no dispatch, operational command or unauthorized intervention."
+      ro: "Poziționare informativă și de cooperare, fără coordonare autonomă de urgență, comandă de intervenție sau intervenție neautorizată.",
+      en: "Informational and cooperative positioning, with no emergency-service coordination, activity command or unauthorized intervention."
     }
   }
 ];
@@ -537,10 +538,10 @@ export const institutionalPrograms = [
   {
     icon: Map,
     label: "Infrastructure",
-    title: { ro: "Emergency Infrastructure", en: "Emergency Infrastructure" },
+    title: { ro: "Preparedness Infrastructure", en: "Preparedness Infrastructure" },
     text: {
-      ro: "Placeholder pentru hartă AED, rețea de voluntari, acoperire de răspuns și comunicare de urgență.",
-      en: "Placeholder for AED map, volunteer network, response coverage and emergency communication."
+      ro: "Placeholder pentru hartă AED, rețea de voluntari, acoperire comunitară și comunicare responsabilă.",
+      en: "Placeholder for AED map, volunteer network, community coverage and responsible communication."
     }
   }
 ];
@@ -548,8 +549,8 @@ export const institutionalPrograms = [
 export const futureIntegrations = [
   { icon: Users, title: { ro: "Volunteer registration", en: "Volunteer registration" }, text: { ro: "Formulare, onboarding, status și validare.", en: "Forms, onboarding, status and validation." } },
   { icon: HandHeart, title: { ro: "Donation platform", en: "Donation platform" }, text: { ro: "Campanii, sponsori, destinații clare și rapoarte.", en: "Campaigns, sponsors, clear destinations and reports." } },
-  { icon: Map, title: { ro: "Emergency map", en: "Emergency map" }, text: { ro: "Hartă AED și resurse publice integrate.", en: "AED map and integrated public resources." } },
-  { icon: Activity, title: { ro: "Operational dashboard", en: "Operational dashboard" }, text: { ro: "Indicatori, acoperire, training și impact.", en: "Metrics, coverage, training and impact." } },
+  { icon: Map, title: { ro: "AED awareness map", en: "AED awareness map" }, text: { ro: "Hartă AED și resurse publice integrate.", en: "AED map and integrated public resources." } },
+  { icon: Activity, title: { ro: "Civic dashboard", en: "Civic dashboard" }, text: { ro: "Indicatori, acoperire, training și impact.", en: "Metrics, coverage, training and impact." } },
   { icon: CalendarDays, title: { ro: "Events calendar", en: "Events calendar" }, text: { ro: "Training, campanii, evenimente și suport public.", en: "Training, campaigns, events and public support." } },
   { icon: Building2, title: { ro: "Partner portal", en: "Partner portal" }, text: { ro: "Municipalități, sponsori, protocoale și vizibilitate.", en: "Municipalities, sponsors, protocols and visibility." } }
 ];
@@ -558,8 +559,8 @@ export const divisionCapabilities = [
   {
     title: { ro: "Guvernanță", en: "Governance" },
     text: {
-      ro: "Roluri clare, proceduri, limite operaționale, comunicare publică responsabilă și documentare verificabilă.",
-      en: "Clear roles, procedures, operational limits, responsible public communication and verifiable documentation."
+      ro: "Roluri clare, proceduri, limite de activitate, comunicare publică responsabilă și documentare verificabilă.",
+      en: "Clear roles, procedures, activity boundaries, responsible public communication and verifiable documentation."
     }
   },
   {
@@ -579,8 +580,8 @@ export const divisionCapabilities = [
   {
     title: { ro: "Integrare viitoare", en: "Future integration" },
     text: {
-      ro: "Pregătit pentru portal voluntari, dashboard operațional, calendar evenimente și CMS Journey.",
-      en: "Ready for volunteer portal, operational dashboard, events calendar and Journey CMS."
+      ro: "Pregătit pentru portal voluntari, dashboard civic, calendar evenimente și CMS Journey.",
+      en: "Ready for volunteer portal, civic dashboard, events calendar and Journey CMS."
     }
   }
 ];
@@ -597,9 +598,9 @@ export const transparencyPage = {
     it: "Trasparenza, governance e responsabilità pubblica"
   },
   text: {
-    ro: "GIUVA este o asociație română cu deschidere europeană și o platformă cu orientare europeană de reziliență civică. GIUVA NU înlocuiește instituțiile statului, are caracter complementar instituțional și acționează în limitele legii și cu respectarea valorilor democratice europene.",
-    en: "GIUVA is a Romanian association with European openness and a European-oriented civic resilience platform. GIUVA does NOT replace state institutions, has a complementary institutional role and acts within the law and democratic European values.",
-    it: "GIUVA è un’associazione rumena con apertura europea e una piattaforma orientata alla resilienza civica europea. GIUVA NON sostituisce le istituzioni dello Stato, ha carattere complementare istituzionale e agisce nei limiti della legge e dei valori democratici europei."
+    ro: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS este o asociație română cu deschidere europeană și o platformă cu orientare europeană de reziliență civică. GIUVA NU înlocuiește instituțiile statului, are caracter complementar instituțional și acționează în limitele legii și cu respectarea valorilor democratice europene.",
+    en: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS is a Romanian association with European openness and a European-oriented civic resilience platform. GIUVA does NOT replace state institutions, has a complementary institutional role and acts within the law and democratic European values.",
+    it: "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS è un’associazione rumena con apertura europea e una piattaforma orientata alla resilienza civica europea. GIUVA NON sostituisce le istituzioni dello Stato, ha carattere complementare istituzionale e agisce nei limiti della legge e dei valori democratici europei."
   },
   documents: [
     { title: "Statut GIUVA", file: "statut-giuva.pdf", status: { ro: "placeholder public", en: "public placeholder", it: "placeholder pubblico" } },
@@ -672,9 +673,9 @@ export const governancePackage = {
       title: "Statut",
       file: "statut-giuva.pdf",
       description: {
-        ro: "Documentul fundamental care stabilește misiunea, principiile, structura de guvernanță și funcționarea organizației.",
-        en: "The fundamental document defining the mission, principles, governance structure and functioning of the organization.",
-        it: "Il documento fondamentale che stabilisce missione, principi, governance e funzionamento dell’organizzazione."
+        ro: "Documentul fundamental care stabilește scopul public, principiile, structura de guvernanță și funcționarea organizației.",
+        en: "The fundamental document defining the public purpose, principles, governance structure and functioning of the organization.",
+        it: "Il documento fondamentale che stabilisce scopo pubblico, principi, governance e funzionamento dell’organizzazione."
       }
     },
     {
@@ -727,7 +728,7 @@ export const governancePackage = {
     "SOP complete",
     "Regulament intern complet",
     "documenti disciplinari",
-    "procedure operative sensibili",
+    "sensitive internal procedures",
     "processi interni dettagliati"
   ],
   principles: [
@@ -798,9 +799,9 @@ export const civicAvailabilityNetwork = {
       title: "Public Map",
       visibility: "public",
       text: {
-        ro: "Afișează AED, arii de acoperire și impact comunitar. Nu afișează GPS live al voluntarilor sau resurse operaționale.",
-        en: "Shows AED locations, coverage areas and community impact. It does not show live volunteer GPS or live operational resources.",
-        it: "Mostra AED, aree di copertura e impatto comunitario. Non mostra GPS live dei volontari o risorse operative live."
+        ro: "Afișează AED, arii de acoperire și impact comunitar. Nu afișează GPS live al voluntarilor sau resurse civice rezervate.",
+        en: "Shows AED locations, coverage areas and community impact. It does not show live volunteer GPS or restricted civic resources.",
+        it: "Mostra AED, aree di copertura e impatto comunitario. Non mostra GPS live dei volontari o risorse civiche riservate."
       }
     },
     {
@@ -823,11 +824,11 @@ export const civicAvailabilityNetwork = {
     }
   ],
   roles: ["Public visitor", "GIUVA volunteer", "GIUVA coordinator", "Institutional partner viewer", "Admin"],
-  statuses: ["offline", "available", "assigned", "moving", "on scene", "unavailable"],
+  statuses: ["offline", "available", "scheduled", "in transit", "present at activity site", "unavailable"],
   slots: ["08:00-12:00", "12:00-18:00", "18:00-22:00"],
   categories: [
-    { color: "blue", title: "Rider BLS-D / AED community responder", className: "bg-blue-600" },
-    { color: "orange", title: "Partner medical resource / ambulance partner with AED", className: "bg-orange-500" },
+    { color: "blue", title: "Rider BLS-D / AED awareness volunteer", className: "bg-blue-600" },
+    { color: "orange", title: "Partner medical resource with AED", className: "bg-orange-500" },
     { color: "green", title: "Community support volunteer for civil protection support activities", className: "bg-emerald-600" },
     { color: "yellow", title: "Logistics and fire-prevention support team", className: "bg-yellow-400" },
     { color: "purple", title: "Coordination / communication unit", className: "bg-purple-600" }
@@ -842,7 +843,7 @@ export const civicAvailabilityNetwork = {
     "resource details",
     "contact coordinator",
     "shift calendar",
-    "incident note field",
+    "activity note field",
     "audit log"
   ],
   privacy: [
@@ -881,7 +882,7 @@ export const footerLinks = [
   "ERC",
   "Romanian Red Cross",
   "Legal placeholder",
-  "Emergency authorities"
+  "Public preparedness institutions"
 ];
 
 export const projectPulseMetrics = [
@@ -908,11 +909,11 @@ export const contactChannels = [
 
 export const partnerGroups = [
   { icon: Building2, title: { ro: "Municipalități", en: "Municipalities", it: "Municipalità", de: "Kommunen", fr: "Municipalités", hu: "Önkormányzatok", sr: "Opštine", hr: "Općine" }, text: brand.description },
-  { icon: ShieldCheck, title: { ro: "Instituții de urgență", en: "Emergency institutions", it: "Istituzioni di emergenza", de: "Notfallinstitutionen", fr: "Institutions d’urgence", hu: "Sürgősségi intézmények", sr: "Hitne institucije", hr: "Hitne institucije" }, text: pillars[4].purpose },
+  { icon: ShieldCheck, title: { ro: "Pregătire publică", en: "Public preparedness", it: "Preparazione pubblica", de: "Öffentliche Vorsorge", fr: "Préparation publique", hu: "Közfelkészültség", sr: "Javna pripremljenost", hr: "Javna pripravnost" }, text: pillars[4].purpose },
   { icon: Scale, title: { ro: "Legal și conformitate", en: "Legal and compliance", it: "Legale e conformità", de: "Recht und Compliance", fr: "Juridique et conformité", hu: "Jogi és megfelelőség", sr: "Pravno i usklađenost", hr: "Pravno i usklađenost" }, text: { ro: "Protocoale, GDPR, siguranță, roluri clare și comunicare responsabilă.", en: "Protocols, GDPR, safety, clear roles and responsible communication.", it: "Protocolli, GDPR, sicurezza, ruoli chiari e comunicazione responsabile.", de: "Protokolle, DSGVO, Sicherheit, klare Rollen und verantwortliche Kommunikation.", fr: "Protocoles, RGPD, sécurité, rôles clairs et communication responsable.", hu: "Protokollok, GDPR, biztonság, világos szerepek és felelős kommunikáció.", sr: "Protokoli, GDPR, bezbednost, jasne uloge i odgovorna komunikacija.", hr: "Protokoli, GDPR, sigurnost, jasne uloge i odgovorna komunikacija." } }
 ];
 
-export const partnerCategories = ["Institutional", "Emergency", "Municipal", "Medical", "Corporate", "European funding"];
+export const partnerCategories = ["Institutional", "Preparedness", "Municipal", "Medical", "Corporate", "European funding"];
 export const legalAndBenchmarkReferences = [
   { title: "European Road Safety Charter - AASI", type: "Reference", href: "https://road-safety-charter.ec.europa.eu/user/3617", text: "European civic and road safety positioning reference." },
   { title: "Rider Rescue Network", type: "Benchmark", href: "https://apps.apple.com/us/app/riders-to-the-rescue/id6744728720", text: "Mobile support benchmark; no current partnership implied." }

@@ -1,0 +1,57 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GIUVA Riders civic availability</title>
+  <desc id="desc">Neutral illustration of AED mobility, route planning and responsible volunteer availability without emergency vehicles or institutional uniforms.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1536" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#082F49"/>
+      <stop offset="0.55" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="34" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#93C5FD" stroke-width="2">
+    <path d="M120 230H1416"/>
+    <path d="M120 390H1416"/>
+    <path d="M120 550H1416"/>
+    <path d="M120 710H1416"/>
+    <path d="M300 120V900"/>
+    <path d="M520 120V900"/>
+    <path d="M740 120V900"/>
+    <path d="M960 120V900"/>
+    <path d="M1180 120V900"/>
+  </g>
+  <path d="M194 754C388 616 470 744 622 594C770 448 840 554 986 398C1098 278 1244 328 1360 210" stroke="#38BDF8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M194 754C388 616 470 744 622 594C770 448 840 554 986 398C1098 278 1244 328 1360 210" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.86"/>
+  <g filter="url(#shadow)">
+    <rect x="190" y="162" width="430" height="300" rx="26" fill="#F8FAFC"/>
+    <rect x="220" y="200" width="370" height="64" rx="12" fill="#DBEAFE"/>
+    <text x="246" y="242" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900" fill="#1E3A8A">Riders Rescue</text>
+    <text x="246" y="304" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#334155">AED mobility</text>
+    <text x="246" y="344" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#334155">Availability slots</text>
+    <text x="246" y="384" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#334155">Approved community activity</text>
+  </g>
+  <g transform="translate(716 256)" filter="url(#shadow)">
+    <rect width="340" height="420" rx="36" fill="#F8FAFC"/>
+    <rect x="42" y="44" width="256" height="150" rx="18" fill="#E0F2FE" stroke="#38BDF8" stroke-width="4"/>
+    <path d="M170 88C194 58 242 74 242 116C242 158 194 190 170 220C146 190 98 158 98 116C98 74 146 58 170 88Z" fill="#DC2626"/>
+    <path d="M170 102V175" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+    <path d="M134 138H206" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+    <rect x="54" y="238" width="232" height="34" rx="8" fill="#CBD5E1"/>
+    <rect x="54" y="292" width="180" height="34" rx="8" fill="#CBD5E1"/>
+    <rect x="54" y="346" width="210" height="34" rx="8" fill="#CBD5E1"/>
+  </g>
+  <g fill="#F8FAFC">
+    <text x="190" y="846" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900">GIUVA</text>
+    <text x="190" y="896" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#BAE6FD">Mobile civic availability • AED awareness • Volunteer wellbeing</text>
+  </g>
+  <g transform="translate(1110 610)">
+    <circle cx="110" cy="110" r="96" fill="#0EA5E9" opacity="0.18"/>
+    <path d="M58 130H174L150 82H82L58 130Z" fill="#E2E8F0"/>
+    <circle cx="86" cy="148" r="18" fill="#94A3B8"/>
+    <circle cx="148" cy="148" r="18" fill="#94A3B8"/>
+    <path d="M96 82H136" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

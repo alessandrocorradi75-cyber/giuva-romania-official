@@ -1,0 +1,47 @@
+<svg width="1536" height="1024" viewBox="0 0 1536 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GIUVA Project Pulse clean fundraising visual</title>
+  <desc id="desc">Neutral fundraising dashboard for AED awareness, training, mobility and logistics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1536" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="0.52" stop-color="#102A43"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="26" stdDeviation="32" flood-color="#000000" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="170" y="150" width="1196" height="724" rx="34" fill="#F8FAFC"/>
+    <rect x="220" y="218" width="520" height="238" rx="24" fill="#EFF6FF"/>
+    <rect x="796" y="218" width="520" height="238" rx="24" fill="#F0FDF4"/>
+    <rect x="220" y="520" width="1096" height="286" rx="24" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(278 260)">
+    <path d="M162 58C190 22 248 42 248 94C248 148 190 184 162 220C134 184 76 148 76 94C76 42 134 22 162 58Z" fill="#DC2626"/>
+    <path d="M162 78V170" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+    <path d="M116 124H208" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <g fill="#0F172A">
+    <text x="460" y="304" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">Project Pulse</text>
+    <text x="460" y="356" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#475569">Transparent fundraising for civic infrastructure</text>
+    <text x="852" y="304" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">Impact dashboard</text>
+    <text x="852" y="356" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#475569">AED awareness • training • logistics • mobility</text>
+  </g>
+  <g transform="translate(860 278)">
+    <rect x="0" y="98" width="70" height="74" rx="10" fill="#2563EB"/>
+    <rect x="100" y="56" width="70" height="116" rx="10" fill="#16A34A"/>
+    <rect x="200" y="18" width="70" height="154" rx="10" fill="#DC2626"/>
+    <rect x="300" y="82" width="70" height="90" rx="10" fill="#F59E0B"/>
+  </g>
+  <g>
+    <path d="M282 668H1228" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round"/>
+    <path d="M282 668H764" stroke="#2563EB" stroke-width="14" stroke-linecap="round"/>
+    <path d="M282 728H1228" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round"/>
+    <path d="M282 728H598" stroke="#16A34A" stroke-width="14" stroke-linecap="round"/>
+    <path d="M282 788H1228" stroke="#E2E8F0" stroke-width="14" stroke-linecap="round"/>
+    <path d="M282 788H930" stroke="#DC2626" stroke-width="14" stroke-linecap="round"/>
+    <text x="282" y="620" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900" fill="#0F172A">Clear destination for every donation</text>
+  </g>
+</svg>

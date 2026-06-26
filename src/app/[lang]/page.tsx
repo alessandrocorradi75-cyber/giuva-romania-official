@@ -72,7 +72,7 @@ export default async function LocalizedHome({ params }: PageProps) {
           { href: withLocale(locale, "/project-pulse"), label: homeCopy.ctaSupport, tone: "ghost" },
           { href: withLocale(locale, "/partners"), label: homeCopy.ctaPartners, tone: "blue" }
         ]}
-        imagePanel={{ src: "/brand/civil-response-scene.png", alt: "GIUVA civic resilience field cooperation" }}
+        imagePanel={{ src: "/brand/civic-resilience-visual.svg", alt: "GIUVA civic resilience and urban volunteering network" }}
       />
 
       <section className="dark-section px-5 py-20">
@@ -214,7 +214,7 @@ export default async function LocalizedHome({ params }: PageProps) {
           <span className="tag tag-light">Institutional cooperation</span>
           <h2 className="section-title max-w-5xl text-white">{t(locale, homepageSections.cooperationTitle)}</h2>
           <p className="section-text text-slate-300">
-            GIUVA is designed for municipalities, civil protection, emergency agencies, Red Cross structures, ERC-aligned education,
+            GIUVA is designed for municipalities, civil protection cooperation, public preparedness partners, Red Cross structures, ERC-aligned education,
             MAI, IGSU and local authorities.
           </p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">

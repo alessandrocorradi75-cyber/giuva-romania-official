@@ -14,7 +14,7 @@ export default function ContactPage() {
     <>
       <HeroSection
         eyebrow="Contact"
-        title="Let's build response together."
+        title="Let's build civic resilience together."
         subtitle="Voluntari, sponsori, instituții, media și parteneri."
         subtitleEn="Volunteers, sponsors, institutions, media and partners."
         text="Scrie-ne pentru voluntariat, sponsorizări, protocoale, colaborări, Journey stories sau Project Pulse."
@@ -30,7 +30,7 @@ export default function ContactPage() {
           <SectionHeader
             light
             tag="Email system"
-            title="Canale pregătite pentru faza operativă."
+            title="Canale pregătite pentru cooperare civică."
             text="Pentru moment, canalul unic rămâne contact@giuva.ro. Aceste adrese sunt structura recomandată pentru Cloudflare Email Routing sau un provider dedicat."
             textEn="For now, the single official channel remains contact@giuva.ro. These addresses are the recommended structure for Cloudflare Email Routing or a dedicated provider."
           />

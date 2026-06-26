@@ -28,7 +28,7 @@ export default function ProjectPulsePage() {
           { href: "mailto:contact@giuva.ro", label: "Susține Project Pulse", tone: "red" },
           { href: "/riders-rescue", label: "Riders Rescue", tone: "ghost" }
         ]}
-        imagePanel={{ src: "/brand/project-pulse-scene.png", alt: "Project Pulse AED fundraising scene" }}
+        imagePanel={{ src: "/brand/project-pulse-clean.svg", alt: "Project Pulse transparent AED fundraising dashboard" }}
       />
       <ProjectPulseSection />
       <ModuleGrid

@@ -15,9 +15,9 @@ const header = {
     it: "Cinque pilastri indipendenti, una sola piattaforma civica."
   },
   text: {
-    ro: "Fiecare divizie poate crește separat, dar rămâne conectată la misiunea comună: reziliență, prevenție, voluntariat și cooperare.",
-    en: "Each division can grow independently while remaining connected to the shared mission: resilience, prevention, volunteering and cooperation.",
-    it: "Ogni divisione può crescere autonomamente restando collegata alla missione comune: resilienza, prevenzione, volontariato e cooperazione."
+    ro: "Fiecare divizie poate crește separat, dar rămâne conectată la același cadru civic: reziliență, prevenție, voluntariat și cooperare.",
+    en: "Each division can grow independently while remaining connected to the same civic framework: resilience, prevention, volunteering and cooperation.",
+    it: "Ogni divisione può crescere autonomamente restando collegata allo stesso quadro civico: resilienza, prevenzione, volontariato e cooperazione."
   }
 };
 

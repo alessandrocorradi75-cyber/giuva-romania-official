@@ -7,17 +7,17 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "GIUVA.RO | European Civic Resilience Platform",
+    default: "GIUVA.RO | Urban Volunteering & Awareness",
     template: "%s | GIUVA.RO"
   },
   description:
-    "GIUVA.RO is a European civic resilience platform for volunteering, AED awareness, public preparedness, community support and institutional cooperation.",
+    "GIUVA.RO is the Global Initiative for Urban Volunteering & Awareness, a European-oriented civic platform for AED awareness, community preparedness, prevention culture and complementary institutional cooperation.",
   icons: {
     icon: "/favicon.svg"
   },
   openGraph: {
     title: "GIUVA.RO",
-    description: "European civic resilience platform for communities, volunteers and public preparedness.",
+    description: "Urban volunteering, AED awareness, community preparedness and prevention culture.",
     url: "https://giuva.ro",
     siteName: "GIUVA.RO",
     type: "website"

@@ -27,13 +27,61 @@ function findPillar(slug: string) {
   return pillars.find((pillar) => pillar.slug === slug);
 }
 
+const demoGroups = [
+  {
+    title: "Core website",
+    items: [
+      { href: "/", label: "Homepage" },
+      { href: "/contact", label: "Contact" },
+      { href: "/partners", label: "Partners" },
+      { href: "/media", label: "Media / public communication" }
+    ]
+  },
+  {
+    title: "Operational pillars",
+    items: [
+      { href: "/riders-rescue", label: "Riders Rescue" },
+      { href: "/community", label: "Community" },
+      { href: "/journey", label: "Journey" },
+      { href: "/project-pulse", label: "Project Pulse" },
+      { href: "/civil-response", label: "Civil Response" },
+      { href: "/emergency-communications", label: "Community Communications Unit" },
+      { href: "/volunteer-academy", label: "Volunteer Academy" }
+    ]
+  },
+  {
+    title: "Institutional / governance",
+    items: [
+      { href: "/about", label: "About GIUVA" },
+      { href: "/transparency", label: "Transparency & Governance" },
+      { href: "/principles", label: "Principles" },
+      { href: "/european-affairs", label: "European Affairs & Funding Office" },
+      { href: "/impact", label: "KPI & Impact" }
+    ]
+  },
+  {
+    title: "Civic Availability Network",
+    items: [
+      { href: "/civic-availability", label: "Platform concept" },
+      { href: "/coverage-map", label: "Public Coverage Map" },
+      { href: "/aed-registry", label: "AED Registry" },
+      { href: "/volunteer-login", label: "Volunteer Login" },
+      { href: "/partner-dashboard", label: "Partner Dashboard" },
+      { href: "/coordinator-dashboard", label: "Coordinator Dashboard" },
+      { href: "/admin-panel", label: "Admin Panel" },
+      { href: "/gdpr-consent", label: "GDPR Consent" },
+      { href: "/kpi-reports", label: "KPI & Reports" }
+    ]
+  }
+];
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang, slug } = await params;
   const locale = getLocale(lang);
   const pillar = findPillar(slug);
 
   if (
-    ["transparency", "about", "principles", "volunteer-academy", "european-affairs", "impact", "civic-availability"].includes(slug) ||
+    ["demo", "transparency", "about", "principles", "volunteer-academy", "european-affairs", "impact", "civic-availability"].includes(slug) ||
     civicAvailabilityNetwork.pages.some((page) => page.slug === slug)
   ) {
     return {
@@ -53,6 +101,74 @@ export default async function LocalizedSubPage({ params }: PageProps) {
   const locale = getLocale(lang);
   const pillar = findPillar(slug);
 
+  if (slug === "demo") {
+    return (
+      <section className="min-h-screen bg-white px-5 pb-20 pt-32 text-slate-950">
+        <div className="mx-auto max-w-7xl">
+          <MotionShell>
+            <span className="rounded-md bg-blue-50 px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-blue-700">
+              GIUVA demo review
+            </span>
+            <h1 className="mt-6 max-w-5xl text-5xl font-black leading-tight text-slate-950 md:text-7xl">
+              Naviga tutta la demo da qui.
+            </h1>
+            <p className="mt-6 max-w-3xl text-xl font-semibold leading-9 text-slate-600">
+              Usa questa pagina come checklist temporanea per verificare testi, immagini, tono istituzionale, responsive e pagine future.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {(["ro", "en", "it", "de", "fr", "hu", "sr", "hr"] as Locale[]).map((code) => (
+                <Link
+                  key={code}
+                  href={`/${code}/demo`}
+                  className={`rounded-md border px-3 py-2 text-sm font-black uppercase tracking-[0.12em] ${
+                    code === locale ? "border-blue-700 bg-blue-700 text-white" : "border-slate-200 bg-slate-50 text-slate-700 hover:bg-blue-50"
+                  }`}
+                >
+                  {code}
+                </Link>
+              ))}
+            </div>
+          </MotionShell>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            {demoGroups.map((group) => (
+              <MotionShell key={group.title}>
+                <article className="h-full rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                  <h2 className="text-2xl font-black text-blue-950">{group.title}</h2>
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={withLocale(locale, item.href)}
+                        className="flex min-h-14 items-center justify-between gap-3 rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-black text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-900"
+                      >
+                        {item.label}
+                        <ArrowRight size={16} />
+                      </Link>
+                    ))}
+                  </div>
+                </article>
+              </MotionShell>
+            ))}
+          </div>
+
+          <MotionShell>
+            <div className="mt-8 rounded-md border border-emerald-200 bg-emerald-50 p-6 text-emerald-950">
+              <h2 className="text-2xl font-black">Checklist di revisione</h2>
+              <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {["Nome ufficiale GIUVA visibile", "Nessuna immagine con ambulanze GIUVA", "Nessun riferimento visivo a istituzioni rumene", "Tono civic / preparedness"].map((item) => (
+                  <p key={item} className="rounded-md bg-white/75 px-4 py-3 text-sm font-bold">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </MotionShell>
+        </div>
+      </section>
+    );
+  }
+
   if (slug === "transparency") {
     return (
       <>
@@ -61,7 +177,8 @@ export default async function LocalizedSubPage({ params }: PageProps) {
             <MotionShell>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-blue-700">{t(locale, governancePackage.hero.eyebrow)}</p>
               <h1 className="mt-4 text-5xl font-black leading-[0.96] tracking-normal text-slate-950 md:text-7xl">GIUVA</h1>
-              <h2 className="mt-5 text-2xl font-black leading-tight text-blue-950 md:text-4xl">{t(locale, governancePackage.hero.title)}</h2>
+              <h2 className="mt-5 text-2xl font-black uppercase leading-tight text-blue-950 md:text-4xl">{brand.officialFullName}</h2>
+              <p className="mt-4 max-w-2xl text-lg font-semibold leading-8 text-slate-600">{t(locale, governancePackage.hero.title)}</p>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{t(locale, governancePackage.hero.text)}</p>
               <div className="mt-8 rounded-md border-l-4 border-emerald-500 bg-emerald-50 p-5 text-base font-bold leading-7 text-emerald-950">
                 {t(locale, governancePackage.hero.banner)}
@@ -197,7 +314,7 @@ export default async function LocalizedSubPage({ params }: PageProps) {
                     </div>
                   </div>
                 </div>
-                <p className="mt-4 text-sm leading-6 text-slate-600">Read-only mode. No dispatch command. No state operator mission assignment.</p>
+                <p className="mt-4 text-sm leading-6 text-slate-600">Read-only mode. No emergency-service coordination. No intervention command.</p>
               </div>
             </MotionShell>
           </div>
@@ -224,7 +341,7 @@ export default async function LocalizedSubPage({ params }: PageProps) {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <MotionShell>
               <span className="rounded-md bg-emerald-50 px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-emerald-700">Resource categories</span>
-              <h2 className="mt-5 text-4xl font-black text-slate-950 md:text-6xl">Civic resource visibility, not public dispatch.</h2>
+              <h2 className="mt-5 text-4xl font-black text-slate-950 md:text-6xl">Civic availability visibility, not emergency-service coordination.</h2>
               <p className="mt-6 leading-8 text-slate-600">
                 GPS is visible only when the volunteer is available and has given consent. It is never shown on the public map.
               </p>
@@ -299,7 +416,7 @@ export default async function LocalizedSubPage({ params }: PageProps) {
 
     const pageText =
       slug === "about"
-        ? "GIUVA este o organizație civică, educațională și comunitară, orientată către dezvoltarea rezilienței comunitare, a voluntariatului responsabil și a culturii prevenției. GIUVA promovează cooperarea instituțională, educația civică, cultura primului ajutor, awareness AED, pregătirea comunitară, solidaritatea și responsabilitatea publică. GIUVA NU înlocuiește instituțiile statului."
+        ? "GLOBAL INITIATIVE FOR URBAN VOLUNTEERING & AWARENESS (GIUVA) este o organizație civică, educațională și comunitară, orientată către dezvoltarea rezilienței comunitare, a voluntariatului responsabil și a culturii prevenției. GIUVA promovează cooperarea instituțională, educația civică, cultura primului ajutor, awareness AED, pregătirea comunitară, solidaritatea și responsabilitatea publică. GIUVA NU înlocuiește instituțiile statului."
         : slug === "volunteer-academy"
           ? "Volunteer Academy reprezintă componenta educațională GIUVA, dedicată dezvoltării culturii civice, pregătirii comunitare și voluntariatului responsabil."
           : slug === "european-affairs"
@@ -391,20 +508,20 @@ export default async function LocalizedSubPage({ params }: PageProps) {
         imagePanel={{
           src:
             pillar.slug === "riders-rescue"
-              ? "/brand/riders-rescue-support.png"
+              ? "/brand/riders-civic-availability.svg"
               : pillar.slug === "journey"
                 ? "/brand/journey-urban-3.png"
                 : pillar.slug === "civil-response"
-                  ? "/brand/civil-response-protocol.png"
+                  ? "/brand/civil-preparedness-visual.svg"
                   : pillar.slug === "project-pulse"
-                    ? "/brand/project-pulse-scene.png"
+                    ? "/brand/project-pulse-clean.svg"
                     : "/brand/community-manifesto-3.png",
           alt: t(locale, pillar.title)
         }}
       />
       <section className="dark-section px-5 py-20">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
-          {["mission", "operational purpose", "identity"].map((item, index) => (
+          {["civic purpose", "approved activity", "identity"].map((item, index) => (
             <MotionShell key={item}>
               <article className="h-full rounded-md border border-white/10 bg-white/5 p-6">
                 <Icon className="text-red-400" size={34} />
@@ -424,8 +541,8 @@ export default async function LocalizedSubPage({ params }: PageProps) {
       </section>
       <section className="red-section px-5 py-20">
         <div className="mx-auto max-w-7xl">
-          <span className="tag tag-light">Operational division</span>
-          <h2 className="section-title max-w-4xl text-white">{t(locale, pillar.title)} as an institutional module.</h2>
+          <span className="tag tag-light">Civic division</span>
+          <h2 className="section-title max-w-4xl text-white">{t(locale, pillar.title)} as a civic institutional module.</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {divisionCapabilities.map((capability, index) => (
               <MotionShell key={t(locale, capability.title)}>

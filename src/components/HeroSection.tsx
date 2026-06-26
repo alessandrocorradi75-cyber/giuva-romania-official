@@ -63,8 +63,8 @@ export function HeroSection({
         <MotionShell className="min-w-0">
           {showBanner ? (
             <Image
-              src="/brand/giuva-riders-rescue-banner.png"
-              alt="GIUVA Riders Rescue mobile community first response"
+              src="/brand/civic-resilience-visual.svg"
+              alt="GIUVA civic resilience and urban volunteering network"
               width={1536}
               height={1024}
               className="w-full rounded-md border border-white/10 shadow-[0_28px_90px_rgba(0,0,0,0.4)]"

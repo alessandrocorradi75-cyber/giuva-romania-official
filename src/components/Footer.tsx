@@ -13,8 +13,13 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_1.3fr]">
         <div>
           <strong className="block text-lg text-white">{brand.name}</strong>
+          <p className="mt-2 text-xs font-black uppercase tracking-[0.16em] text-slate-500">{brand.officialFullName}</p>
           <span className="font-semibold text-cyan-200">{text(brand.tagline)}</span>
           <p className="mt-4 max-w-md">{text(brand.description)}</p>
+          <p className="mt-4 max-w-md text-xs leading-5 text-slate-500">
+            GIUVA is non-political, non-military and not an emergency-service provider. Its role is civic, educational,
+            community-based and complementary.
+          </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="flex flex-wrap gap-x-4 gap-y-2">
