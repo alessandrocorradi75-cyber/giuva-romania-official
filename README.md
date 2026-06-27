@@ -1,80 +1,63 @@
-# GIUVA.RO Platform
+# GIUVA.RO
 
-GIUVA.RO is now structured as a real platform, not a static landing page.
+Prototype oficial pentru GIUVA Romania.
 
-## Frontend
+GIUVA înseamnă **Global Initiative for Urban Volunteering & Awareness**.
+
+Site-ul prezintă GIUVA Romania ca platformă civică în fază de dezvoltare pentru voluntariat urban, pregătire comunitară, educație civică, AED awareness și cultură a prevenției.
+
+GIUVA nu înlocuiește 112, SMURD, ambulanțele, poliția, pompierii sau serviciile publice. GIUVA are caracter civic, formativ și complementar.
+
+## Stack
 
 - Next.js 15
+- React 19
 - TypeScript
-- TailwindCSS
-- Framer Motion
-- Component architecture under `components/`
-- Static content source under `data/`, ready to be replaced by CMS fetchers
+- Tailwind CSS 4
+- conținut centralizat în `data/site.ts`
+- componente reutilizabile în `components/`
 
-Run:
+## Local
 
 ```bash
 npm install
-npm run dev
+npm run dev -- --hostname 127.0.0.1 --port 3000
 ```
 
-Frontend URL:
+Preview:
 
 ```text
 http://127.0.0.1:3000
 ```
 
-## Backend
-
-- FastAPI
-- PostgreSQL
-- SQLAlchemy async
-- Alembic migration scaffold
-- JWT security utilities
-- Modular API routes under `backend/app/api/routes/`
-
-Backend modules:
-
-- Volunteers
-- Trainings
-- Events
-- Project Pulse campaigns
-- Sponsors
-- Journey stories
-- Galleries
-- Partners
-- Civil Response informational resources
-
-Run PostgreSQL:
+## Build
 
 ```bash
-docker compose up -d postgres
+npm run build
 ```
 
-Run API:
+## Pagini principale
 
-```bash
-cd backend
-copy .env.example .env
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
+- `/`
+- `/despre`
+- `/discipline`
+- `/riders-rescue`
+- `/community`
+- `/voluntari`
+- `/deschide-o-sediu`
+- `/partner`
+- `/sustine`
+- `/news`
+- `/contact`
 
-API docs:
+URL-urile vechi redirecționează către structura nouă.
+
+## Editare conținut
+
+Textele publice, navigația, disciplinele, noutățile, opțiunile de formular și SEO sunt în:
 
 ```text
-http://127.0.0.1:8000/docs
+data/site.ts
 ```
 
-## Critical Boundary
-
-GIUVA is a community platform first. Civil Response is informational and protocol-based only.
-
-GIUVA is not an emergency dispatch system, intervention command platform, police body or autonomous emergency operator.
-
-## Next Operational Steps
-
-1. Connect Sanity or Strapi for Journey, news, events and campaigns.
-2. Generate the first Alembic migration from SQLAlchemy models.
-3. Replace placeholder API endpoints with database-backed CRUD.
-4. Add real auth persistence and role guards for volunteer, coordinator and admin.
-5. Connect the Next.js frontend to `NEXT_PUBLIC_API_BASE_URL`.
+Formularele sunt mock frontend, pregătite pentru integrare viitoare cu email, database, export voluntari, consimțământ GDPR și confirmare automată.

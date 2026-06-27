@@ -1,0 +1,39 @@
+
+> giuva-platform@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+   ▲ Next.js 15.5.18
+   - Local:        http://127.0.0.1:3000
+   - Network:      http://127.0.0.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 9.3s
+ ○ Compiling / ...
+ ✓ Compiled /contact in 20.1s (678 modules)
+ HEAD /voluntari 200 in 20673ms
+ HEAD /en 200 in 22045ms
+ HEAD /contact 200 in 21617ms
+ HEAD /deschide-o-sediu 200 in 21809ms
+ GET / 200 in 1246ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 5.2s (646 modules)
+ GET /sw.js 404 in 6479ms
+ GET /sw.js 404 in 211ms
+ HEAD / 200 in 607ms
+ ○ Compiling /en ...
+ ✓ Compiled /en in 609ms (400 modules)
+ HEAD /en 200 in 1735ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 3.8s (428 modules)
+ ✓ Compiled (432 modules)
+ HEAD /deschide-o-sediu 200 in 5486ms
+ HEAD /contact 200 in 5910ms
+ HEAD /voluntari 200 in 6296ms
+ GET / 200 in 973ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4.5s (646 modules)
+ GET /sw.js 404 in 5676ms
+ GET /sw.js 404 in 180ms
+ GET / 200 in 2319ms
+ GET /sw.js 404 in 365ms
+ GET /sw.js 404 in 175ms
