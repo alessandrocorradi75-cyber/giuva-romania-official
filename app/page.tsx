@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import { headers } from "next/headers";
 import { ArrowRight, CheckCircle2, Facebook, Globe2, Linkedin } from "lucide-react";
 import {
@@ -49,7 +50,7 @@ export default async function HomePage() {
           </div>
 
           <figure className="hero-photo-panel mt-12">
-            <img src="/brand/giuva-romania-disciplines-flag.png" alt={site.title} />
+            <Image src="/brand/giuva-romania-disciplines-flag.webp" alt={site.title} width={1536} height={1024} priority sizes="(min-width: 1500px) 1500px, calc(100vw - 40px)" />
           </figure>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Bike, CheckCircle2, Facebook, Globe2, GraduationCap, HandHeart, HeartPulse, Linkedin, Map, Radio, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { brand, ctas, europeanNetwork, socialLinks } from "@/data/site";
@@ -77,7 +78,7 @@ export default function EnglishHome() {
           </div>
 
           <figure className="hero-photo-panel mt-12">
-            <img src="/brand/giuva-romania-disciplines.png" alt="GIUVA Romania volunteers, community, Romania and Europe" />
+            <Image src="/brand/giuva-romania-disciplines.webp" alt="GIUVA Romania volunteers, community, Romania and Europe" width={1536} height={1024} priority sizes="(min-width: 1500px) 1500px, calc(100vw - 40px)" />
           </figure>
         </div>
       </section>

@@ -439,3 +439,125 @@ Data verifica: 2026-06-27
 **PRODUCTION BASELINE PASSED**
 
 Motivatie: homepage, SEO base, robots, sitemap, pagini privacy/cookie, linkuri principale si formulare mock production-safe sunt functionale; lint, build si dev smoke test trec fara erori.
+
+---
+
+## R1-003 Completed
+
+Data verifica: 2026-06-27
+
+### Immagini analizate
+
+Au fost analizate toate imaginile din `public`, inclusiv SVG si PNG. Imaginile raster mari identificate in `public/brand` si `public/images`:
+
+| Imagine | Dimensiuni | PNG initial | WebP optimizat | Reducere |
+|---|---:|---:|---:|---:|
+| `journey-urban-3.png` | 1536x1024 | 3291 KB | 366 KB | 88.9% |
+| `journey-urban-1.png` | 1024x1536 | 2965 KB | 275 KB | 90.7% |
+| `journey-urban-2.png` | 1024x1536 | 2803 KB | 238 KB | 91.5% |
+| `community-manifesto-1.png` | 1024x1536 | 2791 KB | 302 KB | 89.2% |
+| `community-manifesto-2.png` | 1536x1024 | 2729 KB | 301 KB | 89.0% |
+| `riders-rescue-support.png` | 1536x1024 | 2677 KB | 218 KB | 91.9% |
+| `community-manifesto-0.png` | 1024x1536 | 2622 KB | 283 KB | 89.2% |
+| `project-pulse-scene.png` | 1536x1024 | 2602 KB | 188 KB | 92.8% |
+| `civil-response-protocol.png` | 1536x1024 | 2598 KB | 203 KB | 92.2% |
+| `civil-response-scene.png` | 1536x1024 | 2521 KB | 208 KB | 91.7% |
+| `giuva-romania-disciplines-flag.png` | 1536x1024 | 2475 KB | 317 KB | 87.2% |
+| `giuva-romania-disciplines.png` | 1536x1024 | 2475 KB | 317 KB | 87.2% |
+| `giuva-romania-disciplines-before-flag.png` | 1536x1024 | 2413 KB | 317 KB | 86.9% |
+| `giuva-riders-rescue-banner.png` | 1536x1024 | 2029 KB | 201 KB | 90.1% |
+| `public/images/giuva-riders-rescue-banner.png` | 1536x1024 | 2029 KB | 201 KB | 90.1% |
+| `community-manifesto-3.png` | 1536x1024 | 2021 KB | 188 KB | 90.7% |
+
+SVG-urile au fost verificate si pastrate ca atare deoarece sunt deja foarte mici.
+
+### Imagini optimizate
+
+Au fost generate variante WebP pentru toate imaginile PNG mari, fara stergerea originalelor:
+
+- `public/brand/journey-urban-3.webp`
+- `public/brand/journey-urban-1.webp`
+- `public/brand/journey-urban-2.webp`
+- `public/brand/community-manifesto-1.webp`
+- `public/brand/community-manifesto-2.webp`
+- `public/brand/riders-rescue-support.webp`
+- `public/brand/community-manifesto-0.webp`
+- `public/brand/project-pulse-scene.webp`
+- `public/brand/civil-response-protocol.webp`
+- `public/brand/civil-response-scene.webp`
+- `public/brand/giuva-romania-disciplines-flag.webp`
+- `public/brand/giuva-romania-disciplines.webp`
+- `public/brand/giuva-romania-disciplines-before-flag.webp`
+- `public/brand/giuva-riders-rescue-banner.webp`
+- `public/images/giuva-riders-rescue-banner.webp`
+- `public/brand/community-manifesto-3.webp`
+
+Total estimat pentru variantele optimizate: de la **40.08 MB PNG** la **4.03 MB WebP**, aproximativ **90.0% reducere** pentru imaginile convertite.
+
+### Modificari aplicate
+
+- Homepage `/` foloseste `next/image` pentru hero si varianta WebP `giuva-romania-disciplines-flag.webp`, cu `priority` si `sizes` explicit.
+- Pagina `/en` foloseste `next/image` pentru hero si varianta WebP `giuva-romania-disciplines.webp`, cu `priority` si `sizes` explicit.
+- `PageHero` foloseste `next/image` pentru imaginile vizuale de pagina, cu dimensiuni fixe si `sizes` responsive.
+- `HeroSection` foloseste WebP pentru bannerul Riders Rescue si are `sizes` explicit pentru imaginile hero.
+- `JourneyGallery` si `VisualShowcase` pastreaza `next/image` si au `loading="lazy"` explicit pentru imaginile non-hero.
+- `journeyStories` foloseste varianta WebP pentru imaginea Journey principala.
+- `/discipline` foloseste varianta WebP pentru imaginea discipline GIUVA.
+
+### File modificate
+
+- `app/page.tsx`
+- `app/en/page.tsx`
+- `app/discipline/page.tsx`
+- `components/PageHero.tsx`
+- `components/HeroSection.tsx`
+- `components/JourneyGallery.tsx`
+- `components/VisualShowcase.tsx`
+- `data/site.ts`
+- `data/site-romania.ts`
+- `data/site.romania.backup.ts`
+- `public/brand/*.webp` generate
+- `public/images/giuva-riders-rescue-banner.webp`
+- `PROJECT_AUDIT.md`
+
+### Verificare calitate hero
+
+Hero principala a fost verificata vizual pe varianta WebP `giuva-romania-disciplines-flag.webp`: continutul vizual, logo-ul, oamenii, disciplinele si steagul raman clare. Dimensiunile pixel raman 1536x1024.
+
+### Imbunatatiri estimate
+
+- Hero Romania: de la ~2475 KB PNG la ~317 KB WebP, reducere ~87.2%.
+- Hero EN: de la ~2475 KB PNG la ~317 KB WebP, reducere ~87.2%.
+- Journey principala: de la ~2965 KB PNG la ~275 KB WebP, reducere ~90.7%.
+- Banner Riders Rescue: de la ~2029 KB PNG la ~201 KB WebP, reducere ~90.1%.
+- Total pentru imaginile convertite: ~90.0% reducere fata de PNG-urile initiale.
+
+### Probleme ramase
+
+- Originalele PNG au fost pastrate conform cerintei; directorul `public` contine acum atat surse PNG cat si variante WebP.
+- Logo-urile SVG din navbar/footer raman incarcate ca `<img>` deoarece sunt SVG-uri foarte mici si reprezinta asset-uri brand statice; optimizarea principala a fost aplicata rasterelor mari.
+- Open Graph/Twitter metadata continua sa foloseasca imagine PNG pentru compatibilitate social preview; nu afecteaza incarcarea vizuala a paginii.
+- Nu a fost rulat Lighthouse real in browser in acest sprint; verificarea a fost facuta prin dimensiuni asset, `next/image`, build si smoke test HTTP.
+
+### Verificari executate
+
+- `npm run lint`: PASS
+  - ESLint executat fara erori si fara warning.
+
+- `npm run build`: PASS
+  - Next.js 15.5.18.
+  - Compilare reusita.
+  - TypeScript valid.
+  - 30 rute generate.
+
+- `npm run dev`: PASS
+  - Pornit temporar pe `127.0.0.1:3006`.
+  - Verificate cu HTTP 200: `/`, `/en`, `/discipline`, `/brand/giuva-romania-disciplines-flag.webp`, `/brand/journey-urban-1.webp`.
+  - Asset-urile WebP raspund cu `Content-Type: image/webp`.
+  - Dev server temporar inchis dupa test.
+
+### Status R1-003
+
+**PERFORMANCE BASELINE PASSED**
+
+Motivatie: imaginile raster mari au variante WebP optimizate, imaginile principale sunt incarcate prin `next/image`, hero foloseste `priority` si `sizes`, imaginile non-hero au lazy loading explicit, iar lint/build/dev trec fara erori.

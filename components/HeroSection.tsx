@@ -51,12 +51,13 @@ export function HeroSection({
         <MotionShell className="min-w-0">
           {showBanner ? (
             <Image
-              src="/brand/giuva-riders-rescue-banner.png"
+              src="/brand/giuva-riders-rescue-banner.webp"
               alt="GIUVA Riders Rescue mobile community first response"
               width={1536}
               height={1024}
               className="w-full rounded-md border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
               priority
+              sizes="(min-width: 1024px) 46vw, calc(100vw - 40px)"
             />
           ) : imagePanel ? (
             <Image
@@ -66,6 +67,7 @@ export function HeroSection({
               height={1024}
               className="w-full rounded-md border border-white/15 object-cover shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
               priority
+              sizes="(min-width: 1024px) 46vw, calc(100vw - 40px)"
             />
           ) : panel ? (
             <div className="rounded-md border border-white/12 bg-white/[0.06] p-7 shadow-2xl">

@@ -24,6 +24,7 @@ export function JourneyGallery() {
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">

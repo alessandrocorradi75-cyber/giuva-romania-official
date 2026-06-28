@@ -333,7 +333,7 @@ export const journeyStories = [
     title: "GIUVA Journey",
     location: "Romania / Europa",
     category: "Journey",
-    image: "/brand/journey-urban-1.png",
+    image: "/brand/journey-urban-1.webp",
     text: "Calatorii responsabile, povesti scurte si conexiuni intre comunitati."
   }
 ];

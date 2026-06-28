@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -56,7 +57,7 @@ export function PageHero({
         {visual ? (
           imageSrc ? (
             <figure className="hero-image-panel">
-              <img src={imageSrc} alt={imageAlt ?? title} />
+              <Image src={imageSrc} alt={imageAlt ?? title} width={1536} height={1024} priority sizes="(min-width: 1024px) 55vw, calc(100vw - 40px)" />
             </figure>
           ) : (
             <div className="hero-visual" aria-label="Spatiu vizual GIUVA Romania">
