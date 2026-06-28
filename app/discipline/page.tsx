@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { DisciplineCards } from "@/components/DisciplineCards";
 import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Discipline GIUVA",
-  description: "Cele noua directii civice ale GIUVA Romania."
+  description: "Disciplinele civice ale GIUVA Romania."
 };
 
 export default function DisciplinesPage() {
@@ -12,11 +12,11 @@ export default function DisciplinesPage() {
     <>
       <PageHero
         eyebrow="Discipline GIUVA"
-        title="Noua directii civice, o retea comuna."
-        text="Fiecare disciplina explica o parte clara a asociatiei: comunitate, AED, suport civic, pregatire, storytelling, fundraising, educatie, tineri si seniori."
+        title="Discipline civice, pagini dedicate și participare responsabilă."
+        text="Fiecare disciplină explică o parte clară a portalului: misiune, activități, FAQ, documente corelate, noutăți și formular de interes."
         visual
         imageSrc="/brand/giuva-romania-disciplines.webp"
-        imageAlt="Cele 9 discipline GIUVA Romania si tricolorul Romaniei"
+        imageAlt="Discipline GIUVA Romania și tricolorul României"
       />
       <section className="px-5 pb-20">
         <div className="mx-auto max-w-7xl">

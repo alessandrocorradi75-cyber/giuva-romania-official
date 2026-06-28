@@ -1,0 +1,2369 @@
+warning: in the working copy of 'PROJECT_AUDIT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/contact/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/discipline/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/layout.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/news/[slug]/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/news/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/partner/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/sitemap.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/DisciplineCards.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/Footer.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/MockForm.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/Navbar.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/site.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'lib/siteByHost.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'styles/globals.css', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/PROJECT_AUDIT.md b/PROJECT_AUDIT.md[m
+[1mindex f10fd9bd..27e3b4cd 100644[m
+[1m--- a/PROJECT_AUDIT.md[m
+[1m+++ b/PROJECT_AUDIT.md[m
+[36m@@ -561,3 +561,254 @@[m [mHero principala a fost verificata vizual pe varianta WebP `giuva-romania-discipl[m
+ **PERFORMANCE BASELINE PASSED**[m
+ [m
+ Motivatie: imaginile raster mari au variante WebP optimizate, imaginile principale sunt incarcate prin `next/image`, hero foloseste `priority` si `sizes`, imaginile non-hero au lazy loading explicit, iar lint/build/dev trec fara erori.[m
+[32m+[m
+[32m+[m[32m## R1-004 Completed[m
+[32m+[m
+[32m+[m[32mDate: 2026-06-28[m
+[32m+[m
+[32m+[m[32m### Scope[m
+[32m+[m
+[32m+[m[32mGIUVA Romania was upgraded from a simple institutional website into a broader institutional European civic portal, without introducing new technologies and without changing official GIUVA colors, logos, uniforms or brand identity.[m
+[32m+[m
+[32m+[m[32mThe required file `GIUVA_RELEASE_1_REQUIREMENTS.md` was searched in `C:\GIUVA-PROJECTS\GIUVA-ROMANIA` and wider `C:\GIUVA-PROJECTS`, but it was not present. In absence of the file, implementation followed the consolidated Release 1 requirements already reflected in the project and in previous R1 audit notes: Romanian default, English secondary, civic/non-emergency positioning, no implicit partnerships, no operational authority language, production-safe public content.[m
+[32m+[m
+[32m+[m[32m### Main changes[m
+[32m+[m
+[32m+[m[32m- Homepage redesigned as an institutional portal entry point.[m
+[32m+[m[32m- Hero made full-width, more cinematic and more readable.[m
+[32m+[m[32m- GIUVA AI visible across the site through a global minimizable widget.[m
+[32m+[m[32m- Homepage now answers: who we are, what we do, how to participate, how to collaborate, why trust GIUVA.[m
+[32m+[m[32m- Added dedicated Mission / Vision / Core Values / European Principles section.[m
+[32m+[m[32m- Added statistics component with easily editable placeholder metrics.[m
+[32m+[m[32m- Rebuilt programme cards with image, discipline color, CTA and links to dedicated discipline pages.[m
+[32m+[m[32m- Added dynamic dedicated pages for every existing GIUVA discipline.[m
+[32m+[m[32m- Added GIUVA AI page.[m
+[32m+[m[32m- Added GIUVA Network page with Romania, Italia, Spania, Austria, Ungaria and Europe cards.[m
+[32m+[m[32m- Added Institutional Resources page with official/public links only and no implied partnership.[m
+[32m+[m[32m- Added Transparency & Documents page.[m
+[32m+[m[32m- Added Governance page.[m
+[32m+[m[32m- Footer transformed into institutional hub: mission, transparency, normativa/resources, European network, GIUVA AI, contacts, newsletter, social, release/version.[m
+[32m+[m[32m- Social section expanded to official and future channels: LinkedIn, Facebook, Instagram, TikTok, YouTube, Threads, WhatsApp Channel, Telegram, Roblox roadmap.[m
+[32m+[m[32m- Corrected mojibake Romanian text in the main `data/site.ts` content used by the portal.[m
+[32m+[m[32m- Updated sitemap to include new institutional and discipline routes.[m
+[32m+[m
+[32m+[m[32m### Files modified[m
+[32m+[m
+[32m+[m[32m- `app/page.tsx`[m
+[32m+[m[32m- `app/layout.tsx`[m
+[32m+[m[32m- `app/sitemap.ts`[m
+[32m+[m[32m- `app/discipline/page.tsx`[m
+[32m+[m[32m- `components/Navbar.tsx`[m
+[32m+[m[32m- `components/Footer.tsx`[m
+[32m+[m[32m- `components/DisciplineCards.tsx`[m
+[32m+[m[32m- `data/site.ts`[m
+[32m+[m[32m- `lib/siteByHost.ts`[m
+[32m+[m[32m- `PROJECT_AUDIT.md`[m
+[32m+[m
+[32m+[m[32m### New pages[m
+[32m+[m
+[32m+[m[32m- `app/discipline/[slug]/page.tsx`[m
+[32m+[m[32m- `app/giuva-ai/page.tsx`[m
+[32m+[m[32m- `app/giuva-network/page.tsx`[m
+[32m+[m[32m- `app/resurse-institutionale/page.tsx`[m
+[32m+[m[32m- `app/transparenta/page.tsx`[m
+[32m+[m[32m- `app/guvernanta/page.tsx`[m
+[32m+[m
+[32m+[m[32m### New components[m
+[32m+[m
+[32m+[m[32m- `components/GiuvaAiWidget.tsx`[m
+[32m+[m[32m- `components/MissionPrinciples.tsx`[m
+[32m+[m[32m- `components/PortalStats.tsx`[m
+[32m+[m[32m- `components/ProgrammeCards.tsx`[m
+[32m+[m[32m- `components/SocialChannels.tsx`[m
+[32m+[m
+[32m+[m[32m### Verification results[m
+[32m+[m
+[32m+[m[32m- `npm install`: PASS[m
+[32m+[m[32m  - Dependencies already up to date.[m
+[32m+[m[32m  - 2 moderate vulnerabilities remain, same known dependency audit issue. `npm audit fix --force` would introduce breaking/unsafe changes, so it was not applied.[m
+[32m+[m
+[32m+[m[32m- `npm run lint`: PASS[m
+[32m+[m[32m  - ESLint completed with `--max-warnings=0`.[m
+[32m+[m
+[32m+[m[32m- `npm run build`: PASS[m
+[32m+[m[32m  - Next.js 15.5.18.[m
+[32m+[m[32m  - 44 pages generated.[m
+[32m+[m[32m  - Dynamic discipline pages generated through `generateStaticParams`.[m
+[32m+[m
+[32m+[m[32m- `npm run dev`: PASS[m
+[32m+[m[32m  - Dev server started on `http://127.0.0.1:3000`.[m
+[32m+[m[32m  - HTTP status check returned `200`.[m
+[32m+[m
+[32m+[m[32m### Screenshots[m
+[32m+[m
+[32m+[m[32m- Browser screenshot capture was partially available. The homepage hero screenshot was captured and emitted in the Codex conversation.[m
+[32m+[m[32m- Saving multiple screenshot files locally from the in-app browser to `C:\GIUVA-PROJECTS\GIUVA-ROMANIA` was blocked by browser filesystem permissions / CDP screenshot timeouts. This is a tooling limitation, not a build or runtime failure.[m
+[32m+[m
+[32m+[m[32m### Remaining issues / risks[m
+[32m+[m
+[32m+[m[32m- `GIUVA_RELEASE_1_REQUIREMENTS.md` is missing from the repository, so future work should add it to the project root to make requirement validation explicit.[m
+[32m+[m[32m- `data/site-romania.ts` still exists as a legacy/alternate data file; the active portal imports use `data/site.ts`.[m
+[32m+[m[32m- Some existing legacy routes remain in the project for backward compatibility and were not removed.[m
+[32m+[m[32m- Social future channels intentionally use roadmap/placeholder status where official URLs are not confirmed.[m
+[32m+[m[32m- Audit vulnerabilities remain moderate and should be reviewed when Next.js dependency remediation offers a non-breaking fix.[m
+[32m+[m
+[32m+[m[32m### Status[m
+[32m+[m
+[32m+[m[32m**INSTITUTIONAL PORTAL PASSED**[m
+[32m+[m
+[32m+[m[32mMotivation: the site now functions as a broader institutional civic portal with stronger hero, mission, statistics, dedicated discipline pages, GIUVA AI, network, resources, transparency, governance, expanded footer and verified build quality. The remaining issues are documentation/tooling/dependency-audit risks, not blockers for the R1-004 portal baseline.[m
+[32m+[m
+[32m+[m[32m## R1-005 Completed[m
+[32m+[m
+[32m+[m[32mDate: 2026-06-28[m
+[32m+[m
+[32m+[m[32m### Scope[m
+[32m+[m
+[32m+[m[32mR1-005 completed the natural quality pass after R1-004, improving European institutional quality, accessibility, responsive behavior, navigation, reusable components, production readiness and perceived trust. No new technologies were introduced. Official GIUVA colors, logo, uniforms, brand identity and discipline structure were preserved.[m
+[32m+[m
+[32m+[m[32m`GIUVA_RELEASE_1_REQUIREMENTS.md` was searched again and remains missing from `C:\GIUVA-PROJECTS\GIUVA-ROMANIA`. Implementation followed the Release 1 constraints already consolidated in the project: Romanian default, English secondary, civic/non-emergency positioning, no implicit partnerships, no third-party logos without authorization, no fake documents, production-safe future states.[m
+[32m+[m
+[32m+[m[32m### Accessibility[m
+[32m+[m
+[32m+[m[32m- Added skip-to-content link targeting `#main-content`.[m
+[32m+[m[32m- Added explicit `main` landmark with focus target.[m
+[32m+[m[32m- Added Next.js viewport metadata for mobile rendering.[m
+[32m+[m[32m- Navbar now supports active state with `aria-current="page"`.[m
+[32m+[m[32m- Mobile menu has accessible label and keyboard-reachable summary.[m
+[32m+[m[32m- Forms include clearer required indicators, `aria-describedby`, `role="alert"` and `role="status"` feedback.[m
+[32m+[m[32m- FAQ Center uses native accessible `<details>/<summary>` accordions.[m
+[32m+[m[32m- Icons used decoratively now include `aria-hidden` where appropriate.[m
+[32m+[m[32m- Search component includes label, help text and live result region.[m
+[32m+[m[32m- Focus visibility remains strong through the existing yellow focus outline.[m
+[32m+[m[32m- Added reduced-motion handling through `prefers-reduced-motion`.[m
+[32m+[m
+[32m+[m[32m### Responsive / UX[m
+[32m+[m
+[32m+[m[32m- Added explicit viewport metadata to fix mobile rendering.[m
+[32m+[m[32m- Fixed mobile header compression and hamburger visibility.[m
+[32m+[m[32m- Adjusted mobile hero text wrapping and CTA behavior.[m
+[32m+[m[32m- Added overflow-x protection for the page.[m
+[32m+[m[32m- Added desktop and mobile screenshots under `r1-005-screenshots`.[m
+[32m+[m[32m- Desktop screenshot verified visually: `r1-005-screenshots/desktop-home.png`.[m
+[32m+[m[32m- Mobile final screenshot verified visually: `r1-005-screenshots/mobile-home-menu-visible.png`.[m
+[32m+[m[32m- FAQ desktop screenshot created: `r1-005-screenshots/desktop-faq.png`.[m
+[32m+[m
+[32m+[m[32m### Navigation[m
+[32m+[m
+[32m+[m[32m- Added active navigation state.[m
+[32m+[m[32m- Added footer quick links and expanded institutional hub.[m
+[32m+[m[32m- Added breadcrumbs on new institutional pages.[m
+[32m+[m[32m- Added quick access to FAQ, Events, Publications and Download Center.[m
+[32m+[m[32m- Sitemap updated for new routes and structured news routes.[m
+[32m+[m
+[32m+[m[32m### Search[m
+[32m+[m
+[32m+[m[32m- Added reusable `SearchBox` component.[m
+[32m+[m[32m- Search is demo/static for Release 1.0, backend-free and extensible.[m
+[32m+[m[32m- Homepage and News Center use search entry points.[m
+[32m+[m
+[32m+[m[32m### News Center[m
+[32m+[m
+[32m+[m[32m- News architecture prepared with category, discipline, country, author, date, tags, image and CTA.[m
+[32m+[m[32m- News Center page rebuilt with `NewsCard`.[m
+[32m+[m[32m- News detail pages now use the enriched news data.[m
+[32m+[m
+[32m+[m[32m### Events[m
+[32m+[m
+[32m+[m[32m- Added Events page with Upcoming Events and Past Events.[m
+[32m+[m[32m- Added reusable `EventCard`.[m
+[32m+[m[32m- Event states are roadmap/under development, without fake active events.[m
+[32m+[m
+[32m+[m[32m### Publications[m
+[32m+[m
+[32m+[m[32m- Added Publications page for Annual Report, Impact Report, Guidelines, Policies, Manuals and Institutional Documents.[m
+[32m+[m[32m- Added reusable `DocumentCard`.[m
+[32m+[m[32m- No unreal document download is published.[m
+[32m+[m
+[32m+[m[32m### Download Center[m
+[32m+[m
+[32m+[m[32m- Added Download Center page split conceptually into documentation, manuals, media kit, brand assets, templates and downloads.[m
+[32m+[m[32m- Sensitive/internal documentation remains explicitly not public.[m
+[32m+[m
+[32m+[m[32m### Trust / Testimonials / Newsletter[m
+[32m+[m
+[32m+[m[32m- Added `TrustIndicators` component.[m
+[32m+[m[32m- Added institutional testimonial placeholders without real names.[m
+[32m+[m[32m- Added `NewsletterBox` with privacy consent and double opt-in placeholder.[m
+[32m+[m
+[32m+[m[32m### Partners[m
+[32m+[m
+[32m+[m[32m- Partner page reorganized into Institutional, Academic, NGO, Corporate, Media and International categories.[m
+[32m+[m[32m- No third-party logos are displayed.[m
+[32m+[m[32m- No implicit partnership is declared.[m
+[32m+[m
+[32m+[m[32m### Contact Center[m
+[32m+[m
+[32m+[m[32m- Contact page rebuilt as Contact Center with General Information, Volunteer, Academy, Media, Funding, Partnership, Press, GIUVA AI and Emergency Disclaimer.[m
+[32m+[m[32m- Contact form includes department selection and production-safe mock behavior.[m
+[32m+[m
+[32m+[m[32m### Component Library Additions[m
+[32m+[m
+[32m+[m[32m- `components/portal/Breadcrumbs.tsx`[m
+[32m+[m[32m- `components/portal/SearchBox.tsx`[m
+[32m+[m[32m- `components/portal/NewsletterBox.tsx`[m
+[32m+[m[32m- `components/portal/TrustIndicators.tsx`[m
+[32m+[m[32m- `components/portal/EmptyState.tsx`[m
+[32m+[m[32m- `components/portal/Cards.tsx`[m
+[32m+[m[32m- `components/portal/FaqAccordion.tsx`[m
+[32m+[m[32m- `components/portal/Testimonials.tsx`[m
+[32m+[m
+[32m+[m[32m### New Pages[m
+[32m+[m
+[32m+[m[32m- `app/faq/page.tsx`[m
+[32m+[m[32m- `app/events/page.tsx`[m
+[32m+[m[32m- `app/publicatii/page.tsx`[m
+[32m+[m[32m- `app/download-center/page.tsx`[m
+[32m+[m
+[32m+[m[32m### Modified Key Files[m
+[32m+[m
+[32m+[m[32m- `app/layout.tsx`[m
+[32m+[m[32m- `app/page.tsx`[m
+[32m+[m[32m- `app/contact/page.tsx`[m
+[32m+[m[32m- `app/news/page.tsx`[m
+[32m+[m[32m- `app/news/[slug]/page.tsx`[m
+[32m+[m[32m- `app/partner/page.tsx`[m
+[32m+[m[32m- `app/sitemap.ts`[m
+[32m+[m[32m- `components/Navbar.tsx`[m
+[32m+[m[32m- `components/Footer.tsx`[m
+[32m+[m[32m- `components/MockForm.tsx`[m
+[32m+[m[32m- `data/site.ts`[m
+[32m+[m[32m- `styles/globals.css`[m
+[32m+[m[32m- `PROJECT_AUDIT.md`[m
+[32m+[m
+[32m+[m[32m### Verification Results[m
+[32m+[m
+[32m+[m[32m- `npm install`: PASS[m
+[32m+[m[32m  - Dependencies up to date.[m
+[32m+[m[32m  - 2 moderate vulnerabilities remain from the known dependency audit issue. Forced remediation would require potentially breaking changes, so it was not applied.[m
+[32m+[m
+[32m+[m[32m- `npm run lint`: PASS[m
+[32m+[m[32m  - ESLint completed with `--max-warnings=0`.[m
+[32m+[m
+[32m+[m[32m- `npm run build`: PASS[m
+[32m+[m[32m  - Next.js 15.5.18.[m
+[32m+[m[32m  - 48 pages generated.[m
+[32m+[m[32m  - Dynamic discipline pages generated through `generateStaticParams`.[m
+[32m+[m
+[32m+[m[32m- `npm run dev`: PASS[m
+[32m+[m[32m  - Dev server running on `http://127.0.0.1:3000`.[m
+[32m+[m[32m  - HTTP status check returned `200`.[m
+[32m+[m
+[32m+[m[32m### Remaining Issues / Risks[m
+[32m+[m
+[32m+[m[32m- `GIUVA_RELEASE_1_REQUIREMENTS.md` is still absent and should be added to the repository root.[m
+[32m+[m[32m- Automated WCAG tooling was not added because R1-005 forbids new technologies; accessibility was reviewed manually through code, semantics and visual checks.[m
+[32m+[m[32m- Moderate npm audit findings remain pending a safe non-breaking dependency fix.[m
+[32m+[m[32m- Future channels and documents remain roadmap/under development intentionally.[m
+[32m+[m
+[32m+[m[32m### Status[m
+[32m+[m
+[32m+[m[32m**EUROPEAN QUALITY PASSED**[m
+[32m+[m
+[32m+[m[32mMotivation: R1-005 adds accessibility foundations, responsive fixes, production-safe portal sections, reusable component library, structured news/events/publications/downloads, FAQ, contact center, trust indicators, improved navigation and verified build quality. Remaining items are documentation and dependency-audit risks, not blockers for the Release 1.0 quality baseline.[m
+[1mdiff --git a/app/contact/page.tsx b/app/contact/page.tsx[m
+[1mindex d85a8e08..e6734561 100644[m
+[1m--- a/app/contact/page.tsx[m
+[1m+++ b/app/contact/page.tsx[m
+[36m@@ -1,65 +1,78 @@[m
+[31m-import type { Metadata } from "next";[m
+[31m-import { Facebook, Linkedin } from "lucide-react";[m
+[32m+[m[32m﻿import type { Metadata } from "next";[m
+[32m+[m[32mimport { Bot, Building2, GraduationCap, HandHeart, HeartPulse, Mail, Megaphone, Newspaper, Users } from "lucide-react";[m
+ import { MockForm } from "@/components/MockForm";[m
+[32m+[m[32mimport { Breadcrumbs } from "@/components/portal/Breadcrumbs";[m
+[32m+[m[32mimport { NewsletterBox } from "@/components/portal/NewsletterBox";[m
+[32m+[m[32mimport { TrustIndicators } from "@/components/portal/TrustIndicators";[m
+ import { PageHero } from "@/components/PageHero";[m
+[31m-import { contactEmails, contactFormFields, socialLinks } from "@/data/site";[m
+[32m+[m[32mimport { brand, contactFormFields } from "@/data/site";[m
+ [m
+ export const metadata: Metadata = {[m
+[31m-  title: "Contact",[m
+[31m-  description: "Contacteaza secretariatul GIUVA Romania."[m
+[32m+[m[32m  title: "Contact Center",[m
+[32m+[m[32m  description: "Contact Center GIUVA Romania pentru informații generale, voluntari, academy, media, funding, partnership, press și GIUVA AI."[m
+ };[m
+ [m
+[32m+[m[32mconst contactAreas = [[m
+[32m+[m[32m  { title: "General Information", email: "info@giuva.ro", icon: Mail },[m
+[32m+[m[32m  { title: "Volunteer", email: "volunteers@giuva.ro", icon: Users },[m
+[32m+[m[32m  { title: "Academy", email: "academy@giuva.ro", icon: GraduationCap },[m
+[32m+[m[32m  { title: "Media", email: "media@giuva.ro", icon: Megaphone },[m
+[32m+[m[32m  { title: "Funding", email: "fundraising@giuva.ro", icon: HeartPulse },[m
+[32m+[m[32m  { title: "Partnership", email: "partnerships@giuva.ro", icon: HandHeart },[m
+[32m+[m[32m  { title: "Press", email: "press@giuva.ro", icon: Newspaper },[m
+[32m+[m[32m  { title: "GIUVA AI", email: "info@giuva.ro", icon: Bot }[m
+[32m+[m[32m];[m
+[32m+[m
+ export default function ContactsPage() {[m
+   return ([m
+     <>[m
+[32m+[m[32m      <Breadcrumbs items={[{ label: "Contact Center" }]} />[m
+       <PageHero[m
+[31m-        eyebrow="Contact"[m
+[31m-        title="Secretariat GIUVA Romania"[m
+[31m-        text="Scrie pentru voluntariat, parteneriate, proiecte pilot, community locale sau informatii generale."[m
+[32m+[m[32m        eyebrow="Contact Center"[m
+[32m+[m[32m        title="Un punct clar de contact pentru fiecare nevoie."[m
+[32m+[m[32m        text="Scrie pentru voluntariat, academy, media, funding, parteneriate, presă, comunități locale sau informații generale. GIUVA Romania este în dezvoltare și răspunde prudent, fără a promite servicii operative."[m
+[32m+[m[32m        actions={[{ href: "/voluntari", label: "Devino voluntar" }, { href: "/faq", label: "FAQ Center", tone: "ghost" }]}[m
+       />[m
+       <section className="px-5 pb-20">[m
+[31m-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">[m
+[32m+[m[32m        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.82fr_1.18fr]">[m
+           <div className="grid gap-5">[m
+[31m-            {contactEmails.map((email) => {[m
+[31m-              const Icon = email.icon;[m
+[31m-              return ([m
+[31m-                <a key={email.value} href={`mailto:${email.value}`} className="card interactive-card p-5">[m
+[31m-                  <Icon className="text-[#16825d]" size={30} />[m
+[31m-                  <h2 className="mt-4 text-xl font-black text-[#081f3a]">{email.label}</h2>[m
+[31m-                  <p className="mt-1 font-semibold text-slate-600">{email.value}</p>[m
+[31m-                </a>[m
+[31m-              );[m
+[31m-            })}[m
+[31m-            <div className="card p-5">[m
+[31m-              <h2 className="text-xl font-black text-[#081f3a]">Social</h2>[m
+[31m-              <div className="mt-4 flex flex-wrap gap-2">[m
+[31m-                {socialLinks.map((link) => ([m
+[31m-                  <a[m
+[31m-                    key={link.href}[m
+[31m-                    href={link.href}[m
+[31m-                    target="_blank"[m
+[31m-                    rel="noreferrer"[m
+[31m-                    className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2 text-sm font-bold text-slate-700 transition hover:text-[#16825d]"[m
+[31m-                  >[m
+[31m-                    {link.label === "LinkedIn" ? <Linkedin size={16} /> : <Facebook size={16} />}[m
+[31m-                    {link.label}[m
+[32m+[m[32m            <div className="grid gap-4 sm:grid-cols-2">[m
+[32m+[m[32m              {contactAreas.map((area) => {[m
+[32m+[m[32m                const Icon = area.icon;[m
+[32m+[m[32m                return ([m
+[32m+[m[32m                  <a key={area.title} href={`mailto:${area.email}`} className="card interactive-card p-5">[m
+[32m+[m[32m                    <Icon className="text-[#16825d]" size={28} aria-hidden="true" />[m
+[32m+[m[32m                    <h2 className="mt-4 text-xl font-black text-[#081f3a]">{area.title}</h2>[m
+[32m+[m[32m                    <p className="mt-1 font-semibold text-slate-600">{area.email}</p>[m
+                   </a>[m
+[31m-                ))}[m
+[31m-              </div>[m
+[32m+[m[32m                );[m
+[32m+[m[32m              })}[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div className="card border-l-4 border-l-[#16825d] p-5">[m
+[32m+[m[32m              <Building2 className="text-[#1f5fbf]" size={28} aria-hidden="true" />[m
+[32m+[m[32m              <h2 className="mt-4 text-xl font-black text-[#081f3a]">Emergency Disclaimer</h2>[m
+[32m+[m[32m              <p className="mt-3 leading-7 text-slate-600">{brand.legalBoundary}</p>[m
+             </div>[m
+[32m+[m[32m            <TrustIndicators compact />[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div className="grid gap-6">[m
+[32m+[m[32m            <MockForm fields={contactFormFields} submitLabel="Trimite mesajul" successMessage="Mesajul a fost validat local în demo; în integrarea finală va fi transmis secretariatului GIUVA.">[m
+[32m+[m[32m              <label>[m
+[32m+[m[32m                <span className="field-label">Departament</span>[m
+[32m+[m[32m                <select className="field" name="departament" required>[m
+[32m+[m[32m                  {contactAreas.map((area) => <option key={area.title}>{area.title}</option>)}[m
+[32m+[m[32m                </select>[m
+[32m+[m[32m              </label>[m
+[32m+[m[32m              <label>[m
+[32m+[m[32m                <span className="field-label">Mesaj</span>[m
+[32m+[m[32m                <textarea className="field min-h-36" name="mesaj" required />[m
+[32m+[m[32m              </label>[m
+[32m+[m[32m            </MockForm>[m
+[32m+[m[32m            <NewsletterBox />[m
+           </div>[m
+[31m-          <MockForm[m
+[31m-            fields={contactFormFields}[m
+[31m-            submitLabel="Trimite mesajul"[m
+[31m-            successMessage="Multumim. Mesajul a fost inregistrat local in demo; in integrarea finala va fi transmis secretariatului GIUVA."[m
+[31m-          >[m
+[31m-            <label>[m
+[31m-              <span className="field-label">Mesaj</span>[m
+[31m-              <textarea className="field min-h-36" name="mesaj" required />[m
+[31m-            </label>[m
+[31m-          </MockForm>[m
+         </div>[m
+       </section>[m
+     </>[m
+   );[m
+ }[m
+[41m+[m
+[1mdiff --git a/app/discipline/page.tsx b/app/discipline/page.tsx[m
+[1mindex 07aef8fe..cecea397 100644[m
+[1m--- a/app/discipline/page.tsx[m
+[1m+++ b/app/discipline/page.tsx[m
+[36m@@ -1,10 +1,10 @@[m
+[31m-import type { Metadata } from "next";[m
+[32m+[m[32m﻿import type { Metadata } from "next";[m
+ import { DisciplineCards } from "@/components/DisciplineCards";[m
+ import { PageHero } from "@/components/PageHero";[m
+ [m
+ export const metadata: Metadata = {[m
+   title: "Discipline GIUVA",[m
+[31m-  description: "Cele noua directii civice ale GIUVA Romania."[m
+[32m+[m[32m  description: "Disciplinele civice ale GIUVA Romania."[m
+ };[m
+ [m
+ export default function DisciplinesPage() {[m
+[36m@@ -12,11 +12,11 @@[m [mexport default function DisciplinesPage() {[m
+     <>[m
+       <PageHero[m
+         eyebrow="Discipline GIUVA"[m
+[31m-        title="Noua directii civice, o retea comuna."[m
+[31m-        text="Fiecare disciplina explica o parte clara a asociatiei: comunitate, AED, suport civic, pregatire, storytelling, fundraising, educatie, tineri si seniori."[m
+[32m+[m[32m        title="Discipline civice, pagini dedicate și participare responsabilă."[m
+[32m+[m[32m        text="Fiecare disciplină explică o parte clară a portalului: misiune, activități, FAQ, documente corelate, noutăți și formular de interes."[m
+         visual[m
+         imageSrc="/brand/giuva-romania-disciplines.webp"[m
+[31m-        imageAlt="Cele 9 discipline GIUVA Romania si tricolorul Romaniei"[m
+[32m+[m[32m        imageAlt="Discipline GIUVA Romania și tricolorul României"[m
+       />[m
+       <section className="px-5 pb-20">[m
+         <div className="mx-auto max-w-7xl">[m
+[1mdiff --git a/app/layout.tsx b/app/layout.tsx[m
+[1mindex 6422123f..b1d301da 100644[m
+[1m--- a/app/layout.tsx[m
+[1m+++ b/app/layout.tsx[m
+[36m@@ -1,11 +1,18 @@[m
+[31m-﻿import type { Metadata } from "next";[m
+[32m+[m[32m﻿import type { Metadata, Viewport } from "next";[m
+ import { Navbar } from "@/components/Navbar";[m
+ import { Footer } from "@/components/Footer";[m
+[32m+[m[32mimport { GiuvaAiWidget } from "@/components/GiuvaAiWidget";[m
+ import { brand, seoKeywords } from "@/data/site";[m
+ import "@/styles/globals.css";[m
+ [m
+ const siteUrl = "https://www.giuva.ro";[m
+ [m
+[32m+[m
+[32m+[m[32mexport const viewport: Viewport = {[m
+[32m+[m[32m  width: "device-width",[m
+[32m+[m[32m  initialScale: 1,[m
+[32m+[m[32m  maximumScale: 5[m
+[32m+[m[32m};[m
+ export const metadata: Metadata = {[m
+   metadataBase: new URL(siteUrl),[m
+   title: {[m
+[36m@@ -34,7 +41,7 @@[m [mexport const metadata: Metadata = {[m
+         url: "/brand/giuva-romania-disciplines-flag.png",[m
+         width: 1536,[m
+         height: 864,[m
+[31m-        alt: "GIUVA Romania, voluntari, comunitate, Romania si Europa"[m
+[32m+[m[32m        alt: "GIUVA Romania, voluntari, comunitate, România și Europa"[m
+       }[m
+     ][m
+   },[m
+[36m@@ -53,10 +60,13 @@[m [mexport default function RootLayout({ children }: Readonly<{ children: React.Reac[m
+   return ([m
+     <html lang="ro">[m
+       <body className="site-shell">[m
+[32m+[m[32m        <a href="#main-content" className="skip-link">Sari la conținutul principal</a>[m
+         <Navbar />[m
+[31m-        <main>{children}</main>[m
+[32m+[m[32m        <main id="main-content" tabIndex={-1}>{children}</main>[m
+         <Footer />[m
+[32m+[m[32m        <GiuvaAiWidget />[m
+       </body>[m
+     </html>[m
+   );[m
+ }[m
+[41m+[m
+[1mdiff --git a/app/news/[slug]/page.tsx b/app/news/[slug]/page.tsx[m
+[1mindex b251d3ac..eba52f71 100644[m
+[1m--- a/app/news/[slug]/page.tsx[m
+[1m+++ b/app/news/[slug]/page.tsx[m
+[36m@@ -1,8 +1,10 @@[m
+ ﻿import type { Metadata } from "next";[m
+[32m+[m[32mimport Image from "next/image";[m
+ import Link from "next/link";[m
+ import { notFound } from "next/navigation";[m
+[32m+[m[32mimport { Breadcrumbs } from "@/components/portal/Breadcrumbs";[m
+ import { PageHero } from "@/components/PageHero";[m
+[31m-import { news } from "@/data/site";[m
+[32m+[m[32mimport { newsCenter } from "@/data/site";[m
+ [m
+ type Props = {[m
+   params: Promise<{ slug: string }>;[m
+[36m@@ -10,16 +12,16 @@[m [mtype Props = {[m
+ [m
+ export async function generateMetadata({ params }: Props): Promise<Metadata> {[m
+   const { slug } = await params;[m
+[31m-  const article = news.find((item) => item.slug === slug);[m
+[32m+[m[32m  const article = newsCenter.find((item) => item.slug === slug);[m
+   return {[m
+[31m-    title: article ? article.title : "Noutati",[m
+[32m+[m[32m    title: article ? article.title : "Noutăți",[m
+     description: article?.excerpt[m
+   };[m
+ }[m
+ [m
+ export default async function NewsDetailPage({ params }: Props) {[m
+   const { slug } = await params;[m
+[31m-  const article = news.find((item) => item.slug === slug);[m
+[32m+[m[32m  const article = newsCenter.find((item) => item.slug === slug);[m
+ [m
+   if (!article) {[m
+     notFound();[m
+[36m@@ -27,19 +29,28 @@[m [mexport default async function NewsDetailPage({ params }: Props) {[m
+ [m
+   return ([m
+     <>[m
+[32m+[m[32m      <Breadcrumbs items={[{ label: "News Center", href: "/news" }, { label: article.title }]} />[m
+       <PageHero eyebrow={article.category} title={article.title} text={article.excerpt} />[m
+       <section className="px-5 pb-20">[m
+[31m-        <article className="card mx-auto max-w-4xl p-8">[m
+[31m-          <p className="text-sm font-black uppercase tracking-[0.12em] text-[#16825d]">{article.date}</p>[m
+[31m-          <p className="mt-6 text-lg leading-8 text-slate-600">[m
+[31m-            Aceasta actualizare publica descrie stadiul de dezvoltare GIUVA Romania si va fi completata gradual cu informatii validate, comunicate oficiale si rezultate documentate.[m
+[31m-          </p>[m
+[31m-          <p className="mt-4 text-lg leading-8 text-slate-600">[m
+[31m-            GIUVA Romania ramane un proiect civic in dezvoltare, cu rol educativ, comunitar si complementar institutional.[m
+[31m-          </p>[m
+[31m-          <Link href="/news" className="btn btn-ghost mt-8">[m
+[31m-            Inapoi la noutati[m
+[31m-          </Link>[m
+[32m+[m[32m        <article className="card mx-auto max-w-5xl overflow-hidden">[m
+[32m+[m[32m          <div className="relative aspect-[16/7] bg-slate-100">[m
+[32m+[m[32m            <Image src={article.image} alt={article.title} fill sizes="(min-width: 1024px) 900px, calc(100vw - 40px)" className="object-cover" />[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div className="p-8">[m
+[32m+[m[32m            <p className="text-sm font-black uppercase tracking-[0.12em] text-[#16825d]">[m
+[32m+[m[32m              {article.date} · {article.country} · {article.discipline} · {article.author}[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <div className="mt-4 flex flex-wrap gap-2">[m
+[32m+[m[32m              {article.tags.map((tag) => <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-600">{tag}</span>)}[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <p className="mt-6 text-lg leading-8 text-slate-600">[m
+[32m+[m[32m              Această actualizare publică descrie stadiul de dezvoltare GIUVA Romania și va fi completată gradual cu informații validate, comunicate oficiale și rezultate documentate.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <p className="mt-4 text-lg leading-8 text-slate-600">[m
+[32m+[m[32m              GIUVA Romania rămâne un proiect civic în dezvoltare, cu rol educativ, comunitar și complementar instituțional.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <Link href="/news" className="btn btn-ghost mt-8">Înapoi la News Center</Link>[m
+[32m+[m[32m          </div>[m
+         </article>[m
+       </section>[m
+     </>[m
+[1mdiff --git a/app/news/page.tsx b/app/news/page.tsx[m
+[1mindex 17e93c13..a2c93bab 100644[m
+[1m--- a/app/news/page.tsx[m
+[1m+++ b/app/news/page.tsx[m
+[36m@@ -1,39 +1,33 @@[m
+ ﻿import type { Metadata } from "next";[m
+[31m-import Link from "next/link";[m
+[31m-import { ArrowRight } from "lucide-react";[m
+[32m+[m[32mimport { Breadcrumbs } from "@/components/portal/Breadcrumbs";[m
+[32m+[m[32mimport { NewsCard } from "@/components/portal/Cards";[m
+[32m+[m[32mimport { SearchBox } from "@/components/portal/SearchBox";[m
+ import { PageHero } from "@/components/PageHero";[m
+[31m-import { news } from "@/data/site";[m
+[32m+[m[32mimport { newsCenter, portalSearchItems } from "@/data/site";[m
+ [m
+ export const metadata: Metadata = {[m
+[31m-  title: "Noutăți",[m
+[31m-  description: "Noutăți și actualizări GIUVA Romania."[m
+[32m+[m[32m  title: "News Center",[m
+[32m+[m[32m  description: "Noutăți și actualizări GIUVA Romania cu categorie, disciplină, țară, autor, taguri și imagine."[m
+ };[m
+ [m
+ export default function NewsPage() {[m
+   return ([m
+     <>[m
+[32m+[m[32m      <Breadcrumbs items={[{ label: "News Center" }]} />[m
+       <PageHero[m
+[31m-        eyebrow="Noutăți"[m
+[31m-        title="Actualizări din proiectul GIUVA Romania."[m
+[31m-        text="Secțiune editorială pregătită pentru comunicare publică, proiecte pilot, community, voluntariat și dezvoltare europeană."[m
+[32m+[m[32m        eyebrow="News Center"[m
+[32m+[m[32m        title="Actualizări publice, documentate și ușor de urmărit."[m
+[32m+[m[32m        text="News Center este pregătit pentru comunicare publică instituțională, proiecte pilot, community, voluntariat, academy și dezvoltare europeană."[m
+[32m+[m[32m        actions={[{ href: "/events", label: "Events" }, { href: "/publicatii", label: "Publicații", tone: "ghost" }]}[m
+       />[m
+       <section className="px-5 pb-20">[m
+[31m-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">[m
+[31m-          {news.map((article) => ([m
+[31m-            <article key={article.slug} className="card flex h-full flex-col p-6">[m
+[31m-              <p className="text-sm font-black uppercase tracking-[0.12em] text-[#16825d]">{article.category}</p>[m
+[31m-              <h2 className="mt-4 text-2xl font-black text-[#081f3a]">{article.title}</h2>[m
+[31m-              <p className="mt-2 text-sm font-semibold text-slate-500">{article.date}</p>[m
+[31m-              <p className="mt-4 flex-1 leading-7 text-slate-600">{article.excerpt}</p>[m
+[31m-              <Link href={`/news/${article.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#16825d]">[m
+[31m-                Citește actualizarea[m
+[31m-                <ArrowRight size={16} />[m
+[31m-              </Link>[m
+[31m-            </article>[m
+[31m-          ))}[m
+[32m+[m[32m        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">[m
+[32m+[m[32m          <SearchBox items={portalSearchItems} label="Caută în News Center" />[m
+[32m+[m[32m          <div className="grid gap-5 md:grid-cols-2">[m
+[32m+[m[32m            {newsCenter.map((article) => <NewsCard key={article.slug} article={article} />)}[m
+[32m+[m[32m          </div>[m
+         </div>[m
+       </section>[m
+     </>[m
+   );[m
+ }[m
+[31m-[m
+[1mdiff --git a/app/page.tsx b/app/page.tsx[m
+[1mindex 25648ad1..bd16b14b 100644[m
+[1m--- a/app/page.tsx[m
+[1m+++ b/app/page.tsx[m
+[36m@@ -1,17 +1,16 @@[m
+[31m-import Image from "next/image";[m
+[32m+[m[32m﻿import Image from "next/image";[m
+ import Link from "next/link";[m
+ import { headers } from "next/headers";[m
+[31m-import { ArrowRight, CheckCircle2, Facebook, Globe2, Linkedin } from "lucide-react";[m
+[31m-import {[m
+[31m-  brand,[m
+[31m-  ctas,[m
+[31m-  associationFacts,[m
+[31m-  giuvaToday,[m
+[31m-  giuvaTomorrow,[m
+[31m-  disciplines,[m
+[31m-  europeanNetwork,[m
+[31m-  socialLinks,[m
+[31m-} from "@/data/site";[m
+[32m+[m[32mimport { ArrowRight, CheckCircle2, FileText, Globe2, ShieldCheck } from "lucide-react";[m
+[32m+[m[32mimport { MissionPrinciples } from "@/components/MissionPrinciples";[m
+[32m+[m[32mimport { PortalStats } from "@/components/PortalStats";[m
+[32m+[m[32mimport { ProgrammeCards } from "@/components/ProgrammeCards";[m
+[32m+[m[32mimport { SocialChannels } from "@/components/SocialChannels";[m
+[32m+[m[32mimport { NewsletterBox } from "@/components/portal/NewsletterBox";[m
+[32m+[m[32mimport { SearchBox } from "@/components/portal/SearchBox";[m
+[32m+[m[32mimport { Testimonials } from "@/components/portal/Testimonials";[m
+[32m+[m[32mimport { TrustIndicators } from "@/components/portal/TrustIndicators";[m
+[32m+[m[32mimport { associationFacts, brand, ctas, europeanNetwork, giuvaToday, giuvaTomorrow, portalSearchItems } from "@/data/site";[m
+ import { getSiteByHost } from "@/lib/siteByHost";[m
+ [m
+ export default async function HomePage() {[m
+[36m@@ -20,64 +19,82 @@[m [mexport default async function HomePage() {[m
+ [m
+   return ([m
+     <>[m
+[31m-      <section className="home-hero px-5 pb-14 pt-28 md:pb-20 md:pt-36">[m
+[31m-        <div className="mx-auto max-w-[1500px]">[m
+[31m-          <div className="mx-auto max-w-5xl text-center">[m
+[31m-            <span className="eyebrow">{site.eyebrow}</span>[m
+[31m-            <h1 className="mt-5 text-5xl font-black leading-tight tracking-tight text-[#081f3a] md:text-7xl">[m
+[31m-              {site.title}[m
+[31m-            </h1>[m
+[31m-            <p className="mt-4 text-xl font-black uppercase tracking-[0.12em] text-[#16825d]">{brand.fullName}</p>[m
+[31m-            <p className="mx-auto mt-5 max-w-3xl text-2xl font-black leading-tight text-[#081f3a] md:text-4xl">[m
+[31m-              {brand.claim}[m
+[31m-            </p>[m
+[31m-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">{site.description}</p>[m
+[31m-[m
+[31m-            <div className="mt-8 flex flex-col items-center justify-center gap-3">[m
+[31m-              <Link href={ctas.volunteer.href} className="btn btn-primary hero-primary-cta">[m
+[31m-                {ctas.volunteer.label}[m
+[31m-                <ArrowRight size={19} />[m
+[31m-              </Link>[m
+[31m-              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">[m
+[31m-                <Link href={ctas.chapter.href} className="btn btn-blue">[m
+[31m-                  {ctas.chapter.label}[m
+[31m-                </Link>[m
+[31m-                <Link href={ctas.secretariat.href} className="btn btn-ghost">[m
+[31m-                  {ctas.secretariat.label}[m
+[31m-                </Link>[m
+[31m-              </div>[m
+[32m+[m[32m      <section className="portal-hero relative min-h-[86vh] overflow-hidden bg-[#081f3a] px-5 pb-12 pt-28 text-white md:pt-36">[m
+[32m+[m[32m        <Image src="/brand/giuva-romania-disciplines-flag.webp" alt="GIUVA Romania, voluntari, comunitate, România și Europa" fill priority sizes="100vw" className="object-cover" />[m
+[32m+[m[32m        <div className="absolute inset-0 bg-gradient-to-r from-[#081f3a]/92 via-[#081f3a]/64 to-[#081f3a]/10" />[m
+[32m+[m[32m        <div className="relative mx-auto grid max-w-[1500px] items-end gap-10 lg:grid-cols-[0.78fr_0.22fr]">[m
+[32m+[m[32m          <div className="max-w-4xl py-10 md:py-16">[m
+[32m+[m[32m            <span className="inline-flex rounded-full bg-white/12 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-white backdrop-blur">{site.eyebrow}</span>[m
+[32m+[m[32m            <h1 className="mt-6 text-5xl font-black leading-[0.98] tracking-tight md:text-7xl xl:text-8xl">{site.title}</h1>[m
+[32m+[m[32m            <p className="mt-5 max-w-4xl break-words text-base font-black uppercase tracking-[0.08em] text-[#7ed6b4] sm:text-xl md:text-2xl md:tracking-[0.12em]">{brand.fullName}</p>[m
+[32m+[m[32m            <p className="mt-6 max-w-3xl text-3xl font-black leading-tight md:text-5xl">{brand.claim}</p>[m
+[32m+[m[32m            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/88 md:text-xl">{site.description}</p>[m
+[32m+[m[32m            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">[m
+[32m+[m[32m              <Link href={ctas.volunteer.href} className="btn btn-primary hero-primary-cta">{ctas.volunteer.label}<ArrowRight size={19} aria-hidden="true" /></Link>[m
+[32m+[m[32m              <Link href={ctas.chapter.href} className="btn btn-blue">{ctas.chapter.label}</Link>[m
+[32m+[m[32m              <Link href={ctas.partner.href} className="btn bg-white text-[#081f3a]">Parteneriate instituționale</Link>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">[m
+[32m+[m[32m              {["Civic", "European", "Complementar instituțional"].map((item) => ([m
+[32m+[m[32m                <span key={item} className="rounded-xl border border-white/18 bg-white/10 p-4 text-sm font-black uppercase tracking-[0.12em] backdrop-blur">{item}</span>[m
+[32m+[m[32m              ))}[m
+             </div>[m
+           </div>[m
+[32m+[m[32m          <aside className="rounded-2xl border border-white/18 bg-white/12 p-5 shadow-2xl backdrop-blur-md" aria-labelledby="home-ai-title">[m
+[32m+[m[32m            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#ffd84d]">GIUVA AI</p>[m
+[32m+[m[32m            <h2 id="home-ai-title" className="mt-2 text-2xl font-black">Asistent virtual</h2>[m
+[32m+[m[32m            <p className="mt-3 text-sm leading-6 text-white/86">Vizibil pe tot site-ul. Ghidează către voluntariat, sedii, parteneriate, media, academy, funding, Europa și FAQ.</p>[m
+[32m+[m[32m            <Link href="/giuva-ai" className="btn mt-5 w-full bg-white text-[#081f3a]">Vezi GIUVA AI</Link>[m
+[32m+[m[32m          </aside>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </section>[m
+ [m
+[31m-          <figure className="hero-photo-panel mt-12">[m
+[31m-            <Image src="/brand/giuva-romania-disciplines-flag.webp" alt={site.title} width={1536} height={1024} priority sizes="(min-width: 1500px) 1500px, calc(100vw - 40px)" />[m
+[31m-          </figure>[m
+[32m+[m[32m      <section className="bg-white px-5 py-16">[m
+[32m+[m[32m        <div className="mx-auto max-w-7xl">[m
+[32m+[m[32m          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">[m
+[32m+[m[32m            {associationFacts.map((fact) => ([m
+[32m+[m[32m              <article key={fact.title} className="card interactive-card flex min-h-56 flex-col justify-between p-6">[m
+[32m+[m[32m                <span className="eyebrow self-start">{fact.title}</span>[m
+[32m+[m[32m                <p className="mt-5 text-lg font-bold leading-8 text-slate-700">{fact.text}</p>[m
+[32m+[m[32m              </article>[m
+[32m+[m[32m            ))}[m
+[32m+[m[32m          </div>[m
+         </div>[m
+       </section>[m
+ [m
+[32m+[m[32m      <MissionPrinciples />[m
+[32m+[m[32m      <PortalStats />[m
+[32m+[m
+       <section className="bg-white px-5 py-16">[m
+[31m-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">[m
+[31m-          {associationFacts.map((fact) => ([m
+[31m-            <article key={fact.title} className="card interactive-card flex min-h-56 flex-col justify-between p-6">[m
+[31m-              <span className="eyebrow">{fact.title}</span>[m
+[31m-              <p className="mt-5 text-lg font-bold leading-8 text-slate-700">{fact.text}</p>[m
+[31m-            </article>[m
+[31m-          ))}[m
+[32m+[m[32m        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.86fr_1.14fr]">[m
+[32m+[m[32m          <SearchBox items={portalSearchItems} />[m
+[32m+[m[32m          <TrustIndicators compact />[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </section>[m
+[32m+[m
+[32m+[m[32m      <section className="bg-white px-5 py-20">[m
+[32m+[m[32m        <div className="mx-auto max-w-7xl">[m
+[32m+[m[32m          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">[m
+[32m+[m[32m            <div className="max-w-4xl">[m
+[32m+[m[32m              <span className="eyebrow">Programmes</span>[m
+[32m+[m[32m              <h2 className="section-title mt-5">Discipline GIUVA, fiecare cu identitate și pagină dedicată.</h2>[m
+[32m+[m[32m              <p className="section-text">Fiecare program explică misiunea, activitățile, documentele, FAQ și modul de participare.</p>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <Link href="/discipline" className="btn btn-ghost self-start lg:self-end">Toate disciplinele<ArrowRight size={17} aria-hidden="true" /></Link>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div className="mt-10"><ProgrammeCards limit={6} /></div>[m
+         </div>[m
+       </section>[m
+ [m
+[31m-      <section className="bg-[#f6f8fb] px-5 py-16">[m
+[32m+[m[32m      <section className="bg-[#f6f8fb] px-5 py-20">[m
+         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-2">[m
+[31m-          {[[m
+[31m-            { title: site.today, items: giuvaToday },[m
+[31m-            { title: site.tomorrow, items: giuvaTomorrow },[m
+[31m-          ].map((block) => ([m
+[32m+[m[32m          {[{ title: site.today, items: giuvaToday }, { title: site.tomorrow, items: giuvaTomorrow }].map((block) => ([m
+             <article key={block.title} className="card p-7 md:p-8">[m
+               <h2 className="text-3xl font-black text-[#081f3a]">{block.title}</h2>[m
+               <div className="mt-6 grid gap-3">[m
+                 {block.items.map((item) => ([m
+                   <p key={item} className="flex gap-3 text-slate-700">[m
+[31m-                    <CheckCircle2 className="mt-0.5 shrink-0 text-[#16825d]" size={20} />[m
+[32m+[m[32m                    <CheckCircle2 className="mt-0.5 shrink-0 text-[#16825d]" size={20} aria-hidden="true" />[m
+                     <span className="font-semibold leading-7">{item}</span>[m
+                   </p>[m
+                 ))}[m
+[36m@@ -88,69 +105,49 @@[m [mexport default async function HomePage() {[m
+       </section>[m
+ [m
+       <section className="bg-white px-5 py-20">[m
+[31m-        <div className="mx-auto max-w-7xl">[m
+[31m-          <div className="max-w-4xl">[m
+[31m-            <span className="eyebrow">{site.disciplinesEyebrow}</span>[m
+[31m-            <h2 className="section-title mt-5">{site.sectionTitle}</h2>[m
+[31m-            <p className="section-text">{site.disciplinesText}</p>[m
+[32m+[m[32m        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.82fr_1.18fr]">[m
+[32m+[m[32m          <div>[m
+[32m+[m[32m            <span className="eyebrow">GIUVA Network</span>[m
+[32m+[m[32m            <h2 className="section-title mt-5">România ca punct de pornire pentru o rețea europeană.</h2>[m
+[32m+[m[32m            <p className="section-text">Fiecare țară are dezvoltare autonomă, fără parteneriate implicite și cu respectarea cadrului local.</p>[m
+[32m+[m[32m            <Link href="/giuva-network" className="btn btn-primary mt-7">Vezi rețeaua europeană</Link>[m
+           </div>[m
+[31m-[m
+[31m-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">[m
+[31m-            {disciplines.map((discipline) => {[m
+[31m-              const Icon = discipline.icon;[m
+[31m-              return ([m
+[31m-                <article key={discipline.name} className="card interactive-card discipline-card flex h-full flex-col p-6">[m
+[31m-                  <div className={`flex h-14 w-14 items-center justify-center rounded-xl ${discipline.accent} text-white shadow-sm`}>[m
+[31m-                    <Icon size={27} />[m
+[31m-                  </div>[m
+[31m-                  <h2 className="mt-7 text-2xl font-black leading-tight text-[#081f3a]">{discipline.name}</h2>[m
+[31m-                  <p className="mt-4 flex-1 text-base leading-7 text-slate-600">{discipline.description}</p>[m
+[31m-                </article>[m
+[31m-              );[m
+[31m-            })}[m
+[32m+[m[32m          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">[m
+[32m+[m[32m            {europeanNetwork.map((item) => ([m
+[32m+[m[32m              <a key={item.domain} href={item.href} className="card interactive-card p-5">[m
+[32m+[m[32m                <Globe2 className="text-[#1f5fbf]" size={28} aria-hidden="true" />[m
+[32m+[m[32m                <h3 className="mt-4 text-2xl font-black text-[#081f3a]">{item.label}</h3>[m
+[32m+[m[32m                <p className="mt-2 text-sm font-black uppercase tracking-[0.12em] text-[#16825d]">{item.status}</p>[m
+[32m+[m[32m                <p className="mt-3 text-sm leading-6 text-slate-600">{item.note}</p>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            ))}[m
+           </div>[m
+         </div>[m
+       </section>[m
+ [m
+[31m-      <section className="bg-[#f6f8fb] px-5 py-20">[m
+[31m-        <div className="mx-auto max-w-7xl">[m
+[31m-          <span className="eyebrow">GIUVA Europe</span>[m
+[31m-          <div className="mt-5 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">[m
+[31m-            <div>[m
+[31m-              <h2 className="section-title">GIUVA Europe</h2>[m
+[31m-              <p className="section-text text-2xl font-black text-[#16825d]">{site.europeText}</p>[m
+[31m-            </div>[m
+[31m-[m
+[31m-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">[m
+[31m-              {europeanNetwork.map((item) => ([m
+[31m-                <a key={item.domain} href={item.href} className="card interactive-card p-5">[m
+[31m-                  <Globe2 className="text-[#1f5fbf]" size={28} />[m
+[31m-                  <h3 className="mt-4 text-2xl font-black text-[#081f3a]">{item.label}</h3>[m
+[31m-                  <p className="mt-2 text-sm font-black uppercase tracking-[0.12em] text-[#16825d]">{item.status}</p>[m
+[31m-                </a>[m
+[31m-              ))}[m
+[31m-            </div>[m
+[31m-          </div>[m
+[32m+[m[32m      <section className="navy-band px-5 py-20">[m
+[32m+[m[32m        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">[m
+[32m+[m[32m          {[{ icon: ShieldCheck, title: "De ce fiducie", text: "Poziționare clară: GIUVA nu înlocuiește instituțiile statului și operează civic, educațional și comunitar." }, { icon: FileText, title: "Transparență", text: "Statut, Cod Etic, Privacy, Cookie, Governance și documente publice într-un hub dedicat." }, { icon: Globe2, title: "Resurse oficiale", text: "Linkuri către surse oficiale române, europene și internaționale, fără parteneriate implicite." }].map((item) => {[m
+[32m+[m[32m            const Icon = item.icon;[m
+[32m+[m[32m            return ([m
+[32m+[m[32m              <article key={item.title} className="rounded-2xl border border-white/15 bg-white/10 p-7 backdrop-blur">[m
+[32m+[m[32m                <Icon className="text-[#ffd84d]" size={30} aria-hidden="true" />[m
+[32m+[m[32m                <h2 className="mt-5 text-3xl font-black">{item.title}</h2>[m
+[32m+[m[32m                <p className="mt-4 leading-7 text-white/82">{item.text}</p>[m
+[32m+[m[32m              </article>[m
+[32m+[m[32m            );[m
+[32m+[m[32m          })}[m
+         </div>[m
+       </section>[m
+ [m
+[31m-      <section className="bg-white px-5 py-14">[m
+[31m-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 rounded-2xl border border-slate-200 bg-white p-7 text-center shadow-sm md:flex-row md:text-left">[m
+[31m-          <div>[m
+[31m-            <span className="eyebrow">Social</span>[m
+[31m-            <h2 className="mt-4 text-3xl font-black text-[#081f3a]">{site.socialTitle}</h2>[m
+[31m-          </div>[m
+[32m+[m[32m      <Testimonials />[m
+ [m
+[31m-          <div className="flex flex-wrap justify-center gap-3">[m
+[31m-            {socialLinks.map((link) => ([m
+[31m-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="btn btn-ghost">[m
+[31m-                {link.label === "LinkedIn" ? <Linkedin size={18} /> : <Facebook size={18} />}[m
+[31m-                {link.label}[m
+[31m-              </a>[m
+[31m-            ))}[m
+[31m-          </div>[m
+[31m-        </div>[m
+[32m+[m[32m      <section className="bg-white px-5 py-16">[m
+[32m+[m[32m        <div className="mx-auto max-w-3xl"><NewsletterBox /></div>[m
+       </section>[m
+[32m+[m
+[32m+[m[32m      <SocialChannels />[m
+     </>[m
+   );[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[41m+[m
+[1mdiff --git a/app/partner/page.tsx b/app/partner/page.tsx[m
+[1mindex e00c4b73..2cb97180 100644[m
+[1m--- a/app/partner/page.tsx[m
+[1m+++ b/app/partner/page.tsx[m
+[36m@@ -1,40 +1,32 @@[m
+[31m-import type { Metadata } from "next";[m
+[31m-import { Building2 } from "lucide-react";[m
+[32m+[m[32m﻿import type { Metadata } from "next";[m
+[32m+[m[32mimport { Breadcrumbs } from "@/components/portal/Breadcrumbs";[m
+[32m+[m[32mimport { PartnerCard } from "@/components/portal/Cards";[m
+[32m+[m[32mimport { EmptyState } from "@/components/portal/EmptyState";[m
+ import { PageHero } from "@/components/PageHero";[m
+[31m-import { brand, partnerAreas } from "@/data/site";[m
+[32m+[m[32mimport { brand, partnerProfiles } from "@/data/site";[m
+ [m
+ export const metadata: Metadata = {[m
+[31m-  title: "Parteneri & Sponsori",[m
+[31m-  description: "Parteneriate viitoare și cooperare responsabilă pentru GIUVA Romania."[m
+[32m+[m[32m  title: "Partners",[m
+[32m+[m[32m  description: "Parteneriate GIUVA Romania: institutional, academic, NGO, corporate, media și international, fără logouri terțe neoficiale."[m
+ };[m
+ [m
+ export default function PartnerPage() {[m
+   return ([m
+     <>[m
+[32m+[m[32m      <Breadcrumbs items={[{ label: "Partners" }]} />[m
+       <PageHero[m
+[31m-        eyebrow="Parteneri & Sponsori"[m
+[31m-        title="Cooperare prudentă, transparentă și formalizată."[m
+[31m-        text="GIUVA Romania poate discuta cu organizații, companii, fundații, școli și instituții, dar nu declară parteneriate active fără documente și acorduri explicite."[m
+[31m-        actions={[[m
+[31m-          { href: "/contact", label: "Propune un parteneriat" },[m
+[31m-          { href: "/sustine", label: "Susține un proiect", tone: "blue" },[m
+[31m-          { href: "/despre", label: "Citește poziționarea", tone: "ghost" }[m
+[31m-        ]}[m
+[32m+[m[32m        eyebrow="Partners"[m
+[32m+[m[32m        title="Parteneriate responsabile, transparente și formalizate."[m
+[32m+[m[32m        text="GIUVA Romania poate discuta cu organizații, companii, fundații, școli și instituții, dar nu declară parteneriate active fără documente și acorduri explicite. Nu afișăm logouri terțe fără aprobare oficială."[m
+[32m+[m[32m        actions={[{ href: "/contact", label: "Propune un parteneriat" }, { href: "/transparenta", label: "Principii publice", tone: "ghost" }]}[m
+       />[m
+       <section className="px-5 pb-12">[m
+[31m-        <div className="mx-auto max-w-7xl rounded-md border-l-4 border-[#16825d] bg-white p-6 text-lg font-bold leading-8 text-slate-700 shadow-sm">[m
+[31m-          {brand.legalBoundary}[m
+[31m-        </div>[m
+[32m+[m[32m        <div className="mx-auto max-w-7xl rounded-md border-l-4 border-[#16825d] bg-white p-6 text-lg font-bold leading-8 text-slate-700 shadow-sm">{brand.legalBoundary}</div>[m
+       </section>[m
+       <section className="px-5 pb-20">[m
+         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-3">[m
+[31m-          {partnerAreas.map((area) => ([m
+[31m-            <article key={area} className="card p-6">[m
+[31m-              <Building2 className="text-[#16825d]" size={34} />[m
+[31m-              <h2 className="mt-5 text-2xl font-black text-[#081f3a]">{area}</h2>[m
+[31m-              <p className="mt-4 leading-7 text-slate-600">Zonă pregătită pentru criterii, documente, responsabilități și acorduri viitoare.</p>[m
+[31m-            </article>[m
+[31m-          ))}[m
+[32m+[m[32m          {partnerProfiles.map((partner) => <PartnerCard key={partner.category} partner={partner} />)}[m
+[32m+[m[32m          <EmptyState title="Logouri parteneri" text="Logo-urile instituțiilor sau organizațiilor terțe vor fi afișate numai după acorduri oficiale și permisiuni explicite." href="/contact" action="Contact parteneriate" />[m
+         </div>[m
+       </section>[m
+     </>[m
+[1mdiff --git a/app/sitemap.ts b/app/sitemap.ts[m
+[1mindex b359f2c1..f7e088a6 100644[m
+[1m--- a/app/sitemap.ts[m
+[1m+++ b/app/sitemap.ts[m
+[36m@@ -1,5 +1,5 @@[m
+ ﻿import type { MetadataRoute } from "next";[m
+[31m-import { news } from "@/data/site";[m
+[32m+[m[32mimport { disciplines, newsCenter } from "@/data/site";[m
+ [m
+ const baseUrl = "https://www.giuva.ro";[m
+ [m
+[36m@@ -9,6 +9,15 @@[m [mconst staticRoutes = [[m
+   "/en",[m
+   "/despre",[m
+   "/discipline",[m
+[32m+[m[32m  "/giuva-ai",[m
+[32m+[m[32m  "/giuva-network",[m
+[32m+[m[32m  "/resurse-institutionale",[m
+[32m+[m[32m  "/transparenta",[m
+[32m+[m[32m  "/guvernanta",[m
+[32m+[m[32m  "/events",[m
+[32m+[m[32m  "/publicatii",[m
+[32m+[m[32m  "/download-center",[m
+[32m+[m[32m  "/faq",[m
+   "/riders-rescue",[m
+   "/community",[m
+   "/journey",[m
+[36m@@ -26,12 +35,13 @@[m [mconst staticRoutes = [[m
+ [m
+ export default function sitemap(): MetadataRoute.Sitemap {[m
+   const lastModified = new Date();[m
+[31m-  const newsRoutes = news.map((article) => `/news/${article.slug}`);[m
+[32m+[m[32m  const newsRoutes = newsCenter.map((article) => `/news/${article.slug}`);[m
+[32m+[m[32m  const disciplineRoutes = disciplines.map((discipline) => `/discipline/${discipline.slug}`);[m
+ [m
+[31m-  return [...staticRoutes, ...newsRoutes].map((route) => ({[m
+[32m+[m[32m  return [...staticRoutes, ...disciplineRoutes, ...newsRoutes].map((route) => ({[m
+     url: `${baseUrl}${route}`,[m
+     lastModified,[m
+     changeFrequency: route === "" ? "weekly" : "monthly",[m
+[31m-    priority: route === "" ? 1 : 0.7[m
+[32m+[m[32m    priority: route === "" ? 1 : route.startsWith("/discipline/") ? 0.75 : 0.7[m
+   }));[m
+ }[m
+[1mdiff --git a/components/DisciplineCards.tsx b/components/DisciplineCards.tsx[m
+[1mindex f0a749d9..522f7316 100644[m
+[1m--- a/components/DisciplineCards.tsx[m
+[1m+++ b/components/DisciplineCards.tsx[m
+[36m@@ -1,36 +1,5 @@[m
+[31m-import Link from "next/link";[m
+[31m-import { ArrowRight } from "lucide-react";[m
+[31m-import { disciplines } from "@/data/site";[m
+[32m+[m[32m﻿import { ProgrammeCards } from "@/components/ProgrammeCards";[m
+ [m
+[31m-export function DisciplineCards({ compact = false }: { compact?: boolean }) {[m
+[31m-  const visible = compact ? disciplines.slice(0, 9) : disciplines;[m
+[31m-[m
+[31m-  return ([m
+[31m-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">[m
+[31m-      {visible.map((discipline) => {[m
+[31m-        const Icon = discipline.icon;[m
+[31m-        return ([m
+[31m-          <article key={discipline.slug} className="card interactive-card discipline-card flex h-full flex-col p-6">[m
+[31m-            <div className="flex items-start justify-between gap-4">[m
+[31m-              <div className={`flex h-14 w-14 items-center justify-center rounded-xl ${discipline.accent} text-white shadow-sm`}>[m
+[31m-                <Icon size={27} />[m
+[31m-              </div>[m
+[31m-              <span className="status-pill">in dezvoltare</span>[m
+[31m-            </div>[m
+[31m-            <h2 className="mt-7 text-2xl font-black leading-tight text-[#081f3a]">{discipline.name}</h2>[m
+[31m-            <p className="mt-4 flex-1 text-base leading-7 text-slate-600">{discipline.description}</p>[m
+[31m-            <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">[m
+[31m-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black uppercase tracking-[0.1em] text-slate-600">[m
+[31m-                {discipline.color}[m
+[31m-              </span>[m
+[31m-              <Link href={discipline.slug === "riders-rescue" ? "/riders-rescue" : "/discipline"} className="inline-flex items-center gap-2 text-sm font-black text-[#16825d]">[m
+[31m-                Afla mai multe[m
+[31m-                <ArrowRight size={16} />[m
+[31m-              </Link>[m
+[31m-            </div>[m
+[31m-          </article>[m
+[31m-        );[m
+[31m-      })}[m
+[31m-    </div>[m
+[31m-  );[m
+[32m+[m[32mexport function DisciplineCards() {[m
+[32m+[m[32m  return <ProgrammeCards />;[m
+ }[m
+[1mdiff --git a/components/Footer.tsx b/components/Footer.tsx[m
+[1mindex e5a3296e..b4671a01 100644[m
+[1m--- a/components/Footer.tsx[m
+[1m+++ b/components/Footer.tsx[m
+[36m@@ -1,16 +1,51 @@[m
+[31m-import Link from "next/link";[m
+[31m-import { Facebook, Linkedin } from "lucide-react";[m
+[31m-import { brand, contactEmails, europeanNetwork, navItems, socialLinks } from "@/data/site";[m
+[32m+[m[32m﻿import Link from "next/link";[m
+[32m+[m[32mimport { Facebook, Linkedin, Mail } from "lucide-react";[m
+[32m+[m[32mimport { brand, contactEmails, europeanNetwork, socialLinks } from "@/data/site";[m
+ [m
+[31m-export function Footer() {[m
+[31m-  const footerNetworkOrder = ["GIUVA Europe", "GIUVA Italia", "GIUVA Austria", "GIUVA Spania", "GIUVA Ungaria"];[m
+[31m-  const footerNetwork = footerNetworkOrder[m
+[31m-    .map((label) => europeanNetwork.find((item) => item.label === label))[m
+[31m-    .filter(Boolean) as typeof europeanNetwork;[m
+[32m+[m[32mconst footerGroups = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Mission",[m
+[32m+[m[32m    links: [[m
+[32m+[m[32m      { label: "Despre GIUVA", href: "/despre" },[m
+[32m+[m[32m      { label: "Discipline", href: "/discipline" },[m
+[32m+[m[32m      { label: "Voluntari", href: "/voluntari" },[m
+[32m+[m[32m      { label: "Parteneriate", href: "/partner" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Portal",[m
+[32m+[m[32m    links: [[m
+[32m+[m[32m      { label: "News Center", href: "/news" },[m
+[32m+[m[32m      { label: "Events", href: "/events" },[m
+[32m+[m[32m      { label: "Publicații", href: "/publicatii" },[m
+[32m+[m[32m      { label: "Download Center", href: "/download-center" },[m
+[32m+[m[32m      { label: "FAQ Center", href: "/faq" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Transparență",[m
+[32m+[m[32m    links: [[m
+[32m+[m[32m      { label: "Transparență", href: "/transparenta" },[m
+[32m+[m[32m      { label: "Guvernanță", href: "/guvernanta" },[m
+[32m+[m[32m      { label: "Privacy", href: "/privacy-policy" },[m
+[32m+[m[32m      { label: "Cookie Policy", href: "/cookie-policy" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Normativ & Resurse",[m
+[32m+[m[32m    links: [[m
+[32m+[m[32m      { label: "Resurse instituționale", href: "/resurse-institutionale" },[m
+[32m+[m[32m      { label: "GIUVA AI", href: "/giuva-ai" },[m
+[32m+[m[32m      { label: "Rețea europeană", href: "/giuva-network" },[m
+[32m+[m[32m      { label: "Contact", href: "/contact" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  }[m
+[32m+[m[32m];[m
+ [m
+[32m+[m[32mexport function Footer() {[m
+   return ([m
+     <footer className="border-t border-slate-200 bg-white px-5 py-14">[m
+[31m-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_1.1fr_0.9fr]">[m
+[32m+[m[32m      <div className="mx-auto grid max-w-7xl gap-10 xl:grid-cols-[1fr_1.55fr_0.85fr]">[m
+         <div>[m
+           <div className="flex items-center gap-4">[m
+             <span className="flex h-14 items-center rounded-xl bg-[#081f3a] px-2">[m
+[36m@@ -21,73 +56,60 @@[m [mexport function Footer() {[m
+               <p className="mt-1 text-xs font-black uppercase tracking-[0.12em] text-[#16825d]">{brand.fullName}</p>[m
+             </div>[m
+           </div>[m
+[31m-          <p className="mt-7 text-2xl font-black leading-tight text-[#081f3a]">[m
+[31m-            Connecting Communities.[m
+[31m-            <br />[m
+[31m-            Creating Impact.[m
+[31m-          </p>[m
+[32m+[m[32m          <p className="mt-7 text-2xl font-black leading-tight text-[#081f3a]">Connecting Communities.<br />Creating Impact.</p>[m
+           <p className="mt-5 max-w-md leading-7 text-slate-600">{brand.description}</p>[m
+[31m-          <p className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-600">[m
+[31m-            {brand.legalBoundary}[m
+[31m-          </p>[m
+[32m+[m[32m          <p className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-600">{brand.legalBoundary}</p>[m
+         </div>[m
+ [m
+[31m-        <div className="grid gap-8 sm:grid-cols-2">[m
+[31m-          <div>[m
+[31m-            <h2 className="text-sm font-black uppercase tracking-[0.14em] text-[#1f5fbf]">Navigare</h2>[m
+[31m-            <div className="mt-4 grid gap-2">[m
+[31m-              {navItems.map((item) => ([m
+[31m-                <Link key={item.href} href={item.href} className="text-sm font-semibold text-slate-600 hover:text-[#081f3a]">[m
+[31m-                  {item.label}[m
+[31m-                </Link>[m
+[31m-              ))}[m
+[31m-            </div>[m
+[31m-          </div>[m
+[31m-          <div>[m
+[31m-            <h2 className="text-sm font-black uppercase tracking-[0.14em] text-[#1f5fbf]">GIUVA Europe</h2>[m
+[31m-            <div className="mt-4 grid gap-2">[m
+[31m-              {footerNetwork.map((item) => ([m
+[31m-                <a key={item.domain} href={item.href} className="text-sm font-semibold text-slate-600 hover:text-[#081f3a]">[m
+[31m-                  {item.label}[m
+[31m-                </a>[m
+[31m-              ))}[m
+[32m+[m[32m        <nav className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" aria-label="Footer navigation">[m
+[32m+[m[32m          {footerGroups.map((group) => ([m
+[32m+[m[32m            <div key={group.title}>[m
+[32m+[m[32m              <h2 className="text-sm font-black uppercase tracking-[0.14em] text-[#1f5fbf]">{group.title}</h2>[m
+[32m+[m[32m              <div className="mt-4 grid gap-2">[m
+[32m+[m[32m                {group.links.map((item) => ([m
+[32m+[m[32m                  <Link key={item.href} href={item.href} className="text-sm font-semibold text-slate-600 hover:text-[#081f3a]">[m
+[32m+[m[32m                    {item.label}[m
+[32m+[m[32m                  </Link>[m
+[32m+[m[32m                ))}[m
+[32m+[m[32m              </div>[m
+             </div>[m
+[31m-          </div>[m
+[31m-        </div>[m
+[32m+[m[32m          ))}[m
+[32m+[m[32m        </nav>[m
+ [m
+         <div>[m
+[31m-          <h2 className="text-sm font-black uppercase tracking-[0.14em] text-[#1f5fbf]">Secretariat</h2>[m
+[32m+[m[32m          <h2 className="text-sm font-black uppercase tracking-[0.14em] text-[#1f5fbf]">Contact & Newsletter</h2>[m
+           <div className="mt-4 grid gap-2">[m
+             {contactEmails.map((email) => ([m
+[31m-              <a key={email.value} href={`mailto:${email.value}`} className="text-sm font-semibold text-slate-600 hover:text-[#081f3a]">[m
+[32m+[m[32m              <a key={email.value} href={`mailto:${email.value}`} className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#081f3a]">[m
+[32m+[m[32m                <Mail size={15} aria-hidden="true" />[m
+                 {email.value}[m
+               </a>[m
+             ))}[m
+           </div>[m
+[31m-          <div className="mt-6 flex flex-wrap gap-2">[m
+[32m+[m[32m          <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">[m
+[32m+[m[32m            <p className="text-sm font-black text-[#081f3a]">Newsletter</p>[m
+[32m+[m[32m            <p className="mt-2 text-sm leading-6 text-slate-600">Flux pregătit pentru integrare viitoare cu double opt-in.</p>[m
+[32m+[m[32m            <Link href="/contact" className="mt-3 inline-flex text-sm font-black text-[#16825d]">Contact Center</Link>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div className="mt-6 flex flex-wrap gap-2" aria-label="Canale sociale oficiale">[m
+             {socialLinks.map((item) => ([m
+[31m-              <a[m
+[31m-                key={item.href}[m
+[31m-                href={item.href}[m
+[31m-                target="_blank"[m
+[31m-                rel="noreferrer"[m
+[31m-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-xs font-black text-slate-700 transition hover:border-[#16825d] hover:text-[#16825d]"[m
+[31m-              >[m
+[31m-                {item.label === "LinkedIn" ? <Linkedin size={15} /> : <Facebook size={15} />}[m
+[32m+[m[32m              <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-xs font-black text-slate-700 transition hover:border-[#16825d] hover:text-[#16825d]">[m
+[32m+[m[32m                {item.label === "LinkedIn" ? <Linkedin size={15} aria-hidden="true" /> : <Facebook size={15} aria-hidden="true" />}[m
+                 {item.label}[m
+               </a>[m
+             ))}[m
+[31m-            {[[m
+[31m-              { label: "Privacy", href: "/privacy-policy" },[m
+[31m-              { label: "Cookie", href: "/cookie-policy" }[m
+[31m-            ].map((item) => ([m
+[31m-              <Link key={item.href} href={item.href} className="rounded-full border border-slate-200 px-3 py-2 text-xs font-bold text-slate-500 transition hover:border-[#16825d] hover:text-[#16825d]">[m
+[31m-                {item.label}[m
+[31m-              </Link>[m
+[31m-            ))}[m
+           </div>[m
+         </div>[m
+       </div>[m
+[32m+[m
+[32m+[m[32m      <div className="mx-auto mt-10 grid max-w-7xl gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 md:grid-cols-[1fr_auto]">[m
+[32m+[m[32m        <p>GIUVA Romania · Release 1.0 Quality Review · Version R1-005</p>[m
+[32m+[m[32m        <div className="flex flex-wrap gap-3">[m
+[32m+[m[32m          {europeanNetwork.slice(0, 5).map((item) => ([m
+[32m+[m[32m            <a key={item.domain} href={item.href} className="font-semibold hover:text-[#081f3a]">{item.label}</a>[m
+[32m+[m[32m          ))}[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </div>[m
+     </footer>[m
+   );[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[1mdiff --git a/components/MockForm.tsx b/components/MockForm.tsx[m
+[1mindex 6b563400..73c2c426 100644[m
+[1m--- a/components/MockForm.tsx[m
+[1m+++ b/components/MockForm.tsx[m
+[36m@@ -1,7 +1,7 @@[m
+ ﻿"use client";[m
+ [m
+ import type { FormEvent, ReactNode } from "react";[m
+[31m-import { useState } from "react";[m
+[32m+[m[32mimport { useId, useState } from "react";[m
+ import { formReadiness } from "@/data/site";[m
+ [m
+ type Field = {[m
+[36m@@ -16,7 +16,7 @@[m [mexport function MockForm({[m
+   children,[m
+   submitLabel,[m
+   successMessage,[m
+[31m-  errorMessage = "Verifica datele introduse si accepta consimtamantul privacy inainte de trimitere."[m
+[32m+[m[32m  errorMessage = "Verifică datele introduse și acceptă consimțământul privacy înainte de trimitere."[m
+ }: {[m
+   fields: Field[];[m
+   children?: ReactNode;[m
+[36m@@ -26,6 +26,8 @@[m [mexport function MockForm({[m
+ }) {[m
+   const [sent, setSent] = useState(false);[m
+   const [error, setError] = useState("");[m
+[32m+[m[32m  const helpId = useId();[m
+[32m+[m[32m  const statusId = useId();[m
+ [m
+   function handleSubmit(event: FormEvent<HTMLFormElement>) {[m
+     event.preventDefault();[m
+[36m@@ -50,33 +52,33 @@[m [mexport function MockForm({[m
+   }[m
+ [m
+   return ([m
+[31m-    <form onSubmit={handleSubmit} noValidate className="card grid gap-5 p-6 md:p-8">[m
+[31m-      <div className="rounded-md border border-slate-200 bg-slate-50 p-4 text-sm font-semibold leading-6 text-slate-700">[m
+[31m-        Acest formular este pregatit pentru integrare viitoare. In aceasta versiune publica, datele sunt validate local in browser si nu sunt trimise prin email sau salvate intr-o baza de date reala.[m
+[32m+[m[32m    <form onSubmit={handleSubmit} noValidate className="card grid gap-5 p-6 md:p-8" aria-describedby={`${helpId} ${statusId}`}>[m
+[32m+[m[32m      <div id={helpId} className="rounded-md border border-slate-200 bg-slate-50 p-4 text-sm font-semibold leading-6 text-slate-700">[m
+[32m+[m[32m        Acest formular este pregătit pentru integrare viitoare. În această versiune publică, datele sunt validate local în browser și nu sunt trimise prin email sau salvate într-o bază de date reală.[m
+       </div>[m
+       <div className="grid gap-5 md:grid-cols-2">[m
+         {fields.map((field) => ([m
+           <label key={field.name}>[m
+[31m-            <span className="field-label">{field.label}</span>[m
+[31m-            <input className="field" name={field.name} type={field.type} required={field.required} minLength={field.required ? 2 : undefined} />[m
+[32m+[m[32m            <span className="field-label">{field.label}{field.required ? <span aria-hidden="true"> *</span> : null}</span>[m
+[32m+[m[32m            <input className="field" name={field.name} type={field.type} required={field.required} minLength={field.required ? 2 : undefined} aria-required={field.required ? "true" : undefined} />[m
+           </label>[m
+         ))}[m
+       </div>[m
+       {children}[m
+       <label className="flex gap-3 text-sm font-semibold leading-6 text-slate-700">[m
+         <input name="privacy_consent" type="checkbox" required className="mt-1 h-4 w-4" />[m
+[31m-        Accept prelucrarea datelor pentru analiza solicitarii mele, conform viitoarei politici de confidentialitate GIUVA.[m
+[32m+[m[32m        Accept prelucrarea datelor pentru analiza solicitării mele, conform politicii de confidențialitate GIUVA.[m
+       </label>[m
+       <label className="flex gap-3 text-sm font-semibold leading-6 text-slate-700">[m
+         <input name="contact_consent" type="checkbox" required className="mt-1 h-4 w-4" />[m
+[31m-        Autorizez secretariatul GIUVA sa ma contacteze pentru acest mesaj dupa activarea fluxului oficial de comunicare.[m
+[32m+[m[32m        Autorizez secretariatul GIUVA să mă contacteze pentru acest mesaj după activarea fluxului oficial de comunicare.[m
+       </label>[m
+       <button type="submit" className="btn btn-primary justify-self-start">[m
+         {submitLabel}[m
+       </button>[m
+[31m-      {error ? <p aria-live="polite" className="rounded-md bg-red-50 p-4 font-bold text-red-800">{error}</p> : null}[m
+[31m-      {sent ? <p aria-live="polite" className="rounded-md bg-emerald-50 p-4 font-bold text-emerald-800">{successMessage}</p> : null}[m
+[31m-      <div className="rounded-md bg-slate-50 p-4 text-sm leading-6 text-slate-600">[m
+[32m+[m[32m      {error ? <p role="alert" className="rounded-md bg-red-50 p-4 font-bold text-red-800">{error}</p> : null}[m
+[32m+[m[32m      {sent ? <p role="status" className="rounded-md bg-emerald-50 p-4 font-bold text-emerald-800">{successMessage}</p> : null}[m
+[32m+[m[32m      <div id={statusId} className="rounded-md bg-slate-50 p-4 text-sm leading-6 text-slate-600">[m
+         <strong className="block text-slate-900">Stadiu formular</strong>[m
+         <ul className="mt-2 grid gap-1">[m
+           {formReadiness.map((item) => ([m
+[1mdiff --git a/components/Navbar.tsx b/components/Navbar.tsx[m
+[1mindex 4b2d64f8..cb8c3d32 100644[m
+[1m--- a/components/Navbar.tsx[m
+[1m+++ b/components/Navbar.tsx[m
+[36m@@ -1,82 +1,86 @@[m
+[32m+[m[32m﻿"use client";[m
+[32m+[m
+ import Link from "next/link";[m
+[32m+[m[32mimport { usePathname } from "next/navigation";[m
+ import { Facebook, Linkedin, Menu } from "lucide-react";[m
+ import { brand, ctas, navItems, socialLinks } from "@/data/site";[m
+ [m
+[31m-const primaryNav = navItems.filter((item) => ["/", "/despre", "/discipline", "/riders-rescue", "/community", "/partner"].includes(item.href));[m
+[32m+[m[32mconst primaryNav = navItems.filter((item) => ["/", "/despre", "/discipline", "/giuva-network", "/transparenta", "/resurse-institutionale", "/giuva-ai"].includes(item.href));[m
+[32m+[m
+[32m+[m[32mfunction isActive(pathname: string, href: string) {[m
+[32m+[m[32m  if (href === "/") return pathname === "/";[m
+[32m+[m[32m  return pathname === href || pathname.startsWith(`${href}/`);[m
+[32m+[m[32m}[m
+ [m
+ export function Navbar() {[m
+[32m+[m[32m  const pathname = usePathname();[m
+[32m+[m
+   return ([m
+     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/96 shadow-sm backdrop-blur-xl">[m
+[31m-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3">[m
+[31m-        <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="GIUVA Romania acasa">[m
+[31m-          <span className="flex h-12 shrink-0 items-center rounded-xl bg-[#081f3a] px-2 shadow-sm md:h-14">[m
+[31m-            <img src="/brand/giuva-logo.svg" alt="GIUVA - Global Initiative for Urban Volunteering & Awareness" className="h-9 w-auto md:h-10" />[m
+[32m+[m[32m      <nav className="mx-auto flex max-w-[1500px] items-center justify-between gap-3 px-4 py-3 md:gap-5 md:px-5" aria-label="Navigare principală">[m
+[32m+[m[32m        <Link href="/" className="flex max-w-[calc(100%-4rem)] min-w-0 items-center gap-2 rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[#ffd84d] md:gap-3 lg:max-w-none" aria-label="GIUVA Romania acasă">[m
+[32m+[m[32m          <span className="flex h-10 shrink-0 items-center rounded-xl bg-[#081f3a] px-2 shadow-sm md:h-14">[m
+[32m+[m[32m            <img src="/brand/giuva-logo.svg" alt="GIUVA - Global Initiative for Urban Volunteering & Awareness" className="h-7 w-auto md:h-10" />[m
+           </span>[m
+           <span className="min-w-0 leading-tight">[m
+[31m-            <span className="block text-lg font-black tracking-tight text-[#081f3a]">{brand.name}</span>[m
+[31m-            <span className="block max-w-[15rem] truncate text-[0.62rem] font-black uppercase tracking-[0.12em] text-[#16825d] xl:max-w-none">[m
+[32m+[m[32m            <span className="block text-base font-black tracking-tight text-[#081f3a] md:text-lg">{brand.name}</span>[m
+[32m+[m[32m            <span className="hidden text-[0.62rem] font-black uppercase tracking-[0.12em] text-[#16825d] sm:block md:text-[0.68rem]">[m
+               {brand.fullName}[m
+             </span>[m
+           </span>[m
+         </Link>[m
+ [m
+[31m-        <details className="group lg:hidden">[m
+[31m-          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white text-[#081f3a] shadow-sm">[m
+[31m-            <Menu size={22} />[m
+[32m+[m[32m        <details className="group mobile-menu ml-auto shrink-0">[m
+[32m+[m[32m          <summary className="fixed top-4 z-[60] flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white text-[#081f3a] shadow-sm" style={{ left: "min(calc(100vw - 3.75rem), 335px)" }} aria-label="Deschide meniul principal">[m
+[32m+[m[32m            <Menu size={22} aria-hidden="true" />[m
+           </summary>[m
+[31m-          <div className="absolute left-0 right-0 top-[73px] grid gap-1 border-b border-slate-200 bg-white px-5 py-4 shadow-xl">[m
+[31m-            <div className="mb-2 flex gap-2">[m
+[31m-              <Link href="/" className="rounded-full bg-[#081f3a] px-3 py-1 text-xs font-black text-white">[m
+[31m-                RO[m
+[31m-              </Link>[m
+[31m-              <Link href="/en" className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">[m
+[31m-                EN[m
+[31m-              </Link>[m
+[32m+[m[32m          <div className="absolute left-0 right-0 top-[73px] grid max-h-[calc(100vh-73px)] gap-1 overflow-y-auto border-b border-slate-200 bg-white px-5 py-4 shadow-xl">[m
+[32m+[m[32m            <div className="mb-2 flex gap-2" aria-label="Selectare limbă">[m
+[32m+[m[32m              <Link href="/" aria-current={pathname === "/" ? "page" : undefined} className="rounded-full bg-[#081f3a] px-3 py-1 text-xs font-black text-white">RO</Link>[m
+[32m+[m[32m              <Link href="/en" aria-current={pathname === "/en" ? "page" : undefined} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-700">EN</Link>[m
+             </div>[m
+[31m-            {navItems.map((item) => ([m
+[31m-              <Link key={item.href} href={item.href} className="rounded-lg px-3 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50">[m
+[31m-                {item.label}[m
+[31m-              </Link>[m
+[31m-            ))}[m
+[32m+[m[32m            {navItems.map((item) => {[m
+[32m+[m[32m              const active = isActive(pathname, item.href);[m
+[32m+[m[32m              return ([m
+[32m+[m[32m                <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined} className={`rounded-lg px-3 py-3 text-sm font-bold ${active ? "bg-[#081f3a] text-white" : "text-slate-700 hover:bg-slate-50"}`}>[m
+[32m+[m[32m                  {item.label}[m
+[32m+[m[32m                </Link>[m
+[32m+[m[32m              );[m
+[32m+[m[32m            })}[m
+           </div>[m
+         </details>[m
+ [m
+[31m-        <div className="hidden items-center gap-1 lg:flex">[m
+[31m-          {primaryNav.map((item) => ([m
+[31m-            <Link key={item.href} href={item.href} className="nav-link">[m
+[31m-              {item.label}[m
+[31m-            </Link>[m
+[31m-          ))}[m
+[32m+[m[32m        <div className="hidden items-center gap-1 xl:flex">[m
+[32m+[m[32m          {primaryNav.map((item) => {[m
+[32m+[m[32m            const active = isActive(pathname, item.href);[m
+[32m+[m[32m            return ([m
+[32m+[m[32m              <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined} className={`nav-link ${active ? "nav-link-active" : ""}`}>[m
+[32m+[m[32m                {item.label}[m
+[32m+[m[32m              </Link>[m
+[32m+[m[32m            );[m
+[32m+[m[32m          })}[m
+         </div>[m
+ [m
+         <div className="hidden items-center gap-3 lg:flex">[m
+[31m-          <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 p-1 text-xs font-black text-slate-600">[m
+[31m-            <Link href="/" className="rounded-full bg-white px-2.5 py-1 text-[#081f3a] shadow-sm">[m
+[31m-              RO[m
+[31m-            </Link>[m
+[31m-            <Link href="/en" className="px-2.5 py-1 transition hover:text-[#081f3a]">[m
+[31m-              EN[m
+[31m-            </Link>[m
+[32m+[m[32m          <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-slate-50 p-1 text-xs font-black text-slate-600" aria-label="Selectare limbă">[m
+[32m+[m[32m            <Link href="/" aria-current={pathname === "/" ? "page" : undefined} className="rounded-full bg-white px-2.5 py-1 text-[#081f3a] shadow-sm">RO</Link>[m
+[32m+[m[32m            <Link href="/en" aria-current={pathname === "/en" ? "page" : undefined} className="px-2.5 py-1 transition hover:text-[#081f3a]">EN</Link>[m
+           </div>[m
+[31m-          <div className="flex items-center gap-1">[m
+[32m+[m[32m          <div className="hidden items-center gap-1 2xl:flex" aria-label="Canale sociale oficiale">[m
+             {socialLinks.map((link) => ([m
+[31m-              <a[m
+[31m-                key={link.href}[m
+[31m-                href={link.href}[m
+[31m-                target="_blank"[m
+[31m-                rel="noreferrer"[m
+[31m-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#081f3a] transition hover:border-[#16825d] hover:text-[#16825d]"[m
+[31m-                aria-label={link.label}[m
+[31m-              >[m
+[31m-                {link.label === "LinkedIn" ? <Linkedin size={17} /> : <Facebook size={17} />}[m
+[32m+[m[32m              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-[#081f3a] transition hover:border-[#16825d] hover:text-[#16825d]" aria-label={`${link.label} GIUVA`}>[m
+[32m+[m[32m                {link.label === "LinkedIn" ? <Linkedin size={17} aria-hidden="true" /> : <Facebook size={17} aria-hidden="true" />}[m
+               </a>[m
+             ))}[m
+           </div>[m
+[31m-          <Link href={ctas.volunteer.href} className="btn btn-primary">[m
+[31m-            {ctas.volunteer.label}[m
+[31m-          </Link>[m
+[32m+[m[32m          <Link href={ctas.volunteer.href} className="btn btn-primary">{ctas.volunteer.label}</Link>[m
+         </div>[m
+       </nav>[m
+     </header>[m
+   );[m
+ }[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/data/site.ts b/data/site.ts[m
+[1mindex c56071d5..c910dd07 100644[m
+[1m--- a/data/site.ts[m
+[1m+++ b/data/site.ts[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-import {[m
+[32m+[m[32m﻿import {[m
+   Bike,[m
+   BookOpen,[m
+   Building2,[m
+[36m@@ -6,6 +6,7 @@[m [mimport {[m
+   GraduationCap,[m
+   HandHeart,[m
+   HeartPulse,[m
+[32m+[m[32m  HelpCircle,[m
+   Mail,[m
+   Map,[m
+   Network,[m
+[36m@@ -36,28 +37,32 @@[m [mexport const brand = {[m
+ [m
+ export const seoKeywords = [[m
+   "GIUVA Romania",[m
+[31m-  "voluntariat Romania",[m
+[32m+[m[32m  "voluntariat România",[m
+   "comunitate",[m
+   "voluntari",[m
+   "AED",[m
+[31m-  "educatie civica",[m
+[31m-  "pregatire comunitara",[m
+[32m+[m[32m  "educație civică",[m
+[32m+[m[32m  "pregătire comunitară",[m
+   "proiect european de voluntariat",[m
+[31m-  "rezilienta comunitara",[m
+[31m-  "cultura preventiei"[m
+[32m+[m[32m  "reziliență comunitară",[m
+[32m+[m[32m  "cultura prevenției"[m
+ ];[m
+ [m
+ export const navItems = [[m
+   { href: "/", label: "Acasă" },[m
+   { href: "/despre", label: "Despre" },[m
+   { href: "/discipline", label: "Discipline" },[m
+[31m-  { href: "/riders-rescue", label: "Riders Rescue" },[m
+[31m-  { href: "/community", label: "Community" },[m
+[32m+[m[32m  { href: "/giuva-network", label: "Rețea" },[m
+[32m+[m[32m  { href: "/transparenta", label: "Transparență" },[m
+[32m+[m[32m  { href: "/resurse-institutionale", label: "Resurse" },[m
+[32m+[m[32m  { href: "/news", label: "News" },[m
+[32m+[m[32m  { href: "/events", label: "Events" },[m
+[32m+[m[32m  { href: "/publicatii", label: "Publicații" },[m
+[32m+[m[32m  { href: "/download-center", label: "Download" },[m
+[32m+[m[32m  { href: "/faq", label: "FAQ" },[m
+[32m+[m[32m  { href: "/giuva-ai", label: "GIUVA AI" },[m
+   { href: "/voluntari", label: "Voluntari" },[m
+[31m-  { href: "/deschide-o-sediu", label: "Deschide o comunitate" },[m
+   { href: "/partner", label: "Parteneri" },[m
+[31m-  { href: "/sustine", label: "Susține" },[m
+[31m-  { href: "/news", label: "Noutăți" },[m
+   { href: "/contact", label: "Contact" }[m
+ ];[m
+ [m
+[36m@@ -66,60 +71,92 @@[m [mexport const ctas = {[m
+   chapter: { label: "Deschide o comunitate GIUVA", href: "/deschide-o-sediu" },[m
+   secretariat: { label: "Contactează secretariatul", href: "/contact" },[m
+   partner: { label: "Propune un parteneriat", href: "/partner" },[m
+[31m-  donate: { label: "Sustine proiectul", href: "/sustine" }[m
+[32m+[m[32m  donate: { label: "Susține proiectul", href: "/sustine" },[m
+[32m+[m[32m  ai: { label: "Deschide GIUVA AI", href: "/giuva-ai" }[m
+ };[m
+ [m
+ export const projectStatus =[m
+[31m-  "Retea civica in constructie, proiect pilot si structura in asteptare de formalizare progresiva.";[m
+[32m+[m[32m  "Rețea civică în construcție, proiect pilot și structură în așteptare de formalizare progresivă.";[m
+ [m
+ export const associationFacts = [[m
+   {[m
+[31m-    title: "Ce este GIUVA",[m
+[31m-    text: "O asociatie civica romaneasca cu deschidere europeana, construita pentru voluntariat responsabil, educatie civica si pregatire comunitara."[m
+[32m+[m[32m    title: "Cine suntem",[m
+[32m+[m[32m    text: "O inițiativă civică românească cu deschidere europeană, construită pentru voluntariat responsabil, educație civică și pregătire comunitară."[m
+   },[m
+   {[m
+[31m-    title: "Ce face",[m
+[31m-    text: "Conecteaza oameni, comunitati si viitori parteneri prin activitati civice, formative, sociale si de awareness AED."[m
+[32m+[m[32m    title: "Ce facem",[m
+[32m+[m[32m    text: "Conectăm oameni, comunități și viitori parteneri prin activități civice, formative, sociale, de prevenție și awareness AED."[m
+   },[m
+   {[m
+[31m-    title: "Ce nu este",[m
+[31m-    text: "GIUVA nu este serviciu public, operator de urgenta, structura de interventie autonoma sau inlocuitor pentru institutiile statului."[m
+[32m+[m[32m    title: "Cum participi",[m
+[32m+[m[32m    text: "Poți deveni voluntar, poți deschide o comunitate locală, poți propune un parteneriat sau poți susține Project Pulse."[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "De ce să ai încredere",[m
+[32m+[m[32m    text: "GIUVA comunică prudent, separă clar rolul civic de instituțiile publice și construiește transparență înainte de fundraising."[m
+[32m+[m[32m  }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const missionBlocks = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Mission",[m
+[32m+[m[32m    text: "Crearea unei rețele civice moderne care sprijină comunitățile prin educație, prevenție, voluntariat responsabil și cooperare instituțională."[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Vision",[m
+[32m+[m[32m    text: "Construirea unei platforme europene descentralizate dedicate rezilienței urbane și comunitare, pornind din România."[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Core Values",[m
+[32m+[m[32m    text: "Viața umană înainte de toate, solidaritate, profesionalism, transparență, neutralitate, umanitate și responsabilitate civică."[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "European Principles",[m
+[32m+[m[32m    text: "Legalitate, democrație, drepturi fundamentale, anti-discriminare, safeguarding, accountability și cooperare responsabilă."[m
+   }[m
+ ];[m
+ [m
+[32m+[m[32mexport const portalStats = [[m
+[32m+[m[32m  { label: "Discipline", value: "9", detail: "arii civice GIUVA", icon: Network },[m
+[32m+[m[32m  { label: "Țări", value: "6", detail: "România, Italia și roadmap UE", icon: Map },[m
+[32m+[m[32m  { label: "Voluntari", value: "0+", detail: "în onboarding viitor", icon: Users },[m
+[32m+[m[32m  { label: "Parteneri", value: "0", detail: "doar după formalizare", icon: Building2 },[m
+[32m+[m[32m  { label: "Proiecte", value: "3", detail: "pilot, awareness, community", icon: Sparkles }[m
+[32m+[m[32m];[m
+[32m+[m
+ export const giuvaToday = [[m
+[31m-  "proiect/asociatie in faza de constituire si consolidare",[m
+[31m-  "identitate civica definita",[m
+[31m-  "prime comunitati locale in dezvoltare",[m
+[31m-  "formulare pregatite pentru voluntari si filiale",[m
+[31m-  "cadru prudent pentru activitati civice si formative"[m
+[32m+[m[32m  "proiect/asociație în faza de constituire și consolidare",[m
+[32m+[m[32m  "identitate civică definită",[m
+[32m+[m[32m  "prime comunități locale în dezvoltare",[m
+[32m+[m[32m  "formulare pregătite pentru voluntari și filiale",[m
+[32m+[m[32m  "cadru prudent pentru activități civice și formative"[m
+ ];[m
+ [m
+ export const giuvaTomorrow = [[m
+[31m-  "retea nationala in Romania",[m
+[31m-  "filiale locale in mai multe orase",[m
+[31m-  "voluntari formati prin parteneri autorizati",[m
+[31m-  "parteneriate formalizate doar dupa validare legala",[m
+[31m-  "extindere europeana treptata"[m
+[32m+[m[32m  "rețea națională în România",[m
+[32m+[m[32m  "filiale locale în mai multe orașe",[m
+[32m+[m[32m  "voluntari formați prin parteneri autorizați",[m
+[32m+[m[32m  "parteneriate formalizate doar după validare legală",[m
+[32m+[m[32m  "extindere europeană treptată"[m
+ ];[m
+ [m
+ export const values = [[m
+   "solidaritate",[m
+   "incluziune",[m
+[31m-  "responsabilitate civica",[m
+[31m-  "pregatire",[m
+[32m+[m[32m  "responsabilitate civică",[m
+[32m+[m[32m  "pregătire",[m
+   "cooperare",[m
+[31m-  "transparenta",[m
+[31m-  "impact masurabil"[m
+[32m+[m[32m  "transparență",[m
+[32m+[m[32m  "impact măsurabil"[m
+ ];[m
+ [m
+ export const europeanNetwork = [[m
+[31m-  { label: "GIUVA România", domain: "giuva.ro", href: "https://www.giuva.ro", status: "În dezvoltare 2026" },[m
+[31m-  { label: "GIUVA Italia", domain: "giuva.it", href: "/contact", status: "În dezvoltare 2026" },[m
+[31m-  { label: "GIUVA Austria", domain: "giuva.at", href: "/contact", status: "Planificat 2027" },[m
+[31m-  { label: "GIUVA Spania", domain: "giuva.es", href: "/contact", status: "În dezvoltare 2027" },[m
+[31m-  { label: "GIUVA Ungaria", domain: "giuva.hu", href: "/contact", status: "Planificat 2028" },[m
+[31m-  { label: "GIUVA Europe", domain: "giuva.eu", href: "/contact", status: "În dezvoltare" }[m
+[32m+[m[32m  { label: "GIUVA România", domain: "giuva.ro", href: "https://www.giuva.ro", status: "În dezvoltare 2026", country: "România", note: "punct de pornire civic și comunitar" },[m
+[32m+[m[32m  { label: "GIUVA Italia", domain: "giuva.it", href: "https://www.giuva.it", status: "În dezvoltare 2026", country: "Italia", note: "comunități autonome, identitate europeană" },[m
+[32m+[m[32m  { label: "GIUVA Spania", domain: "giuva.es", href: "/contact", status: "În dezvoltare 2027", country: "Spania", note: "roadmap pentru voluntariat urban" },[m
+[32m+[m[32m  { label: "GIUVA Austria", domain: "giuva.at", href: "/contact", status: "Planificat 2027", country: "Austria", note: "cooperare europeană planificată" },[m
+[32m+[m[32m  { label: "GIUVA Ungaria", domain: "giuva.hu", href: "/contact", status: "Planificat 2028", country: "Ungaria", note: "dezvoltare graduală" },[m
+[32m+[m[32m  { label: "GIUVA Europe", domain: "giuva.eu", href: "/contact", status: "În dezvoltare", country: "Europa", note: "cadru comun de valori, transparență și impact" }[m
+ ];[m
+ [m
+ export const disciplines = [[m
+[36m@@ -128,135 +165,225 @@[m [mexport const disciplines = [[m
+     name: "Community & Social",[m
+     color: "verde",[m
+     accent: "bg-[#18865B]",[m
+[32m+[m[32m    border: "border-[#18865B]",[m
+[32m+[m[32m    image: "/brand/community-manifesto-2.webp",[m
+     icon: Users,[m
+     description:[m
+[31m-      "Actiuni comunitare, socializare, sprijin local, incluziune si evenimente deschise oamenilor cu valori comune."[m
+[32m+[m[32m      "Acțiuni comunitare, socializare, sprijin local, incluziune și evenimente deschise oamenilor cu valori comune.",[m
+[32m+[m[32m    mission: "Să creeze spații sigure și prietenoase pentru implicare civică, socializare și sprijin comunitar.",[m
+[32m+[m[32m    activities: ["întâlniri comunitare", "charity rides", "activități sociale", "sprijin local", "evenimente intergeneraționale"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Este un club închis?", answer: "Nu. Community & Social este gândit ca spațiu deschis, incluziv și orientat către oameni." },[m
+[32m+[m[32m      { question: "Pot participa fără experiență?", answer: "Da. Activitățile sunt civice și comunitare, cu roluri adaptate disponibilității fiecărei persoane." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Cod Etic", "Safeguarding", "Ghid voluntari"],[m
+[32m+[m[32m    relatedNews: ["community-pilot"][m
+   },[m
+   {[m
+     slug: "riders-rescue",[m
+     name: "Riders Rescue",[m
+[31m-    color: "albastru",[m
+[32m+[m[32m    color: "albastru navy",[m
+     accent: "bg-[#0B2A4A]",[m
+[32m+[m[32m    border: "border-[#0B2A4A]",[m
+[32m+[m[32m    image: "/brand/riders-rescue-support.webp",[m
+     icon: Bike,[m
+     description:[m
+[31m-      "Pilon in dezvoltare pentru voluntari mobili, awareness AED, educatie de prim ajutor si suport civic complementar."[m
+[32m+[m[32m      "Pilon în dezvoltare pentru voluntari mobili, awareness AED, educație de prim ajutor și suport civic complementar.",[m
+[32m+[m[32m    mission: "Să promoveze mobilitatea civică responsabilă, cultura AED și pregătirea comunitară, fără a înlocui serviciile publice.",[m
+[32m+[m[32m    activities: ["awareness AED", "educație prim ajutor", "suport la evenimente", "mobilitate civică", "cooperare doar prin cadre autorizate"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "GIUVA intervine ca serviciu de urgență?", answer: "Nu. GIUVA nu înlocuiește 112, SMURD, poliția, pompierii sau instituțiile statului." },[m
+[32m+[m[32m      { question: "Când pot fi folosite resursele mobile?", answer: "Numai în activități civice, formative sau prin protocoale oficiale viitoare, în limitele legii." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Cod Etic", "Politică safety", "Principii AED awareness"],[m
+[32m+[m[32m    relatedNews: ["riders-rescue-aed-awareness"][m
+   },[m
+   {[m
+     slug: "civil-support",[m
+     name: "Civil Support",[m
+     color: "portocaliu",[m
+     accent: "bg-[#F97316]",[m
+[32m+[m[32m    border: "border-[#F97316]",[m
+[32m+[m[32m    image: "/brand/civil-response-scene.webp",[m
+     icon: Radio,[m
+     description:[m
+[31m-      "Suport civic si logistic pentru activitati comunitare, evenimente locale si proiecte pilot, numai in limitele legii."[m
+[32m+[m[32m      "Suport civic și logistic pentru activități comunitare, evenimente locale și proiecte pilot, numai în limitele legii.",[m
+[32m+[m[32m    mission: "Să susțină prevenția, pregătirea civică și cooperarea instituțională, fără caracter operativ autonom.",[m
+[32m+[m[32m    activities: ["prevenție", "informare publică", "sprijin logistic", "evenimente locale", "pregătire comunitară"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Este protecție civilă oficială?", answer: "Nu. Este o componentă civică de suport complementar, în dezvoltare." },[m
+[32m+[m[32m      { question: "Poate acționa independent?", answer: "Nu. Orice cooperare instituțională se face doar formal, legal și documentat." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Principii de cooperare", "Safeguarding", "Transparență"],[m
+[32m+[m[32m    relatedNews: ["giuva-romania-in-dezvoltare"][m
+   },[m
+   {[m
+     slug: "preparedness",[m
+     name: "Preparedness",[m
+     color: "galben",[m
+     accent: "bg-[#F2C94C]",[m
+[32m+[m[32m    border: "border-[#F2C94C]",[m
+[32m+[m[32m    image: "/brand/civil-response-protocol.webp",[m
+     icon: ShieldCheck,[m
+     description:[m
+[31m-      "Educatie civica, pregatire comunitara, cultura preventiei, informare publica si comportamente responsabile."[m
+[32m+[m[32m      "Educație civică, pregătire comunitară, cultura prevenției, informare publică și comportamente responsabile.",[m
+[32m+[m[32m    mission: "Să transforme prevenția într-o cultură publică accesibilă pentru tineri, familii, seniori și comunități locale.",[m
+[32m+[m[32m    activities: ["pregătire civică", "ateliere awareness", "resurse publice", "educație AED", "prevenție"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Se emit certificate?", answer: "Nu în această etapă, cu excepția unor programe viitoare prin parteneri autorizați." },[m
+[32m+[m[32m      { question: "Este potrivit pentru școli și comunități?", answer: "Da, conținutul este gândit pentru educație, prevenție și implicare civică." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Ghid public", "Resurse instituționale", "Politică educațională"],[m
+[32m+[m[32m    relatedNews: ["giuva-romania-in-dezvoltare"][m
+   },[m
+   {[m
+     slug: "journey",[m
+     name: "Journey",[m
+[31m-    color: "alb/verde",[m
+[31m-    accent: "bg-[#E8F7EF]",[m
+[32m+[m[32m    color: "verde deschis",[m
+[32m+[m[32m    accent: "bg-[#16825d]",[m
+[32m+[m[32m    border: "border-[#16825d]",[m
+[32m+[m[32m    image: "/brand/journey-urban-1.webp",[m
+     icon: Map,[m
+     description:[m
+[31m-      "Povesti, fotografie, calatorii responsabile, memorie comunitara si promovarea locurilor printr-o perspectiva umana."[m
+[32m+[m[32m      "Povești, fotografie, călătorii responsabile, memorie comunitară și promovarea locurilor printr-o perspectivă umană.",[m
+[32m+[m[32m    mission: "Să documenteze drumuri, oameni și momente care construiesc memorie colectivă și awareness comunitar.",[m
+[32m+[m[32m    activities: ["fotografie", "storytelling", "galerii", "rapoarte vizuale", "campanii awareness"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Journey este media oficială?", answer: "Este componenta narativă GIUVA pentru documentare, povești și vizibilitate comunitară." },[m
+[32m+[m[32m      { question: "Pot trimite o poveste?", answer: "Da, prin formularul de contact sau prin viitorul sistem content driven." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Ghid media", "Consimțământ imagine", "Cod Etic"],[m
+[32m+[m[32m    relatedNews: ["community-pilot"][m
+   },[m
+   {[m
+     slug: "project-pulse",[m
+     name: "Project Pulse",[m
+     color: "maro civic",[m
+     accent: "bg-[#8B5E34]",[m
+[32m+[m[32m    border: "border-[#8B5E34]",[m
+[32m+[m[32m    image: "/brand/project-pulse-scene.webp",[m
+     icon: HeartPulse,[m
+     description:[m
+[31m-      "Fundraising viitor, campanii transparente, CSR, proiecte europene si raportare de impact dupa formalizarea cadrului legal."[m
+[32m+[m[32m      "Fundraising viitor, campanii transparente, CSR, proiecte europene și raportare de impact după formalizarea cadrului legal.",[m
+[32m+[m[32m    mission: "Să pregătească un model transparent de susținere pentru AED, educație, logistică și proiecte comunitare.",[m
+[32m+[m[32m    activities: ["campanii AED", "sponsorizări", "CSR", "raportare KPI", "transparență financiară"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Se colectează donații acum?", answer: "Doar după activarea cadrului legal și a mecanismelor oficiale de plată." },[m
+[32m+[m[32m      { question: "Cum se comunică impactul?", answer: "Prin rapoarte publice, KPI, campanii documentate și rezultate verificabile." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Principii fundraising", "KPI & Impact", "Transparență financiară"],[m
+[32m+[m[32m    relatedNews: ["giuva-romania-in-dezvoltare"][m
+   },[m
+   {[m
+     slug: "academy",[m
+     name: "Academy",[m
+     color: "violet",[m
+     accent: "bg-[#7C3AED]",[m
+[32m+[m[32m    border: "border-[#7C3AED]",[m
+[32m+[m[32m    image: "/brand/community-manifesto-1.webp",[m
+     icon: GraduationCap,[m
+     description:[m
+[31m-      "Componenta educationala viitoare pentru workshopuri, proceduri civice, wellbeing voluntari si cresterea competentelor."[m
+[32m+[m[32m      "Componentă educațională viitoare pentru workshopuri, proceduri civice, wellbeing voluntari și creșterea competențelor.",[m
+[32m+[m[32m    mission: "Să ofere un cadru educațional pentru voluntariat responsabil, leadership civic și cultură preventivă.",[m
+[32m+[m[32m    activities: ["ateliere", "first aid awareness", "AED awareness", "leadership civic", "wellbeing voluntari"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Academy este activă?", answer: "Este pregătită ca direcție pentru Release 1.0 și programe viitoare." },[m
+[32m+[m[32m      { question: "Cine poate participa?", answer: "Voluntari, comunități, tineri, seniori și viitori parteneri educaționali." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Program educațional", "Cod Etic", "Safeguarding"],[m
+[32m+[m[32m    relatedNews: ["giuva-romania-in-dezvoltare"][m
+   },[m
+   {[m
+     slug: "youth",[m
+     name: "Youth",[m
+     color: "turcoaz",[m
+     accent: "bg-[#0891B2]",[m
+[32m+[m[32m    border: "border-[#0891B2]",[m
+[32m+[m[32m    image: "/brand/community-manifesto-3.webp",[m
+     icon: Sparkles,[m
+     description:[m
+[31m-      "Implicarea tinerilor, cetatenie activa, leadership civic si proiecte educationale locale."[m
+[32m+[m[32m      "Implicarea tinerilor, cetățenie activă, leadership civic și proiecte educaționale locale.",[m
+[32m+[m[32m    mission: "Să ofere tinerilor un cadru pozitiv pentru implicare civică, educație și proiecte cu impact real.",[m
+[32m+[m[32m    activities: ["voluntariat tineri", "educație civică", "proiecte locale", "comunicare", "leadership"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Este potrivit pentru liceeni și studenți?", answer: "Da, cu respectarea regulilor de safeguarding și a cadrului legal aplicabil." },[m
+[32m+[m[32m      { question: "Există activități online?", answer: "Da, în roadmap sunt prevăzute resurse digitale și programe educaționale." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Safeguarding", "Cod Etic", "Ghid voluntari"],[m
+[32m+[m[32m    relatedNews: ["community-pilot"][m
+   },[m
+   {[m
+     slug: "senior-network",[m
+     name: "Senior Network",[m
+     color: "burgundy",[m
+     accent: "bg-[#7F1D1D]",[m
+[32m+[m[32m    border: "border-[#7F1D1D]",[m
+[32m+[m[32m    image: "/brand/journey-urban-3.webp",[m
+     icon: HandHeart,[m
+     description:[m
+[31m-      "Participarea activa a seniorilor, transfer de experienta si sprijin intergenerational."[m
+[32m+[m[32m      "Participarea activă a seniorilor, transfer de experiență și sprijin intergenerațional.",[m
+[32m+[m[32m    mission: "Să transforme experiența seniorilor într-o resursă comunitară pentru mentorat, solidaritate și memorie locală.",[m
+[32m+[m[32m    activities: ["mentorat", "sprijin intergenerațional", "povești locale", "incluziune", "participare civică"],[m
+[32m+[m[32m    faq: [[m
+[32m+[m[32m      { question: "Seniorii pot avea rol activ?", answer: "Da. Rețeaua pune accent pe experiență, respect și participare adaptată." },[m
+[32m+[m[32m      { question: "Există activități fizice obligatorii?", answer: "Nu. Rolurile sunt adaptate capacității și preferințelor fiecărei persoane." }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    documents: ["Safeguarding", "Ghid comunitate", "Cod Etic"],[m
+[32m+[m[32m    relatedNews: ["community-pilot"][m
+   }[m
+ ];[m
+ [m
+ export const communities = [[m
+[31m-  "GIUVA Community Bucuresti",[m
+[32m+[m[32m  "GIUVA Community București",[m
+   "GIUVA Community Oradea",[m
+[31m-  "viitoare orase din Romania",[m
+[31m-  "viitoare comunitati europene"[m
+[32m+[m[32m  "viitoare orașe din România",[m
+[32m+[m[32m  "viitoare comunități europene"[m
+ ];[m
+ [m
+ export const partnerAreas = [[m
+[31m-  "parteneriate in asteptare de formalizare",[m
+[31m-  "sponsorizari viitoare",[m
+[32m+[m[32m  "parteneriate în așteptare de formalizare",[m
+[32m+[m[32m  "sponsorizări viitoare",[m
+   "CSR",[m
+[31m-  "donatii materiale",[m
+[32m+[m[32m  "donații materiale",[m
+   "sprijin AED",[m
+   "proiecte locale",[m
+   "proiecte europene"[m
+ ];[m
+ [m
+ export const donationOptions = [[m
+[31m-  "donatie economica viitoare",[m
+[32m+[m[32m  "donație economică viitoare",[m
+   "sponsorizare AED",[m
+   "materiale",[m
+   "formare",[m
+   "suport logistic",[m
+[31m-  "spatii",[m
+[32m+[m[32m  "spații",[m
+   "parteneriate"[m
+ ];[m
+ [m
+ export const news = [[m
+   {[m
+     slug: "giuva-romania-in-dezvoltare",[m
+[31m-    title: "GIUVA Romania: retea civica in dezvoltare",[m
+[32m+[m[32m    title: "GIUVA Romania: rețea civică în dezvoltare",[m
+     date: "2026-06-25",[m
+     category: "Institutional",[m
+     excerpt:[m
+[31m-      "GIUVA Romania pregateste o platforma civica pentru voluntariat urban, educatie, pregatire comunitara si cultura preventiei."[m
+[32m+[m[32m      "GIUVA Romania pregătește o platformă civică pentru voluntariat urban, educație, pregătire comunitară și cultura prevenției."[m
+   },[m
+   {[m
+     slug: "community-pilot",[m
+[31m-    title: "Community: proiect pilot pentru comunitati locale",[m
+[32m+[m[32m    title: "Community: proiect pilot pentru comunități locale",[m
+     date: "2026-06-25",[m
+     category: "Community",[m
+     excerpt:[m
+[31m-      "O comunitate poate incepe simplu: oameni, conversatii locale, valori comune si activitati civice responsabile."[m
+[32m+[m[32m      "O comunitate poate începe simplu: oameni, conversații locale, valori comune și activități civice responsabile."[m
+   },[m
+   {[m
+     slug: "riders-rescue-aed-awareness",[m
+[31m-    title: "Riders Rescue: awareness AED si educatie civica",[m
+[32m+[m[32m    title: "Riders Rescue: awareness AED și educație civică",[m
+     date: "2026-06-25",[m
+     category: "Riders Rescue",[m
+     excerpt:[m
+[31m-      "Pilon in dezvoltare pentru awareness AED, preventie si suport comunitar complementar."[m
+[32m+[m[32m      "Pilon în dezvoltare pentru awareness AED, prevenție și suport comunitar complementar."[m
+   }[m
+ ];[m
+ [m
+[36m@@ -267,27 +394,40 @@[m [mexport const contactEmails = [[m
+   { label: "Project Pulse", value: "fundraising@giuva.ro", icon: HeartPulse }[m
+ ];[m
+ [m
+[31m-export const socialLinks = [[m
+[31m-  { label: "LinkedIn", href: "https://www.linkedin.com/company/giuva/?viewAsMember=true" },[m
+[31m-  { label: "Facebook", href: "https://www.facebook.com/GIUVACommunity" }[m
+[31m-];[m
+[32m+[m[32mexport const socialChannels = {[m
+[32m+[m[32m  official: [[m
+[32m+[m[32m    { label: "LinkedIn", href: "https://www.linkedin.com/company/giuva/?viewAsMember=true", status: "oficial" },[m
+[32m+[m[32m    { label: "Facebook", href: "https://www.facebook.com/GIUVACommunity", status: "oficial" },[m
+[32m+[m[32m    { label: "Instagram", href: "https://www.instagram.com/giuva.ro", status: "în dezvoltare" },[m
+[32m+[m[32m    { label: "TikTok", href: "https://www.tiktok.com/@giuva.ro", status: "în dezvoltare" },[m
+[32m+[m[32m    { label: "YouTube", href: "https://www.youtube.com/@GIUVACommunity", status: "în dezvoltare" }[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  future: [[m
+[32m+[m[32m    { label: "Threads", href: "/contact", status: "placeholder" },[m
+[32m+[m[32m    { label: "WhatsApp Channel", href: "/contact", status: "future" },[m
+[32m+[m[32m    { label: "Telegram", href: "/contact", status: "future" },[m
+[32m+[m[32m    { label: "Roblox", href: "/giuva-ai", status: "roadmap educațional" }[m
+[32m+[m[32m  ][m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mexport const socialLinks = socialChannels.official.slice(0, 2);[m
+ [m
+ export const volunteerFields = [[m
+   { name: "prenume", label: "Prenume", type: "text", required: true },[m
+   { name: "nume", label: "Nume", type: "text", required: true },[m
+   { name: "email", label: "Email", type: "email", required: true },[m
+   { name: "telefon", label: "Telefon", type: "tel", required: true },[m
+[31m-  { name: "oras", label: "Oras", type: "text", required: true },[m
+[31m-  { name: "tara", label: "Tara", type: "text", required: true }[m
+[32m+[m[32m  { name: "oras", label: "Oraș", type: "text", required: true },[m
+[32m+[m[32m  { name: "tara", label: "Țara", type: "text", required: true }[m
+ ];[m
+ [m
+[31m-export const disciplineOptions = [...disciplines.map((discipline) => discipline.name), "Nu stiu inca"];[m
+[32m+[m[32mexport const disciplineOptions = [...disciplines.map((discipline) => discipline.name), "Nu știu încă"];[m
+ [m
+ export const availabilityOptions = [[m
+[31m-  "Cateva ore pe luna",[m
+[31m-  "O zi pe luna",[m
+[31m-  "Disponibilitate saptamanala",[m
+[31m-  "Doar activitati specifice",[m
+[32m+[m[32m  "Câteva ore pe lună",[m
+[32m+[m[32m  "O zi pe lună",[m
+[32m+[m[32m  "Disponibilitate săptămânală",[m
+[32m+[m[32m  "Doar activități specifice",[m
+   "De evaluat"[m
+ ];[m
+ [m
+[36m@@ -296,33 +436,33 @@[m [mexport const chapterFields = [[m
+   { name: "nume", label: "Nume", type: "text", required: true },[m
+   { name: "email", label: "Email", type: "email", required: true },[m
+   { name: "telefon", label: "Telefon", type: "tel", required: true },[m
+[31m-  { name: "oras", label: "Oras propus", type: "text", required: true },[m
+[31m-  { name: "tara", label: "Tara", type: "text", required: true }[m
+[32m+[m[32m  { name: "oras", label: "Oraș propus", type: "text", required: true },[m
+[32m+[m[32m  { name: "tara", label: "Țara", type: "text", required: true }[m
+ ];[m
+ [m
+ export const contactFormFields = [[m
+   { name: "nume", label: "Nume", type: "text", required: true },[m
+   { name: "email", label: "Email", type: "email", required: true },[m
+[31m-  { name: "telefon", label: "Telefon optional", type: "tel", required: false },[m
+[32m+[m[32m  { name: "telefon", label: "Telefon opțional", type: "tel", required: false },[m
+   { name: "subiect", label: "Subiect", type: "text", required: true }[m
+ ];[m
+ [m
+ export const languageRoadmap = [[m
+[31m-  { code: "RO", label: "Romana", status: "principala" },[m
+[32m+[m[32m  { code: "RO", label: "Română", status: "principală" },[m
+   { code: "EN", label: "English", status: "secondary" }[m
+ ];[m
+ [m
+ export const formReadiness = [[m
+[31m-  "nu trimite email in aceasta versiune publica",[m
+[31m-  "nu salveaza inca intr-o baza de date reala",[m
+[31m-  "pregatit pentru export date voluntari in integrarea viitoare",[m
+[31m-  "consimtamant privacy vizibil si obligatoriu",[m
+[32m+[m[32m  "nu trimite email în această versiune publică",[m
+[32m+[m[32m  "nu salvează încă într-o bază de date reală",[m
+[32m+[m[32m  "pregătit pentru export date voluntari în integrarea viitoare",[m
+[32m+[m[32m  "consimțământ privacy vizibil și obligatoriu",[m
+   "mesaj de confirmare local pentru verificarea formularului"[m
+ ];[m
+ [m
+ export const pillars = disciplines.slice(0, 5).map((discipline) => ({[m
+   title: discipline.name,[m
+[31m-  href: discipline.slug === "riders-rescue" ? "/riders-rescue" : "/discipline",[m
+[32m+[m[32m  href: `/discipline/${discipline.slug}`,[m
+   icon: discipline.icon,[m
+   byline: "GIUVA Romania",[m
+   text: discipline.description[m
+[36m@@ -331,10 +471,10 @@[m [mexport const pillars = disciplines.slice(0, 5).map((discipline) => ({[m
+ export const journeyStories = [[m
+   {[m
+     title: "GIUVA Journey",[m
+[31m-    location: "Romania / Europa",[m
+[32m+[m[32m    location: "România / Europa",[m
+     category: "Journey",[m
+     image: "/brand/journey-urban-1.webp",[m
+[31m-    text: "Calatorii responsabile, povesti scurte si conexiuni intre comunitati."[m
+[32m+[m[32m    text: "Călătorii responsabile, povești scurte și conexiuni între comunități."[m
+   }[m
+ ];[m
+ [m
+[36m@@ -342,14 +482,14 @@[m [mexport const partnerCategories = partnerAreas;[m
+ [m
+ export const projectPulseMetrics = [[m
+   { label: "Campanii active", value: "0", icon: HeartPulse },[m
+[31m-  { label: "AED sustinute", value: "0", icon: HeartPulse },[m
+[32m+[m[32m  { label: "AED susținute", value: "0", icon: HeartPulse },[m
+   { label: "Parteneriate formalizate", value: "0", icon: Building2 },[m
+[31m-  { label: "Comunitati in dezvoltare", value: "2", icon: Users }[m
+[32m+[m[32m  { label: "Comunități în dezvoltare", value: "2", icon: Users }[m
+ ];[m
+ [m
+ export const roadmap = [[m
+   "identitate GIUVA Romania",[m
+[31m-  "prime comunitati locale",[m
+[32m+[m[32m  "prime comunități locale",[m
+   "onboarding voluntari",[m
+   "cadru de parteneriate",[m
+   "Project Pulse",[m
+[36m@@ -359,9 +499,220 @@[m [mexport const roadmap = [[m
+ export const operationalPages = [[m
+   { title: "Despre", href: "/despre", icon: BookOpen },[m
+   { title: "Discipline", href: "/discipline", icon: Network },[m
+[31m-  { title: "Riders Rescue", href: "/riders-rescue", icon: Bike },[m
+[31m-  { title: "Community", href: "/community", icon: Coffee },[m
+[32m+[m[32m  { title: "Riders Rescue", href: "/discipline/riders-rescue", icon: Bike },[m
+[32m+[m[32m  { title: "Community", href: "/discipline/community-social", icon: Coffee },[m
+   { title: "Parteneri", href: "/partner", icon: Building2 },[m
+[31m-  { title: "Noutati", href: "/news", icon: BookOpen }[m
+[32m+[m[32m  { title: "Noutăți", href: "/news", icon: BookOpen }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const giuvaAiTopics = [[m
+[32m+[m[32m  { title: "Devino voluntar", href: "/voluntari", icon: Users },[m
+[32m+[m[32m  { title: "Deschide o sediu", href: "/deschide-o-sediu", icon: Building2 },[m
+[32m+[m[32m  { title: "Colaborează", href: "/partner", icon: HandHeart },[m
+[32m+[m[32m  { title: "Media", href: "/media", icon: BookOpen },[m
+[32m+[m[32m  { title: "Academy", href: "/discipline/academy", icon: GraduationCap },[m
+[32m+[m[32m  { title: "Funding", href: "/sustine", icon: HeartPulse },[m
+[32m+[m[32m  { title: "Europa", href: "/giuva-network", icon: Map },[m
+[32m+[m[32m  { title: "FAQ", href: "/giuva-ai", icon: HelpCircle }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const institutionalResources = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    group: "România",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { label: "112 România", href: "https://www.112.ro/", note: "portal public pentru numărul european de urgență" },[m
+[32m+[m[32m      { label: "Departamentul pentru Situații de Urgență", href: "https://www.dsu.mai.gov.ro/", note: "resursă publică oficială" },[m
+[32m+[m[32m      { label: "Inspectoratul General pentru Situații de Urgență", href: "https://www.igsu.ro/", note: "resursă publică oficială" },[m
+[32m+[m[32m      { label: "Ministerul Afacerilor Interne", href: "https://www.mai.gov.ro/", note: "minister competent" },[m
+[32m+[m[32m      { label: "Ministerul Sănătății", href: "https://www.ms.ro/", note: "minister competent" },[m
+[32m+[m[32m      { label: "ANPC", href: "https://anpc.ro/", note: "protecția consumatorilor" },[m
+[32m+[m[32m      { label: "Fii Pregătit - hartă", href: "https://fiipregatit.ro/harta", note: "resursă publică de pregătire" },[m
+[32m+[m[32m      { label: "Salvează o viață", href: "https://salveaza-o-viata.ro/", note: "resursă publică AED/prim ajutor" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    group: "Uniunea Europeană",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { label: "Comisia Europeană", href: "https://commission.europa.eu/", note: "portal instituțional UE" },[m
+[32m+[m[32m      { label: "European Solidarity Corps", href: "https://youth.europa.eu/solidarity_en", note: "voluntariat și solidaritate europeană" },[m
+[32m+[m[32m      { label: "EU Civil Protection Mechanism", href: "https://civil-protection-humanitarian-aid.ec.europa.eu/what/civil-protection/eu-civil-protection-mechanism_en", note: "mecanism european de protecție civilă" },[m
+[32m+[m[32m      { label: "EU Funding & Tenders", href: "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home", note: "portal oficial granturi și licitații" },[m
+[32m+[m[32m      { label: "CORDIS", href: "https://cordis.europa.eu/", note: "proiecte și rezultate cercetare UE" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    group: "Organizații internaționale",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { label: "European Resuscitation Council", href: "https://www.erc.edu/", note: "resursă educațională internațională" },[m
+[32m+[m[32m      { label: "International Federation of Red Cross and Red Crescent Societies", href: "https://www.ifrc.org/", note: "organizație umanitară internațională" }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const transparencyDocuments = [[m
+[32m+[m[32m  { title: "Statut", text: "Document public după finalizarea formalizării juridice.", href: "/contact" },[m
+[32m+[m[32m  { title: "Act Constitutiv", text: "Document disponibil după constituirea finală.", href: "/contact" },[m
+[32m+[m[32m  { title: "Cod Etic", text: "Principii de integritate, neutralitate și responsabilitate publică.", href: "/contact" },[m
+[32m+[m[32m  { title: "Safeguarding", text: "Protecția persoanelor vulnerabile și participarea sigură.", href: "/contact" },[m
+[32m+[m[32m  { title: "Privacy", text: "Politica privind protecția datelor personale.", href: "/privacy-policy" },[m
+[32m+[m[32m  { title: "Cookie Policy", text: "Informații despre cookie-uri și tehnologii similare.", href: "/cookie-policy" },[m
+[32m+[m[32m  { title: "Governance", text: "Roluri, responsabilități și principii de conducere.", href: "/guvernanta" },[m
+[32m+[m[32m  { title: "Documente", text: "Hub pentru documentele publice GIUVA.", href: "/transparenta" }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const governanceRoles = [[m
+[32m+[m[32m  { role: "Președinte", status: "în curs de formalizare", responsibility: "reprezentare strategică și guvernanță civică" },[m
+[32m+[m[32m  { role: "Vicepreședinte", status: "în curs de formalizare", responsibility: "coordonare programe și comunități" },[m
+[32m+[m[32m  { role: "Secretar General", status: "în curs de formalizare", responsibility: "secretariat, documente și fluxuri administrative" },[m
+[32m+[m[32m  { role: "Consiliu Director", status: "în curs de formalizare", responsibility: "decizii instituționale și supraveghere" },[m
+[32m+[m[32m  { role: "Coordonatori Naționali", status: "roadmap", responsibility: "dezvoltare comunități și discipline" }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const newsCenter = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    slug: "giuva-romania-in-dezvoltare",[m
+[32m+[m[32m    title: "GIUVA Romania: rețea civică în dezvoltare",[m
+[32m+[m[32m    date: "2026-06-25",[m
+[32m+[m[32m    category: "Institutional",[m
+[32m+[m[32m    discipline: "Governance",[m
+[32m+[m[32m    country: "România",[m
+[32m+[m[32m    author: "Secretariat GIUVA",[m
+[32m+[m[32m    tags: ["transparență", "voluntariat", "Europa"],[m
+[32m+[m[32m    image: "/brand/giuva-romania-disciplines-flag.webp",[m
+[32m+[m[32m    excerpt: "GIUVA Romania pregătește o platformă civică pentru voluntariat urban, educație, pregătire comunitară și cultura prevenției.",[m
+[32m+[m[32m    cta: "Citește actualizarea"[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    slug: "community-pilot",[m
+[32m+[m[32m    title: "Community: proiect pilot pentru comunități locale",[m
+[32m+[m[32m    date: "2026-06-25",[m
+[32m+[m[32m    category: "Community",[m
+[32m+[m[32m    discipline: "Community & Social",[m
+[32m+[m[32m    country: "România",[m
+[32m+[m[32m    author: "Community Desk",[m
+[32m+[m[32m    tags: ["comunitate", "incluziune", "social"],[m
+[32m+[m[32m    image: "/brand/community-manifesto-2.webp",[m
+[32m+[m[32m    excerpt: "O comunitate poate începe simplu: oameni, conversații locale, valori comune și activități civice responsabile.",[m
+[32m+[m[32m    cta: "Vezi detalii"[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    slug: "riders-rescue-aed-awareness",[m
+[32m+[m[32m    title: "Riders Rescue: awareness AED și educație civică",[m
+[32m+[m[32m    date: "2026-06-25",[m
+[32m+[m[32m    category: "Riders Rescue",[m
+[32m+[m[32m    discipline: "Riders Rescue",[m
+[32m+[m[32m    country: "România",[m
+[32m+[m[32m    author: "AED Awareness Desk",[m
+[32m+[m[32m    tags: ["AED", "prevenție", "educație"],[m
+[32m+[m[32m    image: "/brand/riders-rescue-support.webp",[m
+[32m+[m[32m    excerpt: "Pilon în dezvoltare pentru awareness AED, prevenție și suport comunitar complementar.",[m
+[32m+[m[32m    cta: "Citește actualizarea"[m
+[32m+[m[32m  }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const eventGroups = {[m
+[32m+[m[32m  upcoming: [[m
+[32m+[m[32m    { title: "Community Introduction Day", status: "Upcoming", date: "Roadmap 2026", organizer: "GIUVA Romania", location: "București / online", cta: "Anunță interes", href: "/contact" },[m
+[32m+[m[32m    { title: "AED Awareness Session", status: "Upcoming", date: "Roadmap 2026", organizer: "Academy Desk", location: "Hibrid", cta: "Urmărește noutăți", href: "/news" },[m
+[32m+[m[32m    { title: "GIUVA Network Briefing", status: "Upcoming", date: "Roadmap 2026", organizer: "European Desk", location: "Online", cta: "Vezi rețeaua", href: "/giuva-network" }[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  past: [[m
+[32m+[m[32m    { title: "Identity & Portal Review", status: "Past", date: "June 2026", organizer: "GIUVA Romania", location: "Digital", cta: "Vezi transparența", href: "/transparenta" }[m
+[32m+[m[32m  ][m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mexport const publications = [[m
+[32m+[m[32m  { title: "Annual Report", type: "Annual Report", status: "Roadmap", description: "Raport anual public după primul an operațional documentat.", href: "/transparenta" },[m
+[32m+[m[32m  { title: "Impact Report", type: "Impact Report", status: "Roadmap", description: "Indicatori de impact comunitar, voluntariat, educație și parteneriate formalizate.", href: "/transparenta" },[m
+[32m+[m[32m  { title: "Guidelines", type: "Guidelines", status: "Under Development", description: "Ghiduri publice pentru participare civică, prevenție și comunicare responsabilă.", href: "/resurse-institutionale" },[m
+[32m+[m[32m  { title: "Policies", type: "Policies", status: "Available progressively", description: "Privacy, Cookie, Safeguarding și principii de guvernanță.", href: "/privacy-policy" },[m
+[32m+[m[32m  { title: "Manuals", type: "Manuals", status: "Internal / future", description: "Manualele complete nu sunt publicate până la validare și formalizare.", href: "/contact" },[m
+[32m+[m[32m  { title: "Institutional Documents", type: "Documents", status: "In formalizare", description: "Statut, Act Constitutiv și documente publice după finalizarea cadrului juridic.", href: "/transparenta" }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const downloadItems = [[m
+[32m+[m[32m  { title: "Prezentare instituțională GIUVA", type: "Documentație", status: "Coming Soon", description: "PDF public de prezentare pentru voluntari, parteneri și comunități.", href: "/contact" },[m
+[32m+[m[32m  { title: "Media Kit", type: "Media Kit", status: "Under Development", description: "Pachet media pregătit pentru comunicare publică după validarea materialelor oficiale.", href: "/media" },[m
+[32m+[m[32m  { title: "Brand Assets", type: "Brand Assets", status: "Restricted", description: "Logo-urile oficiale se folosesc doar conform regulilor de brand și cu acord GIUVA.", href: "/contact" },[m
+[32m+[m[32m  { title: "Template parteneriat", type: "Template", status: "Roadmap", description: "Model orientativ pentru discuții, fără valoare juridică până la formalizare.", href: "/partner" },[m
+[32m+[m[32m  { title: "Politici publice", type: "Download", status: "Public pages", description: "Privacy, Cookie, transparență și guvernanță sunt disponibile ca pagini publice.", href: "/transparenta" }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const partnerProfiles = [[m
+[32m+[m[32m  { category: "Institutional", title: "Autorități și instituții publice", text: "Dialog și cooperare doar prin cadre formale, fără a declara parteneriate implicite.", status: "fără logo-uri terțe" },[m
+[32m+[m[32m  { category: "Academic", title: "Universități și școli", text: "Educație civică, awareness AED, voluntariat și proiecte pentru tineri.", status: "în dezvoltare" },[m
+[32m+[m[32m  { category: "NGO", title: "Organizații civice", text: "Cooperare în jurul prevenției, incluziunii, safeguarding și impactului comunitar.", status: "roadmap" },[m
+[32m+[m[32m  { category: "Corporate", title: "Companii & CSR", text: "Sprijin transparent pentru educație, Project Pulse, materiale și inițiative locale.", status: "după formalizare" },[m
+[32m+[m[32m  { category: "Media", title: "Media & Storytelling", text: "Comunicare publică responsabilă, documentare Journey și campanii de awareness.", status: "în dezvoltare" },[m
+[32m+[m[32m  { category: "International", title: "Rețele europene", text: "Direcție europeană, fonduri, schimb de bune practici și proiecte de impact.", status: "roadmap european" }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const faqGroups = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Volunteers",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "Cum devin voluntar GIUVA?", answer: "Completezi formularul de interes, alegi o disciplină și vei fi contactat după activarea fluxului oficial de onboarding." },[m
+[32m+[m[32m      { question: "Am nevoie de experiență?", answer: "Nu pentru activități civice generale. Pentru activități sensibile vor fi necesare formări și criterii specifice." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Academy",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "GIUVA Academy emite certificate?", answer: "Nu în Release 1.0. Certificatele vor exista doar prin parteneri autorizați sau programe validate." },[m
+[32m+[m[32m      { question: "Ce teme vor exista?", answer: "First aid awareness, AED awareness, prevenție, comunicare, leadership civic și cooperare instituțională." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Europe",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "GIUVA există în mai multe țări?", answer: "GIUVA Romania este punct de pornire. Alte țări sunt prezentate ca roadmap sau dezvoltare separată, fără parteneriate implicite." },[m
+[32m+[m[32m      { question: "GIUVA Europe este o instituție UE?", answer: "Nu. Este o direcție de dezvoltare civică europeană, nu o instituție publică." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Funding",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "Pot dona acum?", answer: "Mecanismele publice de donație vor fi activate doar după formalizare și validare legală." },[m
+[32m+[m[32m      { question: "Cum va fi raportat impactul?", answer: "Prin KPI, rapoarte de impact, transparență financiară și rezultate documentate." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "GIUVA AI",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "GIUVA AI oferă sfaturi medicale sau juridice?", answer: "Nu. Este un asistent de orientare în portal, demonstrativ în Release 1.0." },[m
+[32m+[m[32m      { question: "Poate prelua cereri operative?", answer: "Nu. GIUVA AI nu este sistem de dispatch, urgență sau intervenție." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Privacy",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "Formularele trimit date reale?", answer: "În Release 1.0 formularele validează local și sunt pregătite pentru integrare viitoare." },[m
+[32m+[m[32m      { question: "Este necesar consimțământ GDPR?", answer: "Da, consimțământul privacy este vizibil și obligatoriu în formulare." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Network",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "Pot deschide o comunitate locală?", answer: "Da, poți trimite interes prin formularul dedicat. Deschiderea se face doar după validare internă." },[m
+[32m+[m[32m      { question: "Există sedii oficiale?", answer: "Doar cele formalizate vor fi publicate ca atare. Restul sunt direcții de dezvoltare." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Donations",[m
+[32m+[m[32m    items: [[m
+[32m+[m[32m      { question: "Ce este Project Pulse?", answer: "Componenta viitoare de fundraising transparent pentru AED, educație, logistică și proiecte comunitare." },[m
+[32m+[m[32m      { question: "Se publică destinația fondurilor?", answer: "Da, obiectivul este trasabilitate publică, campanii clare și raportare de impact." }[m
+[32m+[m[32m    ][m
+[32m+[m[32m  }[m
+[32m+[m[32m];[m
+[32m+[m
+[32m+[m[32mexport const portalSearchItems = [[m
+[32m+[m[32m  { title: "Devino voluntar", category: "Volunteers", href: "/voluntari", keywords: ["onboarding", "formular", "discipline"] },[m
+[32m+[m[32m  { title: "Discipline GIUVA", category: "Programmes", href: "/discipline", keywords: ["community", "riders", "academy", "youth"] },[m
+[32m+[m[32m  { title: "GIUVA AI", category: "Assistant", href: "/giuva-ai", keywords: ["faq", "assistant", "orientare"] },[m
+[32m+[m[32m  { title: "Transparență", category: "Governance", href: "/transparenta", keywords: ["documente", "privacy", "statut"] },[m
+[32m+[m[32m  { title: "Resurse instituționale", category: "Resources", href: "/resurse-institutionale", keywords: ["112", "DSU", "UE", "AED"] },[m
+[32m+[m[32m  { title: "Download Center", category: "Downloads", href: "/download-center", keywords: ["media kit", "brand", "template"] },[m
+[32m+[m[32m  { title: "FAQ Center", category: "Support", href: "/faq", keywords: ["întrebări", "privacy", "donations"] }[m
+ ];[m
+ [m
+[1mdiff --git a/lib/siteByHost.ts b/lib/siteByHost.ts[m
+[1mindex fbffa43c..ec8a604a 100644[m
+[1m--- a/lib/siteByHost.ts[m
+[1m+++ b/lib/siteByHost.ts[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-export function getSiteByHost(host: string) {[m
+[32m+[m[32m﻿export function getSiteByHost(host: string) {[m
+   const cleanHost = host.replace("www.", "").toLowerCase();[m
+ [m
+   if (cleanHost.includes("giuva.it")) {[m
+[36m@@ -7,16 +7,16 @@[m [mexport function getSiteByHost(host: string) {[m
+       eyebrow: "GIUVA Italia",[m
+       title: "GIUVA Italia",[m
+       description:[m
+[31m-        "GIUVA Italia costruisce una rete civica di volontari, comunita e partner per citta piu connesse, preparate e solidali.",[m
+[32m+[m[32m        "GIUVA Italia costruisce una rete civica di volontari, comunità e partner per città più connesse, preparate e solidali.",[m
+       positioning: "Posizionamento pubblico",[m
+[31m-      sectionTitle: "Comunita, preparazione e impatto civico.",[m
+[32m+[m[32m      sectionTitle: "Comunità, preparazione e impatto civico.",[m
+       today: "GIUVA oggi",[m
+       tomorrow: "GIUVA domani",[m
+[31m-      disciplinesEyebrow: "Le 9 discipline",[m
+[32m+[m[32m      disciplinesEyebrow: "Le discipline",[m
+       disciplinesText:[m
+[31m-        "Le discipline GIUVA mostrano come puo crescere l'associazione: sociale, educativa, civica, preventiva, narrativa ed europea.",[m
+[31m-      europeText: "Costruiamo insieme una rete europea di comunita.",[m
+[31m-      socialTitle: "Segui lo sviluppo di GIUVA.",[m
+[32m+[m[32m        "Le discipline GIUVA mostrano come può crescere l'associazione: sociale, educativa, civica, preventiva, narrativa ed europea.",[m
+[32m+[m[32m      europeText: "Costruiamo insieme una rete europea di comunità.",[m
+[32m+[m[32m      socialTitle: "Segui lo sviluppo di GIUVA."[m
+     };[m
+   }[m
+ [m
+[36m@@ -31,11 +31,11 @@[m [mexport function getSiteByHost(host: string) {[m
+       sectionTitle: "Community, preparedness and civic impact.",[m
+       today: "GIUVA today",[m
+       tomorrow: "GIUVA tomorrow",[m
+[31m-      disciplinesEyebrow: "The 9 disciplines",[m
+[32m+[m[32m      disciplinesEyebrow: "The disciplines",[m
+       disciplinesText:[m
+         "The GIUVA disciplines show how the organization can grow: social, educational, civic, preventive, narrative and European.",[m
+       europeText: "Together, we are building a European network of communities.",[m
+[31m-      socialTitle: "Follow GIUVA development.",[m
+[32m+[m[32m      socialTitle: "Follow GIUVA development."[m
+     };[m
+   }[m
+ [m
+[36m@@ -44,15 +44,15 @@[m [mexport function getSiteByHost(host: string) {[m
+     eyebrow: "GIUVA Romania",[m
+     title: "GIUVA Romania",[m
+     description:[m
+[31m-      "GIUVA Romania construieste o retea civica de voluntari, comunitati si parteneri, pentru orase mai conectate, pregatite si solidare.",[m
+[31m-    positioning: "Pozitionare publica",[m
+[31m-    sectionTitle: "Comunitate, pregatire si impact civic.",[m
+[31m-    today: "GIUVA astazi",[m
+[31m-    tomorrow: "GIUVA maine",[m
+[31m-    disciplinesEyebrow: "Cele 9 discipline",[m
+[32m+[m[32m      "GIUVA Romania construiește o rețea civică de voluntari, comunități și parteneri, pentru orașe mai conectate, pregătite și solidare.",[m
+[32m+[m[32m    positioning: "Poziționare publică",[m
+[32m+[m[32m    sectionTitle: "Comunitate, pregătire și impact civic.",[m
+[32m+[m[32m    today: "GIUVA astăzi",[m
+[32m+[m[32m    tomorrow: "GIUVA mâine",[m
+[32m+[m[32m    disciplinesEyebrow: "Discipline GIUVA",[m
+     disciplinesText:[m
+[31m-      "Disciplinele GIUVA arata cum poate creste asociatia: social, educativ, civic, preventiv, narativ si european.",[m
+[31m-    europeText: "Construim impreuna o retea europeana de comunitati.",[m
+[31m-    socialTitle: "Urmareste dezvoltarea GIUVA.",[m
+[32m+[m[32m      "Disciplinele GIUVA arată cum poate crește asociația: social, educativ, civic, preventiv, narativ și european.",[m
+[32m+[m[32m    europeText: "Construim împreună o rețea europeană de comunități.",[m
+[32m+[m[32m    socialTitle: "Urmărește dezvoltarea GIUVA."[m
+   };[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[1mdiff --git a/styles/globals.css b/styles/globals.css[m
+[1mindex 40d1f6e3..1d66f238 100644[m
+[1m--- a/styles/globals.css[m
+[1m+++ b/styles/globals.css[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-@import "tailwindcss";[m
+[32m+[m[32m﻿@import "tailwindcss";[m
+ [m
+ :root {[m
+   --navy: #081f3a;[m
+[36m@@ -285,3 +285,80 @@[m [mtextarea {[m
+     font-size: clamp(2rem, 12vw, 3rem);[m
+   }[m
+ }[m
+[32m+[m
+[32m+[m[32m.skip-link {[m
+[32m+[m[32m  position: fixed;[m
+[32m+[m[32m  left: 1rem;[m
+[32m+[m[32m  top: 1rem;[m
+[32m+[m[32m  z-index: 100;[m
+[32m+[m[32m  transform: translateY(-150%);[m
+[32m+[m[32m  border-radius: 0.65rem;[m
+[32m+[m[32m  background: var(--eu-yellow);[m
+[32m+[m[32m  color: var(--navy);[m
+[32m+[m[32m  padding: 0.85rem 1rem;[m
+[32m+[m[32m  font-weight: 900;[m
+[32m+[m[32m  box-shadow: var(--shadow);[m
+[32m+[m[32m  transition: transform 160ms ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.skip-link:focus {[m
+[32m+[m[32m  transform: translateY(0);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.sr-only {[m
+[32m+[m[32m  position: absolute;[m
+[32m+[m[32m  width: 1px;[m
+[32m+[m[32m  height: 1px;[m
+[32m+[m[32m  padding: 0;[m
+[32m+[m[32m  margin: -1px;[m
+[32m+[m[32m  overflow: hidden;[m
+[32m+[m[32m  clip: rect(0, 0, 0, 0);[m
+[32m+[m[32m  white-space: nowrap;[m
+[32m+[m[32m  border: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.nav-link-active {[m
+[32m+[m[32m  background: rgba(22, 130, 93, 0.12);[m
+[32m+[m[32m  color: var(--navy);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@media (prefers-reduced-motion: reduce) {[m
+[32m+[m[32m  *,[m
+[32m+[m[32m  *::before,[m
+[32m+[m[32m  *::after {[m
+[32m+[m[32m    scroll-behavior: auto !important;[m
+[32m+[m[32m    transition-duration: 0.01ms !important;[m
+[32m+[m[32m    animation-duration: 0.01ms !important;[m
+[32m+[m[32m    animation-iteration-count: 1 !important;[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@media (min-width: 1600px) {[m
+[32m+[m[32m  .portal-hero {[m
+[32m+[m[32m    min-height: 78vh;[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@media (max-width: 480px) {[m
+[32m+[m[32m  .btn {[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    min-height: 3.1rem;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .portal-hero h1 {[m
+[32m+[m[32m    font-size: clamp(3rem, 16vw, 4.5rem);[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mhtml, body {[m
+[32m+[m[32m  overflow-x: hidden;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m@media (min-width: 1024px) {[m
+[32m+[m[32m  .mobile-menu {[m
+[32m+[m[32m    display: none;[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[41m+[m

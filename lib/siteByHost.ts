@@ -1,4 +1,4 @@
-export function getSiteByHost(host: string) {
+﻿export function getSiteByHost(host: string) {
   const cleanHost = host.replace("www.", "").toLowerCase();
 
   if (cleanHost.includes("giuva.it")) {
@@ -7,16 +7,16 @@ export function getSiteByHost(host: string) {
       eyebrow: "GIUVA Italia",
       title: "GIUVA Italia",
       description:
-        "GIUVA Italia costruisce una rete civica di volontari, comunita e partner per citta piu connesse, preparate e solidali.",
+        "GIUVA Italia costruisce una rete civica di volontari, comunità e partner per città più connesse, preparate e solidali.",
       positioning: "Posizionamento pubblico",
-      sectionTitle: "Comunita, preparazione e impatto civico.",
+      sectionTitle: "Comunità, preparazione e impatto civico.",
       today: "GIUVA oggi",
       tomorrow: "GIUVA domani",
-      disciplinesEyebrow: "Le 9 discipline",
+      disciplinesEyebrow: "Le discipline",
       disciplinesText:
-        "Le discipline GIUVA mostrano come puo crescere l'associazione: sociale, educativa, civica, preventiva, narrativa ed europea.",
-      europeText: "Costruiamo insieme una rete europea di comunita.",
-      socialTitle: "Segui lo sviluppo di GIUVA.",
+        "Le discipline GIUVA mostrano come può crescere l'associazione: sociale, educativa, civica, preventiva, narrativa ed europea.",
+      europeText: "Costruiamo insieme una rete europea di comunità.",
+      socialTitle: "Segui lo sviluppo di GIUVA."
     };
   }
 
@@ -31,11 +31,11 @@ export function getSiteByHost(host: string) {
       sectionTitle: "Community, preparedness and civic impact.",
       today: "GIUVA today",
       tomorrow: "GIUVA tomorrow",
-      disciplinesEyebrow: "The 9 disciplines",
+      disciplinesEyebrow: "The disciplines",
       disciplinesText:
         "The GIUVA disciplines show how the organization can grow: social, educational, civic, preventive, narrative and European.",
       europeText: "Together, we are building a European network of communities.",
-      socialTitle: "Follow GIUVA development.",
+      socialTitle: "Follow GIUVA development."
     };
   }
 
@@ -44,15 +44,15 @@ export function getSiteByHost(host: string) {
     eyebrow: "GIUVA Romania",
     title: "GIUVA Romania",
     description:
-      "GIUVA Romania construieste o retea civica de voluntari, comunitati si parteneri, pentru orase mai conectate, pregatite si solidare.",
-    positioning: "Pozitionare publica",
-    sectionTitle: "Comunitate, pregatire si impact civic.",
-    today: "GIUVA astazi",
-    tomorrow: "GIUVA maine",
-    disciplinesEyebrow: "Cele 9 discipline",
+      "GIUVA Romania construiește o rețea civică de voluntari, comunități și parteneri, pentru orașe mai conectate, pregătite și solidare.",
+    positioning: "Poziționare publică",
+    sectionTitle: "Comunitate, pregătire și impact civic.",
+    today: "GIUVA astăzi",
+    tomorrow: "GIUVA mâine",
+    disciplinesEyebrow: "Discipline GIUVA",
     disciplinesText:
-      "Disciplinele GIUVA arata cum poate creste asociatia: social, educativ, civic, preventiv, narativ si european.",
-    europeText: "Construim impreuna o retea europeana de comunitati.",
-    socialTitle: "Urmareste dezvoltarea GIUVA.",
+      "Disciplinele GIUVA arată cum poate crește asociația: social, educativ, civic, preventiv, narativ și european.",
+    europeText: "Construim împreună o rețea europeană de comunități.",
+    socialTitle: "Urmărește dezvoltarea GIUVA."
   };
 }

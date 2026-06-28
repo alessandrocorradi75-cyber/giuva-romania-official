@@ -1,11 +1,18 @@
-﻿import type { Metadata } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { GiuvaAiWidget } from "@/components/GiuvaAiWidget";
 import { brand, seoKeywords } from "@/data/site";
 import "@/styles/globals.css";
 
 const siteUrl = "https://www.giuva.ro";
 
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5
+};
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
         url: "/brand/giuva-romania-disciplines-flag.png",
         width: 1536,
         height: 864,
-        alt: "GIUVA Romania, voluntari, comunitate, Romania si Europa"
+        alt: "GIUVA Romania, voluntari, comunitate, România și Europa"
       }
     ]
   },
@@ -53,10 +60,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ro">
       <body className="site-shell">
+        <a href="#main-content" className="skip-link">Sari la conținutul principal</a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
+        <GiuvaAiWidget />
       </body>
     </html>
   );
 }
+

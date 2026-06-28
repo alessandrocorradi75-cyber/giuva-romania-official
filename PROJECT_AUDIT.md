@@ -561,3 +561,254 @@ Hero principala a fost verificata vizual pe varianta WebP `giuva-romania-discipl
 **PERFORMANCE BASELINE PASSED**
 
 Motivatie: imaginile raster mari au variante WebP optimizate, imaginile principale sunt incarcate prin `next/image`, hero foloseste `priority` si `sizes`, imaginile non-hero au lazy loading explicit, iar lint/build/dev trec fara erori.
+
+## R1-004 Completed
+
+Date: 2026-06-28
+
+### Scope
+
+GIUVA Romania was upgraded from a simple institutional website into a broader institutional European civic portal, without introducing new technologies and without changing official GIUVA colors, logos, uniforms or brand identity.
+
+The required file `GIUVA_RELEASE_1_REQUIREMENTS.md` was searched in `C:\GIUVA-PROJECTS\GIUVA-ROMANIA` and wider `C:\GIUVA-PROJECTS`, but it was not present. In absence of the file, implementation followed the consolidated Release 1 requirements already reflected in the project and in previous R1 audit notes: Romanian default, English secondary, civic/non-emergency positioning, no implicit partnerships, no operational authority language, production-safe public content.
+
+### Main changes
+
+- Homepage redesigned as an institutional portal entry point.
+- Hero made full-width, more cinematic and more readable.
+- GIUVA AI visible across the site through a global minimizable widget.
+- Homepage now answers: who we are, what we do, how to participate, how to collaborate, why trust GIUVA.
+- Added dedicated Mission / Vision / Core Values / European Principles section.
+- Added statistics component with easily editable placeholder metrics.
+- Rebuilt programme cards with image, discipline color, CTA and links to dedicated discipline pages.
+- Added dynamic dedicated pages for every existing GIUVA discipline.
+- Added GIUVA AI page.
+- Added GIUVA Network page with Romania, Italia, Spania, Austria, Ungaria and Europe cards.
+- Added Institutional Resources page with official/public links only and no implied partnership.
+- Added Transparency & Documents page.
+- Added Governance page.
+- Footer transformed into institutional hub: mission, transparency, normativa/resources, European network, GIUVA AI, contacts, newsletter, social, release/version.
+- Social section expanded to official and future channels: LinkedIn, Facebook, Instagram, TikTok, YouTube, Threads, WhatsApp Channel, Telegram, Roblox roadmap.
+- Corrected mojibake Romanian text in the main `data/site.ts` content used by the portal.
+- Updated sitemap to include new institutional and discipline routes.
+
+### Files modified
+
+- `app/page.tsx`
+- `app/layout.tsx`
+- `app/sitemap.ts`
+- `app/discipline/page.tsx`
+- `components/Navbar.tsx`
+- `components/Footer.tsx`
+- `components/DisciplineCards.tsx`
+- `data/site.ts`
+- `lib/siteByHost.ts`
+- `PROJECT_AUDIT.md`
+
+### New pages
+
+- `app/discipline/[slug]/page.tsx`
+- `app/giuva-ai/page.tsx`
+- `app/giuva-network/page.tsx`
+- `app/resurse-institutionale/page.tsx`
+- `app/transparenta/page.tsx`
+- `app/guvernanta/page.tsx`
+
+### New components
+
+- `components/GiuvaAiWidget.tsx`
+- `components/MissionPrinciples.tsx`
+- `components/PortalStats.tsx`
+- `components/ProgrammeCards.tsx`
+- `components/SocialChannels.tsx`
+
+### Verification results
+
+- `npm install`: PASS
+  - Dependencies already up to date.
+  - 2 moderate vulnerabilities remain, same known dependency audit issue. `npm audit fix --force` would introduce breaking/unsafe changes, so it was not applied.
+
+- `npm run lint`: PASS
+  - ESLint completed with `--max-warnings=0`.
+
+- `npm run build`: PASS
+  - Next.js 15.5.18.
+  - 44 pages generated.
+  - Dynamic discipline pages generated through `generateStaticParams`.
+
+- `npm run dev`: PASS
+  - Dev server started on `http://127.0.0.1:3000`.
+  - HTTP status check returned `200`.
+
+### Screenshots
+
+- Browser screenshot capture was partially available. The homepage hero screenshot was captured and emitted in the Codex conversation.
+- Saving multiple screenshot files locally from the in-app browser to `C:\GIUVA-PROJECTS\GIUVA-ROMANIA` was blocked by browser filesystem permissions / CDP screenshot timeouts. This is a tooling limitation, not a build or runtime failure.
+
+### Remaining issues / risks
+
+- `GIUVA_RELEASE_1_REQUIREMENTS.md` is missing from the repository, so future work should add it to the project root to make requirement validation explicit.
+- `data/site-romania.ts` still exists as a legacy/alternate data file; the active portal imports use `data/site.ts`.
+- Some existing legacy routes remain in the project for backward compatibility and were not removed.
+- Social future channels intentionally use roadmap/placeholder status where official URLs are not confirmed.
+- Audit vulnerabilities remain moderate and should be reviewed when Next.js dependency remediation offers a non-breaking fix.
+
+### Status
+
+**INSTITUTIONAL PORTAL PASSED**
+
+Motivation: the site now functions as a broader institutional civic portal with stronger hero, mission, statistics, dedicated discipline pages, GIUVA AI, network, resources, transparency, governance, expanded footer and verified build quality. The remaining issues are documentation/tooling/dependency-audit risks, not blockers for the R1-004 portal baseline.
+
+## R1-005 Completed
+
+Date: 2026-06-28
+
+### Scope
+
+R1-005 completed the natural quality pass after R1-004, improving European institutional quality, accessibility, responsive behavior, navigation, reusable components, production readiness and perceived trust. No new technologies were introduced. Official GIUVA colors, logo, uniforms, brand identity and discipline structure were preserved.
+
+`GIUVA_RELEASE_1_REQUIREMENTS.md` was searched again and remains missing from `C:\GIUVA-PROJECTS\GIUVA-ROMANIA`. Implementation followed the Release 1 constraints already consolidated in the project: Romanian default, English secondary, civic/non-emergency positioning, no implicit partnerships, no third-party logos without authorization, no fake documents, production-safe future states.
+
+### Accessibility
+
+- Added skip-to-content link targeting `#main-content`.
+- Added explicit `main` landmark with focus target.
+- Added Next.js viewport metadata for mobile rendering.
+- Navbar now supports active state with `aria-current="page"`.
+- Mobile menu has accessible label and keyboard-reachable summary.
+- Forms include clearer required indicators, `aria-describedby`, `role="alert"` and `role="status"` feedback.
+- FAQ Center uses native accessible `<details>/<summary>` accordions.
+- Icons used decoratively now include `aria-hidden` where appropriate.
+- Search component includes label, help text and live result region.
+- Focus visibility remains strong through the existing yellow focus outline.
+- Added reduced-motion handling through `prefers-reduced-motion`.
+
+### Responsive / UX
+
+- Added explicit viewport metadata to fix mobile rendering.
+- Fixed mobile header compression and hamburger visibility.
+- Adjusted mobile hero text wrapping and CTA behavior.
+- Added overflow-x protection for the page.
+- Added desktop and mobile screenshots under `r1-005-screenshots`.
+- Desktop screenshot verified visually: `r1-005-screenshots/desktop-home.png`.
+- Mobile final screenshot verified visually: `r1-005-screenshots/mobile-home-menu-visible.png`.
+- FAQ desktop screenshot created: `r1-005-screenshots/desktop-faq.png`.
+
+### Navigation
+
+- Added active navigation state.
+- Added footer quick links and expanded institutional hub.
+- Added breadcrumbs on new institutional pages.
+- Added quick access to FAQ, Events, Publications and Download Center.
+- Sitemap updated for new routes and structured news routes.
+
+### Search
+
+- Added reusable `SearchBox` component.
+- Search is demo/static for Release 1.0, backend-free and extensible.
+- Homepage and News Center use search entry points.
+
+### News Center
+
+- News architecture prepared with category, discipline, country, author, date, tags, image and CTA.
+- News Center page rebuilt with `NewsCard`.
+- News detail pages now use the enriched news data.
+
+### Events
+
+- Added Events page with Upcoming Events and Past Events.
+- Added reusable `EventCard`.
+- Event states are roadmap/under development, without fake active events.
+
+### Publications
+
+- Added Publications page for Annual Report, Impact Report, Guidelines, Policies, Manuals and Institutional Documents.
+- Added reusable `DocumentCard`.
+- No unreal document download is published.
+
+### Download Center
+
+- Added Download Center page split conceptually into documentation, manuals, media kit, brand assets, templates and downloads.
+- Sensitive/internal documentation remains explicitly not public.
+
+### Trust / Testimonials / Newsletter
+
+- Added `TrustIndicators` component.
+- Added institutional testimonial placeholders without real names.
+- Added `NewsletterBox` with privacy consent and double opt-in placeholder.
+
+### Partners
+
+- Partner page reorganized into Institutional, Academic, NGO, Corporate, Media and International categories.
+- No third-party logos are displayed.
+- No implicit partnership is declared.
+
+### Contact Center
+
+- Contact page rebuilt as Contact Center with General Information, Volunteer, Academy, Media, Funding, Partnership, Press, GIUVA AI and Emergency Disclaimer.
+- Contact form includes department selection and production-safe mock behavior.
+
+### Component Library Additions
+
+- `components/portal/Breadcrumbs.tsx`
+- `components/portal/SearchBox.tsx`
+- `components/portal/NewsletterBox.tsx`
+- `components/portal/TrustIndicators.tsx`
+- `components/portal/EmptyState.tsx`
+- `components/portal/Cards.tsx`
+- `components/portal/FaqAccordion.tsx`
+- `components/portal/Testimonials.tsx`
+
+### New Pages
+
+- `app/faq/page.tsx`
+- `app/events/page.tsx`
+- `app/publicatii/page.tsx`
+- `app/download-center/page.tsx`
+
+### Modified Key Files
+
+- `app/layout.tsx`
+- `app/page.tsx`
+- `app/contact/page.tsx`
+- `app/news/page.tsx`
+- `app/news/[slug]/page.tsx`
+- `app/partner/page.tsx`
+- `app/sitemap.ts`
+- `components/Navbar.tsx`
+- `components/Footer.tsx`
+- `components/MockForm.tsx`
+- `data/site.ts`
+- `styles/globals.css`
+- `PROJECT_AUDIT.md`
+
+### Verification Results
+
+- `npm install`: PASS
+  - Dependencies up to date.
+  - 2 moderate vulnerabilities remain from the known dependency audit issue. Forced remediation would require potentially breaking changes, so it was not applied.
+
+- `npm run lint`: PASS
+  - ESLint completed with `--max-warnings=0`.
+
+- `npm run build`: PASS
+  - Next.js 15.5.18.
+  - 48 pages generated.
+  - Dynamic discipline pages generated through `generateStaticParams`.
+
+- `npm run dev`: PASS
+  - Dev server running on `http://127.0.0.1:3000`.
+  - HTTP status check returned `200`.
+
+### Remaining Issues / Risks
+
+- `GIUVA_RELEASE_1_REQUIREMENTS.md` is still absent and should be added to the repository root.
+- Automated WCAG tooling was not added because R1-005 forbids new technologies; accessibility was reviewed manually through code, semantics and visual checks.
+- Moderate npm audit findings remain pending a safe non-breaking dependency fix.
+- Future channels and documents remain roadmap/under development intentionally.
+
+### Status
+
+**EUROPEAN QUALITY PASSED**
+
+Motivation: R1-005 adds accessibility foundations, responsive fixes, production-safe portal sections, reusable component library, structured news/events/publications/downloads, FAQ, contact center, trust indicators, improved navigation and verified build quality. Remaining items are documentation and dependency-audit risks, not blockers for the Release 1.0 quality baseline.

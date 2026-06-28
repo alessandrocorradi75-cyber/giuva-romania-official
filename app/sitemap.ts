@@ -1,5 +1,5 @@
 ﻿import type { MetadataRoute } from "next";
-import { news } from "@/data/site";
+import { disciplines, newsCenter } from "@/data/site";
 
 const baseUrl = "https://www.giuva.ro";
 
@@ -9,6 +9,15 @@ const staticRoutes = [
   "/en",
   "/despre",
   "/discipline",
+  "/giuva-ai",
+  "/giuva-network",
+  "/resurse-institutionale",
+  "/transparenta",
+  "/guvernanta",
+  "/events",
+  "/publicatii",
+  "/download-center",
+  "/faq",
   "/riders-rescue",
   "/community",
   "/journey",
@@ -26,12 +35,13 @@ const staticRoutes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const newsRoutes = news.map((article) => `/news/${article.slug}`);
+  const newsRoutes = newsCenter.map((article) => `/news/${article.slug}`);
+  const disciplineRoutes = disciplines.map((discipline) => `/discipline/${discipline.slug}`);
 
-  return [...staticRoutes, ...newsRoutes].map((route) => ({
+  return [...staticRoutes, ...disciplineRoutes, ...newsRoutes].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified,
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.7
+    priority: route === "" ? 1 : route.startsWith("/discipline/") ? 0.75 : 0.7
   }));
 }
