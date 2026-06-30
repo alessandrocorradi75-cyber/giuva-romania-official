@@ -16,11 +16,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "GIUVA Romania | Connecting Communities. Creating Impact.",
+    default: "GIUVA Romania | Nu o asociație. O comunitate.",
     template: "%s | GIUVA Romania"
   },
   description:
-    "GIUVA Romania construiește o rețea civică de voluntari, comunități și parteneri pentru orașe mai conectate, pregătite și solidare.",
+    "GIUVA Romania este o comunitate unde oamenii se întâlnesc, împărtășesc idei, creează proiecte și îmbunătățesc societatea împreună.",
   keywords: seoKeywords,
   alternates: {
     canonical: siteUrl,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "GIUVA Romania | Connecting Communities. Creating Impact.",
+    title: "GIUVA Romania | Nu o asociație. O comunitate.",
     description: brand.description,
     url: siteUrl,
     siteName: "GIUVA Romania",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GIUVA Romania | Connecting Communities. Creating Impact.",
+    title: "GIUVA Romania | Nu o asociație. O comunitate.",
     description: brand.description,
     images: ["/brand/giuva-romania-disciplines-flag.png"]
   },
@@ -69,4 +69,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
+
 

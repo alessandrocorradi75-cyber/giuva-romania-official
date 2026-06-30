@@ -812,3 +812,82 @@ R1-005 completed the natural quality pass after R1-004, improving European insti
 **EUROPEAN QUALITY PASSED**
 
 Motivation: R1-005 adds accessibility foundations, responsive fixes, production-safe portal sections, reusable component library, structured news/events/publications/downloads, FAQ, contact center, trust indicators, improved navigation and verified build quality. Remaining items are documentation and dependency-audit risks, not blockers for the Release 1.0 quality baseline.
+
+---
+
+## RO-010 Completed — Human Experience Homepage v2.0
+
+### Objective
+
+Transformed the GIUVA Romania homepage from a mainly institutional portal opening into a human-first community experience aligned with the RO-010 brief.
+
+### Implemented Changes
+
+- Rebuilt the Romanian homepage around the message: `NU O ASOCIAȚIE. O COMUNITATE.`
+- Added a cinematic hero using the existing GIUVA Romania community visual asset.
+- Added human story cards around the concept `Totul poate începe cu o cafea.`
+- Added a community-project timeline: meeting, coffee, idea, development, community, partners, project, impact.
+- Reintroduced the GIUVA disciplines after the human narrative, not before it.
+- Added a Romania impact section with prudent non-fake values.
+- Added a homepage GIUVA AI section and updated the AI page with the GIUVA-only refusal rule.
+- Updated donation/support page language around transparent use of funds, local initiatives and future European development.
+- Updated partner positioning to avoid implicit institutional partnerships.
+- Added transparency/governance entry points on the homepage.
+- Updated English homepage with the same human-experience structure.
+- Updated metadata and navigation language to match the community-first positioning.
+- Added responsive CSS for the new homepage and corrected mobile title overflow.
+
+### Modified Files
+
+- `app/page.tsx`
+- `app/en/page.tsx`
+- `app/giuva-ai/page.tsx`
+- `app/sustine/page.tsx`
+- `app/layout.tsx`
+- `components/GiuvaAiWidget.tsx`
+- `components/Navbar.tsx`
+- `data/site.ts`
+- `styles/globals.css`
+- `PROJECT_AUDIT.md`
+
+### Screenshots
+
+- `ro-010-screenshots/desktop-home-ro010-final2.png`
+- `ro-010-screenshots/mobile-home-ro010-final2.png`
+- `ro-010-screenshots/mobile-en-ro010-final2.png`
+
+Note: the browser-integrated full-page mobile capture repeated the hero visually during screenshot stitching, but the DOM check confirmed the corrected mobile hero title does not overflow the viewport.
+
+### Verification Results
+
+- `npm run lint`: PASS
+  - ESLint completed with `--max-warnings=0`.
+
+- `npm run build`: PASS
+  - Next.js 15.5.18.
+  - 48 pages generated successfully.
+
+- `npm run dev`: PASS
+  - Temporary preview server started on `http://127.0.0.1:3004`.
+  - HTTP status check returned `200`.
+
+### Visual / Responsive Check
+
+- Desktop homepage screenshot generated.
+- Mobile Romanian homepage screenshot generated.
+- Mobile English homepage screenshot generated.
+- Mobile hero title viewport check: PASS.
+  - `overflowLeft: false`
+  - `overflowRight: false`
+
+### Remaining Risks
+
+- The hero uses an existing GIUVA Romania branded visual asset, not newly produced official photography.
+- Story card images are assembled from existing approved project assets and may need replacement with future real GIUVA photography.
+- GIUVA AI remains demonstrative for Release 1.0 and does not include backend intelligence or persistence.
+
+### Status
+
+**RO-010 HUMAN EXPERIENCE PASSED**
+
+Motivation: the homepage now opens with a human, community-first experience, explains GIUVA through people and stories before programmes, keeps Romanian as the primary language, includes an English equivalent page, preserves production-safe legal positioning, passes lint/build, and resolves the mobile hero overflow issue.

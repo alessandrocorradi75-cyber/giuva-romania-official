@@ -361,4 +361,69 @@ html, body {
     display: none;
   }
 }
+/* RO-010 Human Experience Homepage */
+.human-hero {
+  isolation: isolate;
+}
+
+.human-hero-title {
+  max-width: min(100%, 58rem);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.story-card figure img {
+  transition: transform 420ms ease;
+}
+
+.story-card:hover figure img {
+  transform: scale(1.045);
+}
+
+@keyframes giuva-soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.human-hero-title,
+.human-hero p,
+.human-hero a,
+.story-card,
+.discipline-card {
+  animation: giuva-soft-rise 520ms ease both;
+}
+
+@media (max-width: 720px) {
+  .human-hero {
+    min-height: 86vh;
+  }
+
+  .human-hero-title {
+    font-size: clamp(2.8rem, 12vw, 4.1rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .human-hero-title {
+    font-size: clamp(2.25rem, 9.2vw, 2.65rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0;
+    max-width: calc(100vw - 2.5rem);
+  }
+
+  .human-hero .btn {
+    width: 100%;
+  }
+
+  .human-hero .relative.mx-auto {
+    width: 100%;
+  }
+}
 

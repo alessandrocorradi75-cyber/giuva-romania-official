@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Facebook, Linkedin, Menu } from "lucide-react";
 import { brand, ctas, navItems, socialLinks } from "@/data/site";
 
-const primaryNav = navItems.filter((item) => ["/", "/despre", "/discipline", "/giuva-network", "/transparenta", "/resurse-institutionale", "/giuva-ai"].includes(item.href));
+const primaryNav = navItems.filter((item) => ["/", "/despre", "/discipline", "/project-pulse", "/voluntari", "/partner", "/news", "/contact"].includes(item.href));
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -73,12 +73,15 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <Link href={ctas.volunteer.href} className="btn btn-primary">{ctas.volunteer.label}</Link>
+          <Link href={ctas.donate.href} className="btn btn-primary">Donează</Link>
         </div>
       </nav>
     </header>
   );
 }
+
+
+
 
 
 

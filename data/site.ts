@@ -26,11 +26,11 @@ export const brand = {
   name: "GIUVA Romania",
   acronym: "GIUVA",
   fullName: "Global Initiative for Urban Volunteering & Awareness",
-  claim: "Connecting Communities. Creating Impact.",
+  claim: "Nu o asociație. O comunitate.",
   domain: "www.giuva.ro",
   email: "info@giuva.ro",
   description:
-    "GIUVA Romania construiește o rețea civică de voluntari, comunități și parteneri pentru orașe mai conectate, pregătite și solidare.",
+    "GIUVA Romania este o comunitate unde oamenii se întâlnesc, împărtășesc idei, creează proiecte și îmbunătățesc societatea împreună.",
   legalBoundary:
     "GIUVA Romania este un proiect civic aflat în dezvoltare și consolidare. Nu înlocuiește serviciile publice de urgență, 112, SMURD, poliție, pompieri sau alte instituții publice. Activitățile GIUVA sunt civice, educaționale, sociale și comunitare."
 };
@@ -50,19 +50,17 @@ export const seoKeywords = [
 
 export const navItems = [
   { href: "/", label: "Acasă" },
-  { href: "/despre", label: "Despre" },
-  { href: "/discipline", label: "Discipline" },
-  { href: "/giuva-network", label: "Rețea" },
+  { href: "/despre", label: "Cine suntem" },
+  { href: "/discipline", label: "Programe" },
+  { href: "/project-pulse", label: "Proiecte" },
+  { href: "/voluntari", label: "Implică-te" },
+  { href: "/partner", label: "Parteneri" },
+  { href: "/news", label: "Știri" },
+  { href: "/events", label: "Evenimente" },
   { href: "/transparenta", label: "Transparență" },
   { href: "/resurse-institutionale", label: "Resurse" },
-  { href: "/news", label: "News" },
-  { href: "/events", label: "Events" },
-  { href: "/publicatii", label: "Publicații" },
-  { href: "/download-center", label: "Download" },
   { href: "/faq", label: "FAQ" },
   { href: "/giuva-ai", label: "GIUVA AI" },
-  { href: "/voluntari", label: "Voluntari" },
-  { href: "/partner", label: "Parteneri" },
   { href: "/contact", label: "Contact" }
 ];
 
@@ -715,4 +713,6 @@ export const portalSearchItems = [
   { title: "Download Center", category: "Downloads", href: "/download-center", keywords: ["media kit", "brand", "template"] },
   { title: "FAQ Center", category: "Support", href: "/faq", keywords: ["întrebări", "privacy", "donations"] }
 ];
+
+
 
