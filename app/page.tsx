@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -211,11 +211,11 @@ export default function HomePage() {
               <article key={story.name} className="story-card card interactive-card overflow-hidden">
                 <div className="grid grid-cols-2 gap-0">
                   <figure className="relative h-48 overflow-hidden">
-                    <Image src={story.imageBefore} alt={`${story.name} înainte de GIUVA`} fill sizes="(min-width: 1536px) 12vw, 50vw" className="object-cover" style={{ objectPosition: story.positionBefore }} />
+                    <Image src={story.imageBefore} alt={`${story.name} înainte de GIUVA`} fill sizes="(min-width: 1536px) 8vw, (min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw" className="object-cover" style={{ objectPosition: story.positionBefore }} />
                     <figcaption className="absolute left-2 top-2 rounded-full bg-white/90 px-2 py-1 text-[0.65rem] font-black uppercase text-[#081f3a]">înainte</figcaption>
                   </figure>
                   <figure className="relative h-48 overflow-hidden">
-                    <Image src={story.imageAfter} alt={`${story.name} după implicarea in ${story.role}`} fill sizes="(min-width: 1536px) 12vw, 50vw" className="object-cover" style={{ objectPosition: story.positionAfter }} />
+                    <Image src={story.imageAfter} alt={`${story.name} după implicarea in ${story.role}`} fill sizes="(min-width: 1536px) 8vw, (min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw" className="object-cover" style={{ objectPosition: story.positionAfter }} />
                     <figcaption className="absolute right-2 top-2 rounded-full bg-[#081f3a]/90 px-2 py-1 text-[0.65rem] font-black uppercase text-white">după</figcaption>
                   </figure>
                 </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
               return (
                 <article key={discipline.slug} className="card interactive-card overflow-hidden">
                   <figure className="relative h-56">
-                    <Image src={disciplineImageBySlug[discipline.slug] ?? discipline.image} alt={`Imagine oficiala ${discipline.name}`} fill sizes="(min-width: 1280px) 30vw, 100vw" className="object-cover" />
+                    <Image src={disciplineImageBySlug[discipline.slug] ?? discipline.image} alt={`Imagine oficiala ${discipline.name}`} fill sizes="(min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className={`absolute left-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl ${discipline.accent} text-white shadow-xl`}>
                       <Icon size={28} aria-hidden="true" />
@@ -376,6 +376,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 

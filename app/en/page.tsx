@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, CheckCircle2, Coffee, HandHeart, Heart, Lightbulb, Network, Sprout, Users } from "lucide-react";
@@ -39,7 +39,7 @@ export default function EnglishHome() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-12 md:py-16"><div className="mx-auto max-w-[1500px]"><h2 className="text-center text-3xl font-black text-[#081f3a] md:text-4xl">Everything can start with a coffee.</h2><div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">{stories.map((name, index) => <article key={name} className="card interactive-card overflow-hidden"><figure className="relative h-48"><Image src={index === 1 ? "/brand/riders-rescue-support.webp" : index === 4 ? "/brand/journey-urban-1.webp" : "/brand/giuva-romania-disciplines-flag.webp"} alt={`${name} GIUVA story`} fill sizes="(min-width: 1536px) 12vw, 50vw" className="object-cover" /></figure><div className="p-5"><h3 className="text-2xl font-black text-[#081f3a]">{name}</h3><p className="mt-3 text-sm font-semibold leading-6 text-slate-700">Came for a conversation. Stayed for people, ideas and community impact.</p><Link href="/journey" className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#1f5fbf]">Discover the story<ArrowRight size={15} /></Link></div></article>)}</div></div></section>
+      <section className="bg-white px-5 py-12 md:py-16"><div className="mx-auto max-w-[1500px]"><h2 className="text-center text-3xl font-black text-[#081f3a] md:text-4xl">Everything can start with a coffee.</h2><div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">{stories.map((name, index) => <article key={name} className="card interactive-card overflow-hidden"><figure className="relative h-48"><Image src={index === 1 ? "/brand/riders-rescue-support.webp" : index === 4 ? "/brand/journey-urban-1.webp" : "/brand/giuva-romania-disciplines-flag.webp"} alt={`${name} GIUVA story`} fill sizes="(min-width: 1536px) 16vw, (min-width: 768px) 50vw, 100vw" className="object-cover" /></figure><div className="p-5"><h3 className="text-2xl font-black text-[#081f3a]">{name}</h3><p className="mt-3 text-sm font-semibold leading-6 text-slate-700">Came for a conversation. Stayed for people, ideas and community impact.</p><Link href="/journey" className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.08em] text-[#1f5fbf]">Discover the story<ArrowRight size={15} /></Link></div></article>)}</div></div></section>
 
       <section className="px-5 py-8"><div className="mx-auto max-w-[1500px] rounded-2xl bg-[#081f3a] p-6 text-white shadow-2xl md:p-8"><h2 className="text-center text-3xl font-black md:text-4xl">How is a GIUVA project born?</h2><div className="mt-8 grid gap-4 md:grid-cols-4 xl:grid-cols-8">{steps.map((step) => { const Icon = step.icon; return <div key={step.title} className="rounded-xl border border-white/12 bg-white/8 p-4 text-center backdrop-blur"><Icon className="mx-auto text-[#ffd84d]" size={34} /><p className="mt-3 text-sm font-black leading-5">{step.title}</p></div>; })}</div></div></section>
 
@@ -49,5 +49,6 @@ export default function EnglishHome() {
     </>
   );
 }
+
 
 

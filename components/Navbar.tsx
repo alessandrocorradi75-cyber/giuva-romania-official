@@ -1,8 +1,9 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Facebook, Linkedin, Menu } from "lucide-react";
+import { GiuvaLogo } from "@/components/brand/GiuvaLogo";
 import { brand, ctas, navItems, socialLinks } from "@/data/site";
 
 const primaryNav = navItems.filter((item) => ["/", "/despre", "/discipline", "/project-pulse", "/voluntari", "/partner", "/news", "/contact"].includes(item.href));
@@ -20,7 +21,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-[1500px] items-center justify-between gap-3 px-4 py-3 md:gap-5 md:px-5" aria-label="Navigare principală">
         <Link href="/" className="flex max-w-[calc(100%-4rem)] min-w-0 items-center gap-2 rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[#ffd84d] md:gap-3 lg:max-w-none" aria-label="GIUVA Romania acasă">
           <span className="flex h-10 shrink-0 items-center rounded-xl bg-[#081f3a] px-2 shadow-sm md:h-14">
-            <img src="/brand/giuva-logo.svg" alt="GIUVA - Global Initiative for Urban Volunteering & Awareness" className="h-7 w-auto md:h-10" />
+            <GiuvaLogo className="h-7 w-auto md:h-10" height={40} />
           </span>
           <span className="min-w-0 leading-tight">
             <span className="block text-base font-black tracking-tight text-[#081f3a] md:text-lg">{brand.name}</span>
@@ -79,6 +80,8 @@ export function Navbar() {
     </header>
   );
 }
+
+
 
 
 

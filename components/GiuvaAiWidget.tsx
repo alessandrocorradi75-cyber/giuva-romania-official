@@ -1,12 +1,12 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { Bot, X } from "lucide-react";
 import { giuvaAiTopics } from "@/data/site";
 
-export function GiuvaAiWidget() {
-  const [open, setOpen] = useState(false);
+export function GiuvaAiWidget({ defaultOpen = false }: { defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <aside className="fixed bottom-5 right-5 z-50 max-w-[calc(100vw-2.5rem)]">
@@ -44,4 +44,5 @@ export function GiuvaAiWidget() {
     </aside>
   );
 }
+
 

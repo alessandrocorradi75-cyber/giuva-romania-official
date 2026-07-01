@@ -1,5 +1,6 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Facebook, Linkedin, Mail } from "lucide-react";
+import { GiuvaLogo } from "@/components/brand/GiuvaLogo";
 import { brand, contactEmails, europeanNetwork, socialLinks } from "@/data/site";
 
 const footerGroups = [
@@ -49,7 +50,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-4">
             <span className="flex h-14 items-center rounded-xl bg-[#081f3a] px-2">
-              <img src="/brand/giuva-logo.svg" alt="GIUVA - Global Initiative for Urban Volunteering & Awareness" className="h-10 w-auto" />
+              <GiuvaLogo className="h-10 w-auto" height={40} />
             </span>
             <div>
               <strong className="block text-2xl font-black text-[#081f3a]">GIUVA Romania</strong>
@@ -113,3 +114,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

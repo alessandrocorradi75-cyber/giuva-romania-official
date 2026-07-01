@@ -891,3 +891,112 @@ Note: the browser-integrated full-page mobile capture repeated the hero visually
 **RO-010 HUMAN EXPERIENCE PASSED**
 
 Motivation: the homepage now opens with a human, community-first experience, explains GIUVA through people and stories before programmes, keeps Romanian as the primary language, includes an English equivalent page, preserves production-safe legal positioning, passes lint/build, and resolves the mobile hero overflow issue.
+
+---
+
+## Performance Optimization Completed
+
+### Objective
+
+Improved baseline loading performance, production stability, image weight, client-side JavaScript loading and accessibility-related layout stability without changing GIUVA brand identity, institutional message, public navigation logic or discipline structure.
+
+### Image Optimization
+
+- Removed unused PNG duplicates that already had WebP equivalents.
+- Removed one unused duplicate WebP from `public/images`.
+- Switched Open Graph / Twitter metadata image references from PNG to WebP.
+- Kept the above-the-fold homepage hero on `next/image` with `priority`.
+- Refined responsive `sizes` attributes for homepage story and discipline images to avoid oversized image requests on tablet/desktop grids.
+- Preserved all active visual content and official brand assets.
+
+Approximate removed asset weight: 42 MB+ from duplicated public image files.
+
+### Component / Bundle Optimization
+
+- Replaced `MotionShell` Framer Motion usage with a server-rendered lightweight wrapper.
+- Removed `framer-motion` from dependencies and updated `package-lock.json`.
+- Added `GiuvaLogo` reusable component with explicit width/height to reduce layout shift from SVG logos.
+- Replaced repeated raw logo markup in Navbar and Footer with the reusable logo component.
+- Added `GiuvaAiLazy` so the full GIUVA AI assistant code loads only after user interaction.
+- Kept the visible GIUVA AI launcher available as a lightweight button.
+
+### Metadata / SEO Stability
+
+- Updated social preview image references to WebP assets.
+- Existing canonical, robots and sitemap configuration remained valid.
+- Existing title/description structure remained unchanged in message and positioning.
+
+### Accessibility / Layout Stability
+
+- Logo images now include explicit dimensions and stable alt text.
+- GIUVA AI launcher keeps `aria-label` and `aria-busy` state.
+- Touch target dimensions were preserved for mobile.
+- No navigation or public message changes were introduced.
+
+### Modified Files
+
+- `app/layout.tsx`
+- `app/page.tsx`
+- `app/en/page.tsx`
+- `components/Footer.tsx`
+- `components/Navbar.tsx`
+- `components/MotionShell.tsx`
+- `components/GiuvaAiWidget.tsx`
+- `components/GiuvaAiLazy.tsx`
+- `components/brand/GiuvaLogo.tsx`
+- `package.json`
+- `package-lock.json`
+- `PROJECT_AUDIT.md`
+
+### Removed Assets
+
+Removed unused duplicated PNG files with active WebP equivalents:
+
+- `public/brand/journey-urban-3.png`
+- `public/brand/journey-urban-1.png`
+- `public/brand/journey-urban-2.png`
+- `public/brand/community-manifesto-1.png`
+- `public/brand/community-manifesto-2.png`
+- `public/brand/riders-rescue-support.png`
+- `public/brand/community-manifesto-0.png`
+- `public/brand/project-pulse-scene.png`
+- `public/brand/civil-response-protocol.png`
+- `public/brand/civil-response-scene.png`
+- `public/brand/giuva-romania-disciplines-flag.png`
+- `public/brand/giuva-romania-disciplines.png`
+- `public/brand/giuva-romania-disciplines-before-flag.png`
+- `public/brand/giuva-riders-rescue-banner.png`
+- `public/brand/community-manifesto-3.png`
+- `public/images/giuva-riders-rescue-banner.png`
+- `public/images/giuva-riders-rescue-banner.webp`
+
+### Verification Results
+
+- `npm install`: PASS
+  - Removed 3 packages after dropping Framer Motion.
+  - 2 moderate npm audit vulnerabilities remain.
+
+- `npm run lint`: PASS
+  - ESLint completed with `--max-warnings=0`.
+
+- `npm run build`: PASS
+  - Next.js 15.5.18.
+  - 48 pages generated successfully.
+  - Homepage first-load JS remains at 111 kB.
+  - Shared first-load JS remains at 102 kB.
+
+- `npm audit --audit-level=moderate`: WARNING
+  - `postcss <8.5.10` through `next` remains moderate severity.
+  - The suggested fix is `npm audit fix --force`, which would install `next@9.3.3` and is a breaking downgrade. It was intentionally not applied.
+
+### Remaining Warnings / Risks
+
+- The moderate npm audit warning remains pending a safe upstream Next.js/PostCSS resolution.
+- Full Lighthouse scoring was not executed in this task environment; improvements were made through code, build and asset-level optimization.
+- The official logo remains rendered with `<img>` inside the reusable `GiuvaLogo` component because it is an SVG brand asset and must not be transformed or inlined.
+
+### Status
+
+**PERFORMANCE OPTIMIZATION PASSED**
+
+Motivation: image payload and deploy asset weight were substantially reduced, Framer Motion was removed, GIUVA AI is now interaction-loaded, logo CLS risk was reduced, metadata now references WebP, lint/build pass cleanly, and the institutional design/message remained unchanged.
