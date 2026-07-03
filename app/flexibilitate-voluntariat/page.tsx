@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { Clock } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
+export const metadata: Metadata = { title: "Flexibilitate voluntariat GIUVA", description: "Poți dedica 1 oră sau 1 zi: decizi tu. Voluntariat flexibil, activități variate și proiecte comunitare." };
+const options = ["1-2 ore/săptămână: activități punctuale, evenimente locale", "1 zi/lună: participare la proiecte comunitare", "Evenimente speciale: voluntariat la evenimente mari", "Proiecte pe termen lung: implicare continuă într-o disciplină"];
+export default function FlexibleVolunteeringPage() { return <><PageHero eyebrow="Voluntariat flexibil" title="Poți dedica 1 oră sau 1 zi: decizi tu." text="Voluntariatul nu trebuie să fie o povară. La GIUVA, alegi cât timp vrei să oferi." actions={[{ href: "/events", label: "Vezi activitățile disponibile" }]} /><section className="px-5 pb-20"><div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">{options.map((item) => <article key={item} className="card p-6"><Clock className="text-[#16825d]"/><p className="mt-4 font-bold leading-7 text-slate-700">{item}</p></article>)}</div></section></>; }

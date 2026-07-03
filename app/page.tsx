@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Heart } from "lucide-react";
+import { ArrowRight, CheckCircle2, Heart, HandHeart, GraduationCap, Compass } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "GIUVA | Vrei să faci diferența în orașul tău?",
+  title: "GIUVA - Voluntariat civic în Europa",
   description:
-    "GIUVA este o organizație europeană de voluntariat civic. Alătură-te nouă pentru a ajuta, a te forma și a construi comunități mai puternice."
+    "Alătură-te comunității GIUVA și fă diferența în orașul tău. Organizație europeană de voluntariat civic."
 };
 
 const macroAreas = [
   {
-    icon: "🆘",
+    icon: HandHeart,
     title: "AJUTĂ PE ALȚII",
     subtitle: "Dă o mână de ajutor",
     text: "Community & Social, Food Solidarity, Civil Support",
@@ -19,7 +19,7 @@ const macroAreas = [
     href: "/discipline/community-social"
   },
   {
-    icon: "📚",
+    icon: GraduationCap,
     title: "ÎNVAȚĂ ȘI PREPARĂ-TE",
     subtitle: "Acumulează cunoștințe",
     text: "Academy, Preparedness, Youth, Senior",
@@ -27,7 +27,7 @@ const macroAreas = [
     href: "/discipline/academy"
   },
   {
-    icon: "🌍",
+    icon: Compass,
     title: "TRĂIEȘTE EXPERIENȚE UNICE",
     subtitle: "Participă la aventuri civice",
     text: "Journey, Riders Rescue, Community Agriculture",
@@ -56,7 +56,6 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/58 to-black/20" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/82 to-transparent" />
-
         <div className="relative mx-auto flex min-h-[72vh] max-w-[1500px] items-end justify-center">
           <div className="max-w-5xl pb-6 text-center md:pb-12">
             <span className="inline-flex rounded-full border border-white/18 bg-white/12 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#ffd84d] backdrop-blur">
@@ -69,12 +68,12 @@ export default function HomePage() {
               Suntem o organizație europeană de voluntariat civic. Alătură-te nouă pentru a ajuta, a te forma și a construi comunități mai puternice, din cartierul tău până în Europa.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-              <Link href="/voluntari" className="btn bg-[#FF6B35] text-white shadow-2xl hover:bg-[#E63946]">
-                🔥 Începe-ți drumul în voluntariat
+              <Link href="/implica-te" className="btn bg-[#FF6B35] text-white shadow-2xl hover:bg-[#E63946]">
+                Începe-ți drumul în voluntariat
                 <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link href="#ghid" className="btn border border-white/80 bg-transparent text-white backdrop-blur hover:bg-white hover:text-[#081f3a]">
-                👋 Sunt nou, de unde încep?
+                Sunt nou, de unde încep?
               </Link>
             </div>
             <p className="mt-8 flex items-center justify-center gap-3 text-lg font-black text-white">
@@ -95,22 +94,24 @@ export default function HomePage() {
               Nu trebuie să cunoști toate disciplinele din prima zi. Începe cu ceea ce simți că ți se potrivește: ajutor concret, formare sau experiențe civice.
             </p>
           </div>
-
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {macroAreas.map((area) => (
-              <article key={area.title} className="card interactive-card flex h-full flex-col p-7 shadow-sm md:p-8">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#081f3a] text-3xl shadow-lg" aria-hidden="true">
-                  {area.icon}
-                </div>
-                <h3 className="mt-6 text-2xl font-black text-[#081f3a] md:text-3xl">{area.title}</h3>
-                <p className="mt-3 text-lg font-black text-[#16825d]">{area.subtitle}</p>
-                <p className="mt-4 flex-1 text-base font-semibold leading-7 text-slate-600">{area.text}</p>
-                <Link href={area.href} className="btn btn-ghost mt-7 w-full">
-                  {area.cta}
-                  <ArrowRight size={16} aria-hidden="true" />
-                </Link>
-              </article>
-            ))}
+            {macroAreas.map((area) => {
+              const Icon = area.icon;
+              return (
+                <article key={area.title} className="card interactive-card flex h-full flex-col p-7 shadow-sm md:p-8">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#081f3a] text-white shadow-lg" aria-hidden="true">
+                    <Icon size={32} />
+                  </div>
+                  <h3 className="mt-6 text-2xl font-black text-[#081f3a] md:text-3xl">{area.title}</h3>
+                  <p className="mt-3 text-lg font-black text-[#16825d]">{area.subtitle}</p>
+                  <p className="mt-4 flex-1 text-base font-semibold leading-7 text-slate-600">{area.text}</p>
+                  <Link href={area.href} className="btn btn-ghost mt-7 w-full">
+                    {area.cta}
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </Link>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -124,34 +125,6 @@ export default function HomePage() {
               <p className="text-xl font-black leading-7">{badge}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-16 md:py-20">
-        <div className="mx-auto grid max-w-[1500px] gap-6 lg:grid-cols-3">
-          <article className="card p-7 md:p-8">
-            <h2 className="text-3xl font-black text-[#081f3a]">Pentru cei care vor să ajute</h2>
-            <p className="mt-4 leading-8 text-slate-600">
-              GIUVA te ajută să intri treptat în activități civice, sociale și comunitare, într-un mod responsabil și adaptat timpului tău.
-            </p>
-            <Link href="/voluntari" className="btn btn-primary mt-6">Devino voluntar</Link>
-          </article>
-
-          <article className="card p-7 md:p-8">
-            <h2 className="text-3xl font-black text-[#081f3a]">Pentru școli, organizații și parteneri</h2>
-            <p className="mt-4 leading-8 text-slate-600">
-              Construim colaborări civice, educaționale și comunitare pentru prevenție, solidaritate și participare responsabilă.
-            </p>
-            <Link href="/partner" className="btn btn-ghost mt-6">Colaborează cu GIUVA</Link>
-          </article>
-
-          <article className="card p-7 md:p-8">
-            <h2 className="text-3xl font-black text-[#081f3a]">Pentru cei care vor să exploreze</h2>
-            <p className="mt-4 leading-8 text-slate-600">
-              Disciplinele GIUVA rămân disponibile în pagina internă dedicată, pentru a le descoperi în ritmul tău.
-            </p>
-            <Link href="/discipline" className="btn btn-ghost mt-6">Vezi disciplinele</Link>
-          </article>
         </div>
       </section>
     </>

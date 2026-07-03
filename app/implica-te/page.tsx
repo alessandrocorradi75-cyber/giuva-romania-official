@@ -1,0 +1,14 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Building2, HandHeart, HeartPulse, Megaphone, Users } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
+
+export const metadata: Metadata = { title: "Implică-te în GIUVA - Voluntariat civic", description: "Devino voluntar, donează sau partener. Alege cum vrei să contribui la comunitate." };
+const ways = [
+  { title: "Voluntar individual", icon: Users, text: "Poți deveni voluntar în orice disciplină. Nu ai experiență? Te formăm noi.", href: "/formare-voluntari" },
+  { title: "Voluntar corporatist", icon: Building2, text: "Echipa ta poate participa la activități CSR și acțiuni comunitare planificate responsabil.", href: "/parteneri" },
+  { title: "Donator", icon: HeartPulse, text: "Susține proiectele GIUVA prin mecanisme oficiale activate progresiv și raportate transparent.", href: "/doneaza" },
+  { title: "Partener instituțional", icon: HandHeart, text: "Devino partener GIUVA și susține programele noastre prin cadre formale și documentate.", href: "/parteneri" },
+  { title: "Ambasador GIUVA", icon: Megaphone, text: "Reprezintă GIUVA în comunitatea ta și promovează voluntariatul civic.", href: "/contact" }
+];
+export default function GetInvolvedPage() { return <><PageHero eyebrow="Implică-te" title="Implică-te în GIUVA" text="Fiecare ajutor contează. Găsește modul tău de a contribui: voluntar, donator, partener, ambasador sau membru al unei comunități locale." actions={[{ href: "/voluntari", label: "Devino voluntar" }, { href: "/contact", label: "Contactează-ne", tone: "ghost" }]} /><section className="px-5 pb-16"><div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-3">{ways.map((way) => { const Icon = way.icon; return <article key={way.title} className="card interactive-card p-7"><Icon className="text-[#16825d]" size={34}/><h2 className="mt-5 text-2xl font-black text-[#081f3a]">{way.title}</h2><p className="mt-4 leading-7 text-slate-600">{way.text}</p><Link href={way.href} className="mt-5 inline-flex items-center gap-2 font-black text-[#1f5fbf]">Află detalii<ArrowRight size={16}/></Link></article>; })}</div></section><section className="bg-[#1a2a4a] px-5 py-14 text-white"><div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">{[{ href: "/formare-voluntari", text: "Nicio experiență? Te formăm noi." }, { href: "/flexibilitate-voluntariat", text: "Poți dedica 1 oră sau 1 zi: decizi tu." }, { href: "/giuva-europa", text: "Suntem în toată Europa: poți participa oriunde." }].map((item) => <Link key={item.href} href={item.href} className="rounded-2xl bg-white/10 p-6 text-xl font-black hover:bg-white hover:text-[#081f3a]">{item.text}</Link>)}</div></section></>; }

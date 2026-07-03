@@ -1,4 +1,4 @@
-﻿import {
+import {
   Bike,
   BookOpen,
   Building2,
@@ -50,19 +50,15 @@ export const seoKeywords = [
 
 export const navItems = [
   { href: "/", label: "Acasă" },
-  { href: "/despre", label: "Cine suntem" },
-  { href: "/discipline", label: "Programe" },
-  { href: "/project-pulse", label: "Proiecte" },
-  { href: "/voluntari", label: "Implică-te" },
-  { href: "/partner", label: "Parteneri" },
-  { href: "/news", label: "Știri" },
-  { href: "/events", label: "Evenimente" },
-  { href: "/transparenta", label: "Transparență" },
-  { href: "/resurse-institutionale", label: "Resurse" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/giuva-ai", label: "GIUVA AI" },
+  { href: "/despre-noi", label: "Despre Noi" },
+  { href: "/programe", label: "Programe" },
+  { href: "/discipline", label: "Discipline" },
+  { href: "/proiecte", label: "Proiecte" },
+  { href: "/implica-te", label: "Implică-te" },
+  { href: "/parteneri", label: "Parteneri" },
+  { href: "/stiri", label: "Știri" },
   { href: "/contact", label: "Contact" }
-];
+]
 
 export const ctas = {
   volunteer: { label: "Devino voluntar", href: "/voluntari" },

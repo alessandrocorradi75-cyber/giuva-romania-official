@@ -9,7 +9,18 @@ const staticRoutes = [
   "/en",
   "/despre",
   "/despre-noi",
+  "/programe",
   "/discipline",
+  "/proiecte",
+  "/implica-te",
+  "/parteneri",
+  "/stiri",
+  "/contact",
+  "/ai-giuva",
+  "/doneaza",
+  "/formare-voluntari",
+  "/flexibilitate-voluntariat",
+  "/giuva-europa",
   "/giuva-ai",
   "/giuva-network",
   "/resurse-institutionale",
@@ -29,7 +40,6 @@ const staticRoutes = [
   "/partner",
   "/sustine",
   "/news",
-  "/contact",
   "/privacy-policy",
   "/cookie-policy"
 ];
@@ -46,4 +56,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : route.startsWith("/discipline/") ? 0.75 : 0.7
   }));
 }
-

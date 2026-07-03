@@ -6,7 +6,7 @@ import { Facebook, Linkedin, Menu } from "lucide-react";
 import { GiuvaLogo } from "@/components/brand/GiuvaLogo";
 import { brand, ctas, navItems, socialLinks } from "@/data/site";
 
-const primaryNav = navItems.filter((item) => ["/", "/despre", "/discipline", "/project-pulse", "/voluntari", "/partner", "/news", "/contact"].includes(item.href));
+const primaryNav = navItems.filter((item) => ["/", "/despre-noi", "/programe", "/discipline", "/proiecte", "/implica-te", "/parteneri", "/stiri", "/contact"].includes(item.href));
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";

@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { Map } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
+export const metadata: Metadata = { title: "GIUVA Europa", description: "Suntem în toată Europa: poți participa oriunde. Comunități locale și proiecte europene în dezvoltare." };
+const cities = ["București - sediul central", "Oradea - centru regional", "Cluj-Napoca - în dezvoltare", "Timișoara - în dezvoltare", "Europa - proiecte și parteneriate viitoare"];
+export default function GiuvaEuropePage() { return <><PageHero eyebrow="GIUVA Europa" title="Suntem în toată Europa: poți participa oriunde." text="GIUVA pornește din România și se dezvoltă ca rețea europeană de comunități civice, voluntariat și educație." actions={[{ href: "/contact", label: "Contactează echipa locală" }]} /><section className="px-5 pb-20"><div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 xl:grid-cols-3">{cities.map((item) => <article key={item} className="card p-6"><Map className="text-[#16825d]"/><p className="mt-4 font-bold text-slate-700">{item}</p></article>)}</div></section></>; }
