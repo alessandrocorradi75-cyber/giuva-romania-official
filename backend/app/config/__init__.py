@@ -1,4 +1,4 @@
-"""Compatibility exports for existing backend configuration imports."""
+"""Configuration package exports."""
 
 from app.config.settings import Settings, get_settings, settings
 
