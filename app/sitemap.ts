@@ -1,4 +1,4 @@
-﻿import type { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { disciplines, newsCenter } from "@/data/site";
 
 const baseUrl = "https://www.giuva.ro";
@@ -8,6 +8,7 @@ const staticRoutes = [
   "/ro",
   "/en",
   "/despre",
+  "/despre-noi",
   "/discipline",
   "/giuva-ai",
   "/giuva-network",
@@ -45,3 +46,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : route.startsWith("/discipline/") ? 0.75 : 0.7
   }));
 }
+

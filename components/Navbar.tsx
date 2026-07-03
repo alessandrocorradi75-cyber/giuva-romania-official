@@ -26,7 +26,7 @@ export function Navbar() {
           <span className="min-w-0 leading-tight">
             <span className="block text-base font-black tracking-tight text-[#081f3a] md:text-lg">{brand.name}</span>
             <span className="hidden text-[0.62rem] font-black uppercase tracking-[0.12em] text-[#16825d] sm:block md:text-[0.68rem]">
-              {brand.fullName}
+              Organizație europeană de voluntariat civic
             </span>
           </span>
         </Link>
@@ -80,6 +80,7 @@ export function Navbar() {
     </header>
   );
 }
+
 
 
 
