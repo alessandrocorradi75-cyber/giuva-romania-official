@@ -8,6 +8,16 @@ from app.models.enterprise_foundation import (
     TrainingModule,
     VolunteerCertification,
 )
+from app.models.governance_foundation import (
+    AnalyticsEvent,
+    AuditLogEntry,
+    CommunicationCampaign,
+    GDPRRequestRecord,
+    InternalDocument,
+    InternalNotification,
+    MediaAsset,
+    ReportRecord,
+)
 from app.models.journey import Gallery, Story
 from app.models.organization import Organization, OrganizationMembership, VolunteerIdentity
 from app.models.partner import Partner
@@ -17,14 +27,21 @@ from app.models.user import User
 from app.models.volunteer import Event, Training, Volunteer
 
 __all__ = [
+    "AnalyticsEvent",
+    "AuditLogEntry",
     "Campaign",
+    "CommunicationCampaign",
     "Discipline",
     "DonationRecord",
     "Event",
+    "GDPRRequestRecord",
     "Gallery",
+    "InternalDocument",
+    "InternalNotification",
     "ManagedEvent",
     "ManagedPartner",
     "ManagedSponsor",
+    "MediaAsset",
     "MembershipRecord",
     "Organization",
     "OrganizationMembership",
@@ -33,6 +50,7 @@ __all__ = [
     "Program",
     "Project",
     "ProjectParticipation",
+    "ReportRecord",
     "Sponsor",
     "Story",
     "Training",

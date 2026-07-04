@@ -5,6 +5,7 @@ from app.api.routes import (
     civil_response,
     disciplines,
     enterprise_foundation,
+    governance_foundation,
     journey,
     organizations,
     participations,
@@ -31,6 +32,14 @@ api_router.include_router(enterprise_foundation.partners_router, prefix="/partne
 api_router.include_router(enterprise_foundation.sponsors_router, prefix="/sponsor-management", tags=["sponsor-management"])
 api_router.include_router(enterprise_foundation.donations_router, prefix="/donations", tags=["donations"])
 api_router.include_router(enterprise_foundation.memberships_router, prefix="/membership-records", tags=["membership-records"])
+api_router.include_router(governance_foundation.documents_router, prefix="/documents", tags=["documents"])
+api_router.include_router(governance_foundation.media_router, prefix="/media-library", tags=["media-library"])
+api_router.include_router(governance_foundation.communications_router, prefix="/communications", tags=["communications"])
+api_router.include_router(governance_foundation.notifications_router, prefix="/notifications", tags=["notifications"])
+api_router.include_router(governance_foundation.analytics_router, prefix="/analytics-events", tags=["analytics-events"])
+api_router.include_router(governance_foundation.reports_router, prefix="/reports", tags=["reports"])
+api_router.include_router(governance_foundation.audit_router, prefix="/audit-logs", tags=["audit-logs"])
+api_router.include_router(governance_foundation.gdpr_router, prefix="/gdpr-requests", tags=["gdpr-requests"])
 api_router.include_router(volunteers.router, prefix="/volunteers", tags=["volunteers"])
 api_router.include_router(project_pulse.router, prefix="/project-pulse", tags=["project-pulse"])
 api_router.include_router(journey.router, prefix="/journey", tags=["journey"])

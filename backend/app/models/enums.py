@@ -128,3 +128,77 @@ class MembershipType(StrEnum):
     STAFF = "staff"
     PARTNER = "partner"
     SUPPORTER = "supporter"
+
+
+class DocumentType(StrEnum):
+    POLICY = "policy"
+    PROCEDURE = "procedure"
+    REPORT = "report"
+    CONTRACT = "contract"
+    TRAINING = "training"
+    OTHER = "other"
+
+
+class MediaType(StrEnum):
+    IMAGE = "image"
+    VIDEO = "video"
+    AUDIO = "audio"
+    DOCUMENT = "document"
+    OTHER = "other"
+
+
+class CommunicationChannel(StrEnum):
+    EMAIL = "email"
+    SMS = "sms"
+    IN_APP = "in_app"
+    WEB = "web"
+    SOCIAL = "social"
+
+
+class NotificationType(StrEnum):
+    INFO = "info"
+    ACTION_REQUIRED = "action_required"
+    REMINDER = "reminder"
+    SYSTEM = "system"
+
+
+class NotificationStatus(StrEnum):
+    DRAFT = "draft"
+    QUEUED = "queued"
+    DELIVERED = "delivered"
+    READ = "read"
+    ARCHIVED = "archived"
+
+
+class AnalyticsCategory(StrEnum):
+    SYSTEM = "system"
+    USER = "user"
+    ORGANIZATION = "organization"
+    PROGRAM = "program"
+    PROJECT = "project"
+    CONTENT = "content"
+
+
+class ReportType(StrEnum):
+    OPERATIONAL = "operational"
+    FINANCIAL = "financial"
+    PROGRAM = "program"
+    GDPR = "gdpr"
+    AUDIT = "audit"
+
+
+class GDPRRequestType(StrEnum):
+    ACCESS = "access"
+    RECTIFICATION = "rectification"
+    ERASURE = "erasure"
+    RESTRICTION = "restriction"
+    PORTABILITY = "portability"
+    OBJECTION = "objection"
+
+
+class GDPRRequestStatus(StrEnum):
+    RECEIVED = "received"
+    IN_REVIEW = "in_review"
+    COMPLETED = "completed"
+    REJECTED = "rejected"
+    CANCELLED = "cancelled"
