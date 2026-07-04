@@ -50,3 +50,27 @@ class MembershipStatus(StrEnum):
     ACTIVE = "active"
     PAUSED = "paused"
     ENDED = "ended"
+
+
+class ProgramStatus(StrEnum):
+    DRAFT = "draft"
+    ACTIVE = "active"
+    PAUSED = "paused"
+    ARCHIVED = "archived"
+
+
+class ProjectStatus(StrEnum):
+    DRAFT = "draft"
+    PLANNED = "planned"
+    ACTIVE = "active"
+    COMPLETED = "completed"
+    CANCELLED = "cancelled"
+    ARCHIVED = "archived"
+
+
+class ParticipationStatus(StrEnum):
+    INVITED = "invited"
+    ACTIVE = "active"
+    PAUSED = "paused"
+    COMPLETED = "completed"
+    WITHDRAWN = "withdrawn"
