@@ -1,13 +1,18 @@
 from uuid import UUID
 
-from sqlalchemy import func, select
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User
 
 
+async def list_users(session: AsyncSession) -> list[User]:
+    result = await session.execute(select(User).order_by(User.email))
+    return list(result.scalars().all())
+
+
 async def get_user_by_email(session: AsyncSession, email: str) -> User | None:
-    statement = select(User).where(func.lower(User.email) == email.lower())
+    statement = select(User).where(User.email.ilike(email))
     result = await session.execute(statement)
     return result.scalar_one_or_none()
 
