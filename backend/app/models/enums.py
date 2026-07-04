@@ -74,3 +74,57 @@ class ParticipationStatus(StrEnum):
     PAUSED = "paused"
     COMPLETED = "completed"
     WITHDRAWN = "withdrawn"
+
+
+class EventType(StrEnum):
+    COMMUNITY = "community"
+    TRAINING = "training"
+    VOLUNTEERING = "volunteering"
+    PARTNER = "partner"
+    FUNDRAISING = "fundraising"
+    GOVERNANCE = "governance"
+
+
+class FoundationStatus(StrEnum):
+    DRAFT = "draft"
+    PLANNED = "planned"
+    ACTIVE = "active"
+    PAUSED = "paused"
+    COMPLETED = "completed"
+    CANCELLED = "cancelled"
+    ARCHIVED = "archived"
+
+
+class TrainingLevel(StrEnum):
+    INTRODUCTORY = "introductory"
+    BASIC = "basic"
+    INTERMEDIATE = "intermediate"
+    ADVANCED = "advanced"
+
+
+class DeliveryMode(StrEnum):
+    ONLINE = "online"
+    IN_PERSON = "in_person"
+    HYBRID = "hybrid"
+
+
+class CertificationStatus(StrEnum):
+    ISSUED = "issued"
+    EXPIRED = "expired"
+    REVOKED = "revoked"
+    PENDING = "pending"
+
+
+class DonationStatus(StrEnum):
+    PLEDGED = "pledged"
+    RECEIVED = "received"
+    CANCELLED = "cancelled"
+    REFUNDED = "refunded"
+
+
+class MembershipType(StrEnum):
+    VOLUNTEER = "volunteer"
+    COORDINATOR = "coordinator"
+    STAFF = "staff"
+    PARTNER = "partner"
+    SUPPORTER = "supporter"

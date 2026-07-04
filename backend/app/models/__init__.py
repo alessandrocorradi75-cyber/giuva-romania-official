@@ -1,4 +1,13 @@
 from app.models.civil_response import PreparednessResource, TrainingCalendarItem
+from app.models.enterprise_foundation import (
+    DonationRecord,
+    ManagedEvent,
+    ManagedPartner,
+    ManagedSponsor,
+    MembershipRecord,
+    TrainingModule,
+    VolunteerCertification,
+)
 from app.models.journey import Gallery, Story
 from app.models.organization import Organization, OrganizationMembership, VolunteerIdentity
 from app.models.partner import Partner
@@ -10,8 +19,13 @@ from app.models.volunteer import Event, Training, Volunteer
 __all__ = [
     "Campaign",
     "Discipline",
+    "DonationRecord",
     "Event",
     "Gallery",
+    "ManagedEvent",
+    "ManagedPartner",
+    "ManagedSponsor",
+    "MembershipRecord",
     "Organization",
     "OrganizationMembership",
     "Partner",
@@ -23,7 +37,9 @@ __all__ = [
     "Story",
     "Training",
     "TrainingCalendarItem",
+    "TrainingModule",
     "User",
     "Volunteer",
+    "VolunteerCertification",
     "VolunteerIdentity",
 ]
