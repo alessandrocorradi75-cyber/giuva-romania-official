@@ -43,6 +43,9 @@ const navigationItems = [
   { label: "GKMS", href: "/admin/gkms", icon: FileText },
   { label: "AI Assistant", href: "/admin/ai-assistant", icon: LineChart },
   { label: "Communications", href: "/admin/communications", icon: Megaphone },
+  { label: "Media Center", href: "/admin/media-center", icon: Megaphone },
+  { label: "Public API", href: "/admin/public-api", icon: FileText },
+  { label: "Deployment", href: "/admin/deployment", icon: ShieldCheck },
   { label: "Reports", href: "/admin/reports", icon: BarChart3 },
   { label: "Analytics", href: "/admin/analytics", icon: LineChart },
   { label: "Audit Logs", href: "/admin/audit-logs", icon: ScrollText },
@@ -85,5 +88,6 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
     </section>
   );
 }
+
 
 

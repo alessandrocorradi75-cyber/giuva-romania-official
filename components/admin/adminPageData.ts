@@ -225,6 +225,37 @@ export const adminSections = {
     rows: [{ name: "Public answer context", scope: "Global", owner: "Governance", status: "Draft" }, { name: "Admin support context", scope: "Admin", owner: "Platform", status: "Review" }, { name: "Country knowledge context", scope: "Romania", owner: "National team", status: "Pending" }],
     workflows: [{ title: "Context approval", description: "Placeholder approval gate before future assistant context activation.", status: "Review" }, { title: "Allowed sources", description: "Static control for limiting future assistant retrieval sources.", status: "Draft" }, { title: "Safety notes", description: "Future governance notes for public safety, GDPR and scope restrictions.", status: "Pending" }],
     emptyState: "AI assistant entries are static. No prompt execution, API call, model configuration or sensitive data processing occurs.", searchPlaceholder: "Search AI contexts placeholder", filters: ["All", "Global", "Admin", "Review"]
+  },
+  mediaCenter: {
+    title: "Media Center",
+    eyebrow: "Public communication readiness",
+    description: "Internal readiness view for future media assets, press materials and public communication governance. No public claims or live integrations are enabled.",
+    icon: Megaphone,
+    summary: [{ label: "Media items", value: "9", detail: "Static readiness examples" }, { label: "Review gates", value: "4", detail: "Editorial and brand checks" }, { label: "Published", value: "0", detail: "No live publishing from admin" }], columns,
+    rows: [{ name: "Press kit placeholder", scope: "Media asset", owner: "Communications", status: "Draft" }, { name: "Public statement review", scope: "Editorial", owner: "Governance", status: "Review" }, { name: "Image usage register", scope: "Brand", owner: "Media team", status: "Pending" }],
+    workflows: [{ title: "Editorial review", description: "Placeholder approval step before future public communication is released.", status: "Review" }, { title: "Brand validation", description: "Static check for visual identity, wording and public-safety boundaries.", status: "Pending" }, { title: "Publication readiness", description: "Future release gate only; this page does not publish content.", status: "Draft" }],
+    emptyState: "Media center records are mock-only. No real media files are uploaded, published or syndicated.", searchPlaceholder: "Search media readiness placeholder", filters: ["All", "Draft", "Review", "Media"]
+  },
+  publicApi: {
+    title: "Public API",
+    eyebrow: "API readiness",
+    description: "Internal placeholder for future public API structure, documentation coverage and release gates. No backend endpoint is publicly exposed by this page.",
+    icon: FileText,
+    summary: [{ label: "API groups", value: "5", detail: "Draft public-readiness domains" }, { label: "Docs", value: "3", detail: "Placeholder documentation surfaces" }, { label: "Public exposure", value: "0", detail: "No public API enabled" }], columns,
+    rows: [{ name: "Programs API", scope: "Read-only candidate", owner: "Platform", status: "Draft" }, { name: "Events API", scope: "Future public data", owner: "Operations", status: "Review" }, { name: "Media API", scope: "Documentation placeholder", owner: "Communications", status: "Pending" }],
+    workflows: [{ title: "Contract review", description: "Placeholder for future OpenAPI and versioning review.", status: "Draft" }, { title: "Security gate", description: "Future public exposure requires rate limits, CORS policy and auth review.", status: "Review" }, { title: "Documentation release", description: "Static readiness checkpoint before any public API documentation is published.", status: "Pending" }],
+    emptyState: "Public API data is static. No real backend endpoint is exposed publicly or integrated from this page.", searchPlaceholder: "Search API readiness placeholder", filters: ["All", "Draft", "Review", "Docs"]
+  },
+  deployment: {
+    title: "Deployment",
+    eyebrow: "Operations readiness",
+    description: "Internal deployment readiness console for environment guides, release checklist status and runbook ownership.",
+    icon: ShieldCheck,
+    summary: [{ label: "Runbooks", value: "3", detail: "Deployment, release and operations" }, { label: "Secrets stored", value: "0", detail: "No secrets in repository" }, { label: "Release gates", value: "6", detail: "Future deployment checklist" }], columns,
+    rows: [{ name: "Environment guide", scope: "Deployment docs", owner: "Platform", status: "Draft" }, { name: "Release checklist", scope: "Operations", owner: "Governance", status: "Review" }, { name: "Incident runbook", scope: "Support", owner: "Operations", status: "Pending" }],
+    workflows: [{ title: "Pre-release validation", description: "Placeholder gate for lint, build, migration and smoke checks.", status: "Draft" }, { title: "Deployment approval", description: "Future approval checkpoint before production release.", status: "Review" }, { title: "Rollback readiness", description: "Static operational reminder for backup and rollback procedures.", status: "Pending" }],
+    emptyState: "Deployment entries are static. No deployment command, environment change or secret management action is executed.", searchPlaceholder: "Search deployment readiness placeholder", filters: ["All", "Docs", "Release", "Runbook"]
   }
 } satisfies Record<string, AdminSectionConfig>;
+
 
