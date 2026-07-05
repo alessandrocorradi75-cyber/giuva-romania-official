@@ -26,6 +26,94 @@ export type Organization = {
   updated_at?: string;
 };
 
+export type VolunteerPortalSchema = {
+  module: string;
+  status: string;
+  features: string[];
+  tables: string[];
+};
+
+export type ProgramRecord = {
+  id: string;
+  owner_organization_id: string | null;
+  code: string;
+  name: string;
+  description: string | null;
+  status: string;
+  visibility: string;
+  country_availability: string[];
+  created_at?: string;
+  updated_at?: string;
+};
+
+export type ProjectRecord = {
+  id: string;
+  program_id: string;
+  organization_id: string | null;
+  code: string;
+  title: string;
+  description: string | null;
+  status: string;
+  starts_at: string | null;
+  ends_at: string | null;
+  budget: string | null;
+  visibility: string;
+  country_code: string | null;
+  city: string | null;
+  created_at?: string;
+  updated_at?: string;
+};
+
+export type ManagedEventRecord = {
+  id: string;
+  organization_id: string | null;
+  program_id: string | null;
+  project_id: string | null;
+  title: string;
+  description: string | null;
+  event_type: string;
+  status: string;
+  visibility: string;
+  starts_at: string;
+  ends_at: string | null;
+  country_code: string | null;
+  city: string | null;
+  location: string | null;
+  max_participants: number | null;
+  created_at?: string;
+  updated_at?: string;
+};
+
+export type AuditLogRecord = {
+  id: string;
+  actor_user_id: string | null;
+  organization_id: string | null;
+  action: string;
+  entity_type: string;
+  entity_id: string | null;
+  before_json: Record<string, unknown> | null;
+  after_json: Record<string, unknown> | null;
+  ip_address: string | null;
+  user_agent: string | null;
+  occurred_at: string;
+  created_at?: string;
+  updated_at?: string;
+};
+
+export type GdprRequestRecord = {
+  id: string;
+  organization_id: string | null;
+  handled_by_user_id: string | null;
+  data_subject_email: string;
+  request_type: string;
+  status: string;
+  requested_at: string;
+  completed_at: string | null;
+  notes: string | null;
+  created_at?: string;
+  updated_at?: string;
+};
+
 export type LoginResponse = {
   access_token: string;
   token_type: string;
@@ -110,4 +198,28 @@ export async function fetchAdminUsers(token: string) {
 
 export async function fetchAdminUser(token: string, userId: string) {
   return adminRequest<AdminUser>(`/users/${userId}`, token);
+}
+
+export async function fetchVolunteerPortalSchema(token: string) {
+  return adminRequest<VolunteerPortalSchema>("/volunteers/schema", token);
+}
+
+export async function fetchAdminPrograms(token: string) {
+  return adminRequest<ProgramRecord[]>("/programs", token);
+}
+
+export async function fetchAdminProjects(token: string) {
+  return adminRequest<ProjectRecord[]>("/projects", token);
+}
+
+export async function fetchAdminEvents(token: string) {
+  return adminRequest<ManagedEventRecord[]>("/events", token);
+}
+
+export async function fetchAdminAuditLogs(token: string) {
+  return adminRequest<AuditLogRecord[]>("/audit-logs", token);
+}
+
+export async function fetchAdminGdprRequests(token: string) {
+  return adminRequest<GdprRequestRecord[]>("/gdpr-requests", token);
 }

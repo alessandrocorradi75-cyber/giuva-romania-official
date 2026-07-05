@@ -1,12 +1,11 @@
 ﻿import type { Metadata } from "next";
-import { AdminSectionPage } from "@/components/admin/AdminSectionPage";
-import { adminSections } from "@/components/admin/adminPageData";
+import { AdminGdprClient } from "@/components/admin/AdminGdprClient";
 
 export const metadata: Metadata = {
   title: "GDPR | GIUVA Admin",
-  description: "Internal GIUVA gdpr administration placeholder page."
+  description: "Internal GIUVA GDPR API-backed administration page."
 };
 
 export default function AdminGdprPage() {
-  return <AdminSectionPage {...adminSections.gdpr} />;
+  return <AdminGdprClient />;
 }

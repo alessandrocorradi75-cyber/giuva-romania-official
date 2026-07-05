@@ -1,12 +1,11 @@
 ﻿import type { Metadata } from "next";
-import { AdminSectionPage } from "@/components/admin/AdminSectionPage";
-import { adminSections } from "@/components/admin/adminPageData";
+import { AdminProjectsClient } from "@/components/admin/AdminProjectsClient";
 
 export const metadata: Metadata = {
   title: "Projects | GIUVA Admin",
-  description: "Internal GIUVA projects administration placeholder page."
+  description: "Internal GIUVA projects API-backed administration page."
 };
 
 export default function AdminProjectsPage() {
-  return <AdminSectionPage {...adminSections.projects} />;
+  return <AdminProjectsClient />;
 }

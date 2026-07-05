@@ -1,12 +1,11 @@
 ﻿import type { Metadata } from "next";
-import { AdminSectionPage } from "@/components/admin/AdminSectionPage";
-import { adminSections } from "@/components/admin/adminPageData";
+import { AdminEventsClient } from "@/components/admin/AdminEventsClient";
 
 export const metadata: Metadata = {
   title: "Events | GIUVA Admin",
-  description: "Internal GIUVA events administration placeholder page."
+  description: "Internal GIUVA events API-backed administration page."
 };
 
 export default function AdminEventsPage() {
-  return <AdminSectionPage {...adminSections.events} />;
+  return <AdminEventsClient />;
 }
