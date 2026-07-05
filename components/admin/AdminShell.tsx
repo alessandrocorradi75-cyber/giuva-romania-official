@@ -1,4 +1,8 @@
-﻿import type { ReactNode } from "react";
+﻿"use client";
+
+import type { ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 import {
   BarChart3,
   BookOpenCheck,
@@ -14,6 +18,7 @@ import {
   HeartHandshake,
   LayoutDashboard,
   LineChart,
+  LogOut,
   Megaphone,
   ScrollText,
   ShieldCheck,
@@ -21,6 +26,7 @@ import {
   Users,
   UserRoundCheck
 } from "lucide-react";
+import { AdminAuthProvider, useAdminAuth } from "@/components/admin/AdminAuthProvider";
 import { AdminNavigation } from "@/components/admin/AdminNavigation";
 
 const navigationItems = [
@@ -52,7 +58,37 @@ const navigationItems = [
   { label: "GDPR", href: "/admin/gdpr", icon: ShieldCheck }
 ];
 
-export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
+function AdminShellFrame({ children }: Readonly<{ children: ReactNode }>) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { user, token, loading, logout } = useAdminAuth();
+  const isLogin = pathname === "/admin/login";
+
+  useEffect(() => {
+    if (!loading && !token && !isLogin) {
+      router.replace("/admin/login");
+    }
+  }, [isLogin, loading, router, token]);
+
+  if (isLogin) {
+    return <>{children}</>;
+  }
+
+  if (loading || !token) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-slate-100 px-4 text-slate-700">
+        <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-extrabold shadow-sm">
+          Checking internal admin session...
+        </div>
+      </main>
+    );
+  }
+
+  function handleLogout() {
+    logout();
+    router.replace("/admin/login");
+  }
+
   return (
     <section className="bg-slate-100 text-slate-950" aria-label="GIUVA internal administration platform">
       <div className="mx-auto flex min-h-screen w-full max-w-[96rem] flex-col lg:flex-row">
@@ -65,21 +101,30 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
             </div>
             <AdminNavigation items={navigationItems} />
             <div className="mt-4 rounded-lg border border-slate-800 bg-slate-900 p-3 text-xs leading-5 text-slate-300 lg:mt-auto">
-              Static placeholder shell. No public records, live data or authentication workflow is exposed in this block.
+              Internal authenticated area. Public registration, payment, email and real public data collection are disabled.
             </div>
           </div>
         </aside>
 
         <div className="min-w-0 flex-1">
           <header className="border-b border-slate-200 bg-white px-4 py-4 shadow-sm sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="m-0 text-xs font-black uppercase tracking-[0.16em] text-blue-700">R4-R7 Application Layer</p>
-                <p className="m-0 mt-1 text-lg font-black text-slate-950">Internal Operations Console</p>
+                <p className="m-0 text-xs font-black uppercase tracking-[0.16em] text-blue-700">Internal Application Layer</p>
+                <p className="m-0 mt-1 text-lg font-black text-slate-950">Admin Operations Console</p>
               </div>
-              <span className="inline-flex w-fit items-center rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-extrabold text-slate-700">
-                Preview mode
-              </span>
+              <div className="flex flex-col gap-2 sm:items-end">
+                <span className="inline-flex w-fit items-center rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-extrabold text-slate-700">
+                  {user ? `${user.email} · ${user.role}` : "Authenticated"}
+                </span>
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="inline-flex min-h-9 w-fit items-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-extrabold text-slate-700 hover:bg-slate-50"
+                >
+                  <LogOut aria-hidden="true" size={16} /> Logout
+                </button>
+              </div>
             </div>
           </header>
           <div className="px-4 py-6 sm:px-6 lg:px-8">{children}</div>
@@ -89,5 +134,10 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
   );
 }
 
-
-
+export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <AdminAuthProvider>
+      <AdminShellFrame>{children}</AdminShellFrame>
+    </AdminAuthProvider>
+  );
+}
