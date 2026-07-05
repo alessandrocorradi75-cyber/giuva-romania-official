@@ -1,4 +1,4 @@
-"""Environment-aware application configuration for the GIUVA backend."""
+﻿"""Environment-aware application configuration for the GIUVA backend."""
 
 from functools import lru_cache
 from os import getenv
@@ -31,6 +31,8 @@ class Settings(BaseSettings):
     debug: bool = False
     api_v1_prefix: str = "/api/v1"
     backend_cors_origins: list[str] = Field(default_factory=lambda: ["http://127.0.0.1:3000"])
+    backend_cors_methods: list[str] = Field(default_factory=lambda: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"])
+    backend_cors_headers: list[str] = Field(default_factory=lambda: ["Authorization", "Content-Type"])
     allowed_hosts: list[str] = Field(default_factory=lambda: ["127.0.0.1", "localhost"])
 
     database_url: str = "postgresql+asyncpg://giuva:giuva_password@localhost:5432/giuva"
@@ -39,17 +41,24 @@ class Settings(BaseSettings):
 
     jwt_secret_key: str = _DEVELOPMENT_JWT_SECRET
     jwt_algorithm: str = "HS256"
+    jwt_issuer: str = "giuva-api"
+    jwt_audience: str = "giuva-internal-platform"
     access_token_expire_minutes: int = 60
 
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"] = "INFO"
     docs_enabled: bool = True
 
-    @field_validator("backend_cors_origins", "allowed_hosts", mode="before")
+    @field_validator("backend_cors_origins", "backend_cors_methods", "backend_cors_headers", "allowed_hosts", mode="before")
     @classmethod
     def split_csv_values(cls, value: str | list[str]) -> list[str]:
         if isinstance(value, str):
             return [item.strip() for item in value.split(",") if item.strip()]
         return value
+
+    @field_validator("backend_cors_methods", "backend_cors_headers")
+    @classmethod
+    def normalize_uppercase_values(cls, value: list[str]) -> list[str]:
+        return [item.upper() for item in value]
 
     @field_validator("environment", mode="before")
     @classmethod
@@ -67,6 +76,14 @@ class Settings(BaseSettings):
         if self.environment != "production":
             return self
 
+        if self.debug:
+            msg = "debug must be disabled in production"
+            raise ValueError(msg)
+
+        if self.docs_enabled:
+            msg = "docs_enabled must be false in production"
+            raise ValueError(msg)
+
         if self.jwt_secret_key in _PRODUCTION_PLACEHOLDER_SECRETS or len(self.jwt_secret_key) < 32:
             msg = "jwt_secret_key must be provided by environment and be at least 32 characters in production"
             raise ValueError(msg)
@@ -75,8 +92,20 @@ class Settings(BaseSettings):
             msg = "database_url must use the postgresql+asyncpg driver in production"
             raise ValueError(msg)
 
+        if not self.backend_cors_origins:
+            msg = "backend_cors_origins must be explicitly configured in production"
+            raise ValueError(msg)
+
         if any(origin in {"*", "http://127.0.0.1:3000", "http://localhost:3000"} for origin in self.backend_cors_origins):
             msg = "backend_cors_origins must be restricted to production origins in production"
+            raise ValueError(msg)
+
+        if "*" in self.backend_cors_methods or "*" in self.backend_cors_headers:
+            msg = "backend CORS methods and headers must be explicit in production"
+            raise ValueError(msg)
+
+        if not self.allowed_hosts or "*" in self.allowed_hosts:
+            msg = "allowed_hosts must be explicitly restricted in production"
             raise ValueError(msg)
 
         return self

@@ -1,4 +1,4 @@
-from datetime import UTC, datetime, timedelta
+﻿from datetime import UTC, datetime, timedelta
 from typing import Any
 
 from app.core.config import settings
@@ -21,8 +21,16 @@ def hash_password(password: str) -> str:
 def create_access_token(subject: str, claims: dict[str, Any] | None = None) -> str:
     from jose import jwt
 
-    expires_at = datetime.now(UTC) + timedelta(minutes=settings.access_token_expire_minutes)
-    payload: dict[str, Any] = {"sub": subject, "exp": expires_at}
+    now = datetime.now(UTC)
+    expires_at = now + timedelta(minutes=settings.access_token_expire_minutes)
+    payload: dict[str, Any] = {
+        "sub": subject,
+        "exp": expires_at,
+        "iat": now,
+        "iss": settings.jwt_issuer,
+        "aud": settings.jwt_audience,
+        "typ": "access",
+    }
     if claims:
         payload.update(claims)
     return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
@@ -32,6 +40,17 @@ def decode_access_token(token: str) -> dict[str, Any] | None:
     from jose import JWTError, jwt
 
     try:
-        return jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
+        payload = jwt.decode(
+            token,
+            settings.jwt_secret_key,
+            algorithms=[settings.jwt_algorithm],
+            issuer=settings.jwt_issuer,
+            audience=settings.jwt_audience,
+        )
     except JWTError:
         return None
+
+    if payload.get("typ") != "access":
+        return None
+
+    return payload
