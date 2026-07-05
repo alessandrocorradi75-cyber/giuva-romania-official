@@ -18,9 +18,9 @@ import { AdminNavigation } from "@/components/admin/AdminNavigation";
 
 const navigationItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { label: "Organizations", href: "#organizations", icon: Building2 },
-  { label: "Users", href: "#users", icon: Users },
-  { label: "Volunteers", href: "#volunteers", icon: UserRoundCheck },
+  { label: "Organizations", href: "/admin/organizations", icon: Building2 },
+  { label: "Users", href: "/admin/users", icon: Users },
+  { label: "Volunteers", href: "/admin/volunteers", icon: UserRoundCheck },
   { label: "Programs", href: "#programs", icon: ClipboardList },
   { label: "Projects", href: "#projects", icon: FolderKanban },
   { label: "Events", href: "#events", icon: CalendarDays },
@@ -68,4 +68,5 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
     </section>
   );
 }
+
 
