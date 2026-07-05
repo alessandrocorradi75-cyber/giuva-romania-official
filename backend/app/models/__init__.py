@@ -1,3 +1,4 @@
+﻿from app.models.ai_gkms_foundation import AIAssistantContext, KnowledgeDocument, SOPReference, SearchMetadataRecord
 from app.models.civil_response import PreparednessResource, TrainingCalendarItem
 from app.models.enterprise_foundation import (
     DonationRecord,
@@ -27,6 +28,7 @@ from app.models.user import User
 from app.models.volunteer import Event, Training, Volunteer
 
 __all__ = [
+    "AIAssistantContext",
     "AnalyticsEvent",
     "AuditLogEntry",
     "Campaign",
@@ -38,6 +40,7 @@ __all__ = [
     "Gallery",
     "InternalDocument",
     "InternalNotification",
+    "KnowledgeDocument",
     "ManagedEvent",
     "ManagedPartner",
     "ManagedSponsor",
@@ -51,6 +54,8 @@ __all__ = [
     "Project",
     "ProjectParticipation",
     "ReportRecord",
+    "SOPReference",
+    "SearchMetadataRecord",
     "Sponsor",
     "Story",
     "Training",
@@ -61,3 +66,5 @@ __all__ = [
     "VolunteerCertification",
     "VolunteerIdentity",
 ]
+
+

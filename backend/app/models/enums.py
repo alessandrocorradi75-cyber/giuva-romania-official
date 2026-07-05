@@ -1,4 +1,4 @@
-from enum import StrEnum
+﻿from enum import StrEnum
 
 
 class UserRole(StrEnum):
@@ -202,3 +202,28 @@ class GDPRRequestStatus(StrEnum):
     COMPLETED = "completed"
     REJECTED = "rejected"
     CANCELLED = "cancelled"
+
+class KnowledgeSourceType(StrEnum):
+    DOCUMENT = "document"
+    SOP = "sop"
+    POLICY = "policy"
+    TRAINING = "training"
+    FAQ = "faq"
+    OTHER = "other"
+
+
+class AIContextScope(StrEnum):
+    GLOBAL = "global"
+    COUNTRY = "country"
+    ORGANIZATION = "organization"
+    PROGRAM = "program"
+    PROJECT = "project"
+    ADMIN = "admin"
+
+
+class SearchMetadataStatus(StrEnum):
+    DRAFT = "draft"
+    INDEX_READY = "index_ready"
+    INDEXED = "indexed"
+    STALE = "stale"
+    ARCHIVED = "archived"

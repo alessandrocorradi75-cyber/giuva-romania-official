@@ -40,6 +40,8 @@ const navigationItems = [
   { label: "Sponsors", href: "/admin/sponsors", icon: HeartHandshake },
   { label: "Donations", href: "/admin/donations", icon: HandCoins },
   { label: "Documents", href: "/admin/documents", icon: FileText },
+  { label: "GKMS", href: "/admin/gkms", icon: FileText },
+  { label: "AI Assistant", href: "/admin/ai-assistant", icon: LineChart },
   { label: "Communications", href: "/admin/communications", icon: Megaphone },
   { label: "Reports", href: "/admin/reports", icon: BarChart3 },
   { label: "Analytics", href: "/admin/analytics", icon: LineChart },
@@ -83,3 +85,5 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
     </section>
   );
 }
+
+

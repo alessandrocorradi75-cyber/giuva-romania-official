@@ -205,5 +205,26 @@ export const adminSections = {
     rows: [{ name: "Volunteer update", scope: "Romania", owner: "Communications", status: "Draft" }, { name: "Training notice", scope: "Academy", owner: "Training", status: "Review" }, { name: "Partner briefing", scope: "Europe", owner: "Partnerships", status: "Draft" }],
     workflows: [{ title: "Draft message", description: "Placeholder for future internal communication planning.", status: "Draft" }, { title: "Audience review", description: "Static step for checking recipient scope before any sending exists.", status: "Review" }, { title: "Approval gate", description: "Future governance approval before enabling delivery integrations.", status: "Pending" }],
     emptyState: "Communication records are static. No email, SMS or notification delivery is connected.", searchPlaceholder: "Search communications placeholder", filters: ["All", "Draft", "Review", "Internal"]
+  },
+  gkms: {
+    title: "GKMS",
+    eyebrow: "Knowledge management",
+    description: "Internal placeholder for knowledge documents, SOP references and search metadata readiness. No real files are indexed or processed.",
+    icon: FileText,
+    summary: [{ label: "Knowledge docs", value: "12", detail: "Static GKMS examples" }, { label: "SOP references", value: "6", detail: "Future governance links" }, { label: "Indexed", value: "0", detail: "No live indexing enabled" }], columns,
+    rows: [{ name: "Volunteer onboarding guide", scope: "Knowledge document", owner: "Governance", status: "Draft" }, { name: "SOP-GOV-001", scope: "SOP reference", owner: "Operations", status: "Review" }, { name: "Romanian content metadata", scope: "Search metadata", owner: "Platform", status: "Pending" }],
+    workflows: [{ title: "Document intake", description: "Placeholder for future controlled knowledge source registration.", status: "Draft" }, { title: "SOP review", description: "Static review gate before any SOP is available to assistant context.", status: "Review" }, { title: "Search metadata", description: "Future metadata preparation before search indexing is enabled.", status: "Pending" }],
+    emptyState: "GKMS records are mock-only. No real document body, sensitive content or external search index is processed.", searchPlaceholder: "Search GKMS placeholder", filters: ["All", "Documents", "SOP", "Metadata"]
+  },
+  aiAssistant: {
+    title: "AI Assistant",
+    eyebrow: "Assistant context management",
+    description: "Internal placeholder for future GIUVA AI context scopes, allowed sources and safety notes. No AI API calls are made.",
+    icon: LineChart,
+    summary: [{ label: "Contexts", value: "4", detail: "Static assistant contexts" }, { label: "External APIs", value: "0", detail: "No AI provider integration" }, { label: "Safety reviews", value: "3", detail: "Future governance checkpoints" }], columns,
+    rows: [{ name: "Public answer context", scope: "Global", owner: "Governance", status: "Draft" }, { name: "Admin support context", scope: "Admin", owner: "Platform", status: "Review" }, { name: "Country knowledge context", scope: "Romania", owner: "National team", status: "Pending" }],
+    workflows: [{ title: "Context approval", description: "Placeholder approval gate before future assistant context activation.", status: "Review" }, { title: "Allowed sources", description: "Static control for limiting future assistant retrieval sources.", status: "Draft" }, { title: "Safety notes", description: "Future governance notes for public safety, GDPR and scope restrictions.", status: "Pending" }],
+    emptyState: "AI assistant entries are static. No prompt execution, API call, model configuration or sensitive data processing occurs.", searchPlaceholder: "Search AI contexts placeholder", filters: ["All", "Global", "Admin", "Review"]
   }
 } satisfies Record<string, AdminSectionConfig>;
+

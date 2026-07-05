@@ -1,6 +1,7 @@
-from fastapi import APIRouter
+﻿from fastapi import APIRouter
 
 from app.api.routes import (
+    ai_gkms_foundation,
     auth,
     civil_response,
     disciplines,
@@ -19,6 +20,10 @@ from app.api.routes import (
 
 api_router = APIRouter()
 api_router.include_router(auth.router, prefix="/auth", tags=["auth"])
+api_router.include_router(ai_gkms_foundation.knowledge_router, prefix="/knowledge-documents", tags=["knowledge-documents"])
+api_router.include_router(ai_gkms_foundation.sop_router, prefix="/sop-references", tags=["sop-references"])
+api_router.include_router(ai_gkms_foundation.ai_context_router, prefix="/ai-assistant-contexts", tags=["ai-assistant-contexts"])
+api_router.include_router(ai_gkms_foundation.search_router, prefix="/search-metadata", tags=["search-metadata"])
 api_router.include_router(users.router, prefix="/users", tags=["users"])
 api_router.include_router(organizations.router, prefix="/organizations", tags=["organizations"])
 api_router.include_router(programs.router, prefix="/programs", tags=["programs"])
@@ -45,3 +50,5 @@ api_router.include_router(project_pulse.router, prefix="/project-pulse", tags=["
 api_router.include_router(journey.router, prefix="/journey", tags=["journey"])
 api_router.include_router(partners.router, prefix="/partners", tags=["partners"])
 api_router.include_router(civil_response.router, prefix="/civil-response", tags=["civil-response"])
+
+
