@@ -1,16 +1,23 @@
-import type { ReactNode } from "react";
+﻿import type { ReactNode } from "react";
 import {
   BarChart3,
+  BookOpenCheck,
   Building2,
   CalendarDays,
+  ClipboardCheck,
   ClipboardList,
   FileText,
   FolderKanban,
   GraduationCap,
   HandCoins,
   Handshake,
+  HeartHandshake,
   LayoutDashboard,
+  LineChart,
+  Megaphone,
+  ScrollText,
   ShieldCheck,
+  UserCog,
   Users,
   UserRoundCheck
 } from "lucide-react";
@@ -21,15 +28,23 @@ const navigationItems = [
   { label: "Organizations", href: "/admin/organizations", icon: Building2 },
   { label: "Users", href: "/admin/users", icon: Users },
   { label: "Volunteers", href: "/admin/volunteers", icon: UserRoundCheck },
-  { label: "Programs", href: "#programs", icon: ClipboardList },
-  { label: "Projects", href: "#projects", icon: FolderKanban },
-  { label: "Events", href: "#events", icon: CalendarDays },
-  { label: "Training", href: "#training", icon: GraduationCap },
-  { label: "Partners", href: "#partners", icon: Handshake },
-  { label: "Donations", href: "#donations", icon: HandCoins },
-  { label: "Documents", href: "#documents", icon: FileText },
-  { label: "Reports", href: "#reports", icon: BarChart3 },
-  { label: "GDPR", href: "#gdpr", icon: ShieldCheck }
+  { label: "Memberships", href: "/admin/memberships", icon: UserCog },
+  { label: "Programs", href: "/admin/programs", icon: ClipboardList },
+  { label: "Projects", href: "/admin/projects", icon: FolderKanban },
+  { label: "Participation", href: "/admin/participation", icon: ClipboardCheck },
+  { label: "Events", href: "/admin/events", icon: CalendarDays },
+  { label: "Training", href: "/admin/training", icon: GraduationCap },
+  { label: "Certifications", href: "/admin/certifications", icon: BookOpenCheck },
+  { label: "Approvals", href: "/admin/approvals", icon: ClipboardCheck },
+  { label: "Partners", href: "/admin/partners", icon: Handshake },
+  { label: "Sponsors", href: "/admin/sponsors", icon: HeartHandshake },
+  { label: "Donations", href: "/admin/donations", icon: HandCoins },
+  { label: "Documents", href: "/admin/documents", icon: FileText },
+  { label: "Communications", href: "/admin/communications", icon: Megaphone },
+  { label: "Reports", href: "/admin/reports", icon: BarChart3 },
+  { label: "Analytics", href: "/admin/analytics", icon: LineChart },
+  { label: "Audit Logs", href: "/admin/audit-logs", icon: ScrollText },
+  { label: "GDPR", href: "/admin/gdpr", icon: ShieldCheck }
 ];
 
 export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
@@ -54,7 +69,7 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
           <header className="border-b border-slate-200 bg-white px-4 py-4 shadow-sm sm:px-6 lg:px-8">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="m-0 text-xs font-black uppercase tracking-[0.16em] text-blue-700">R4 Application Layer</p>
+                <p className="m-0 text-xs font-black uppercase tracking-[0.16em] text-blue-700">R4-R7 Application Layer</p>
                 <p className="m-0 mt-1 text-lg font-black text-slate-950">Internal Operations Console</p>
               </div>
               <span className="inline-flex w-fit items-center rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-extrabold text-slate-700">
@@ -68,5 +83,3 @@ export function AdminShell({ children }: Readonly<{ children: ReactNode }>) {
     </section>
   );
 }
-
-

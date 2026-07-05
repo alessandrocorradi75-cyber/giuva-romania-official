@@ -1,22 +1,28 @@
 import type { LucideIcon } from "lucide-react";
-import { AlertCircle, Database, LockKeyhole } from "lucide-react";
+import { AlertCircle, Database, Filter, LockKeyhole, Search } from "lucide-react";
 
-type SummaryCard = {
+export type SummaryCard = {
   label: string;
   value: string;
   detail: string;
 };
 
-type TableColumn = {
+export type TableColumn = {
   key: string;
   label: string;
 };
 
-type TableRow = Record<string, string> & {
+export type TableRow = Record<string, string> & {
   status: string;
 };
 
-type AdminSectionPageProps = {
+export type WorkflowCard = {
+  title: string;
+  description: string;
+  status: string;
+};
+
+export type AdminSectionConfig = {
   title: string;
   eyebrow: string;
   description: string;
@@ -25,14 +31,17 @@ type AdminSectionPageProps = {
   columns: TableColumn[];
   rows: TableRow[];
   emptyState: string;
+  searchPlaceholder?: string;
+  filters?: string[];
+  workflows?: WorkflowCard[];
 };
 
 function statusTone(status: string) {
   const normalized = status.toLowerCase();
-  if (normalized.includes("active") || normalized.includes("ready")) {
+  if (normalized.includes("active") || normalized.includes("ready") || normalized.includes("approved")) {
     return "bg-emerald-50 text-emerald-800 border-emerald-100";
   }
-  if (normalized.includes("review") || normalized.includes("draft") || normalized.includes("pending")) {
+  if (normalized.includes("review") || normalized.includes("draft") || normalized.includes("pending") || normalized.includes("queued")) {
     return "bg-amber-50 text-amber-900 border-amber-100";
   }
   return "bg-slate-100 text-slate-700 border-slate-200";
@@ -46,8 +55,11 @@ export function AdminSectionPage({
   summary,
   columns,
   rows,
-  emptyState
-}: Readonly<AdminSectionPageProps>) {
+  emptyState,
+  searchPlaceholder = "Search placeholder only",
+  filters = ["All", "Active", "Draft", "Review"],
+  workflows = []
+}: Readonly<AdminSectionConfig>) {
   return (
     <div className="space-y-6">
       <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm lg:p-6">
@@ -75,6 +87,44 @@ export function AdminSectionPage({
           </article>
         ))}
       </section>
+
+      <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm" aria-label={`${title} controls`}>
+        <div className="grid gap-3 lg:grid-cols-[1fr_auto] lg:items-center">
+          <label className="relative block">
+            <span className="sr-only">Search placeholder</span>
+            <Search aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+            <input
+              readOnly
+              value=""
+              placeholder={searchPlaceholder}
+              className="h-11 w-full rounded-md border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm font-semibold text-slate-700 outline-none"
+            />
+          </label>
+          <div className="flex flex-wrap gap-2" aria-label="Static filters">
+            {filters.map((filter) => (
+              <span key={filter} className="inline-flex min-h-9 items-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-extrabold text-slate-700">
+                <Filter aria-hidden="true" size={14} /> {filter}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {workflows.length > 0 ? (
+        <section className="grid gap-4 lg:grid-cols-3" aria-label={`${title} workflow placeholders`}>
+          {workflows.map((workflow) => (
+            <article key={workflow.title} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="m-0 text-base font-black text-slate-950">{workflow.title}</h2>
+                <span className={`shrink-0 rounded-full border px-2.5 py-1 text-xs font-black ${statusTone(workflow.status)}`}>
+                  {workflow.status}
+                </span>
+              </div>
+              <p className="m-0 mt-2 text-sm leading-6 text-slate-600">{workflow.description}</p>
+            </article>
+          ))}
+        </section>
+      ) : null}
 
       <section className="rounded-lg border border-slate-200 bg-white shadow-sm" aria-labelledby="section-table-title">
         <div className="flex flex-col gap-3 border-b border-slate-200 p-4 sm:flex-row sm:items-center sm:justify-between">

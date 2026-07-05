@@ -3,10 +3,10 @@ import { AdminSectionPage } from "@/components/admin/AdminSectionPage";
 import { adminSections } from "@/components/admin/adminPageData";
 
 export const metadata: Metadata = {
-  title: "Users | GIUVA Admin",
-  description: "Internal GIUVA users administration placeholder page."
+  title: "Donations | GIUVA Admin",
+  description: "Internal GIUVA donations administration placeholder page."
 };
 
-export default function AdminUsersPage() {
-  return <AdminSectionPage {...adminSections.users} />;
+export default function AdminDonationsPage() {
+  return <AdminSectionPage {...adminSections.donations} />;
 }
