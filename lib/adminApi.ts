@@ -223,3 +223,94 @@ export async function fetchAdminAuditLogs(token: string) {
 export async function fetchAdminGdprRequests(token: string) {
   return adminRequest<GdprRequestRecord[]>("/gdpr-requests", token);
 }
+
+export type ProgramMutationPayload = {
+  code: string;
+  name: string;
+  description?: string | null;
+  status: string;
+  visibility: string;
+  country_availability: string[];
+};
+
+export type ProjectMutationPayload = {
+  program_id: string;
+  code: string;
+  title: string;
+  description?: string | null;
+  status: string;
+  visibility: string;
+  country_code?: string | null;
+  city?: string | null;
+};
+
+export type EventMutationPayload = {
+  title: string;
+  description?: string | null;
+  event_type: string;
+  status: string;
+  visibility: string;
+  starts_at: string;
+  ends_at?: string | null;
+  country_code?: string | null;
+  city?: string | null;
+  location?: string | null;
+  max_participants?: number | null;
+  organization_id?: string | null;
+  program_id?: string | null;
+  project_id?: string | null;
+};
+
+export async function createAdminProgram(token: string, payload: ProgramMutationPayload) {
+  return adminRequest<ProgramRecord>("/programs", token, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function updateAdminProgram(token: string, programId: string, payload: Partial<ProgramMutationPayload>) {
+  return adminRequest<ProgramRecord>(`/programs/${programId}`, token, {
+    method: "PATCH",
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function deleteAdminProgram(token: string, programId: string) {
+  return adminRequest<void>(`/programs/${programId}`, token, { method: "DELETE" });
+}
+
+export async function createAdminProject(token: string, payload: ProjectMutationPayload) {
+  return adminRequest<ProjectRecord>("/projects", token, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function updateAdminProject(token: string, projectId: string, payload: Partial<ProjectMutationPayload>) {
+  return adminRequest<ProjectRecord>(`/projects/${projectId}`, token, {
+    method: "PATCH",
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function deleteAdminProject(token: string, projectId: string) {
+  return adminRequest<void>(`/projects/${projectId}`, token, { method: "DELETE" });
+}
+
+export async function createAdminEvent(token: string, payload: EventMutationPayload) {
+  return adminRequest<ManagedEventRecord>("/events", token, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function updateAdminEvent(token: string, eventId: string, payload: Partial<EventMutationPayload>) {
+  return adminRequest<ManagedEventRecord>(`/events/${eventId}`, token, {
+    method: "PATCH",
+    body: JSON.stringify(payload)
+  });
+}
+
+export async function deleteAdminEvent(token: string, eventId: string) {
+  return adminRequest<void>(`/events/${eventId}`, token, { method: "DELETE" });
+}
